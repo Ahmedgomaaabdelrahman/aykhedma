@@ -1,0 +1,49 @@
+
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>{{'Add Service'|translate}}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-item>
+        <ion-label>{{'choose category' |translate}}</ion-label>
+        <ion-select  name="service_category_id" [(ngModel)]="service.service_category_id">
+            <ion-option  *ngFor="let category of salesCategory" [value]="category.id" >{{category.name_ar}}</ion-option>
+        </ion-select>
+    </ion-item>
+   
+<ion-item>
+<ion-label stacked class="servtitle">{{'Service Title:'|translate}}</ion-label>
+<ion-input [(ngModel)]="service.title" name="title" type="text"></ion-input>
+</ion-item>
+
+<p class="select">{{'Description:'|translate}}</p>
+<ion-row><ion-col col-3></ion-col>
+  <ion-col col-9>
+    <textarea  [(ngModel)]="service.description" name="description" class="txtarea" placeholder=""></textarea>
+  </ion-col>
+</ion-row>
+
+<ion-row style="margin-top: 20px;">
+  <ion-col col-4>
+    <img  src="assets/imgs/Artboard – 11.png" (click)="addImage()">
+    <p class="textimg">{{'Add Photo'|translate}}</p>
+  </ion-col>
+
+  <ion-col col-4 (click)="recordVideo()">
+    <img src="assets/imgs/Artboard – 12.png">
+    <p class="textimg">{{'Add Video'|translate}}</p>
+  </ion-col>
+
+  <ion-col col-4 (click)="recordAudio()">
+    <img src="assets/imgs/Artboard – 13.png">
+    <p class="textimg">{{'Add Audio'|translate}}</p>
+  </ion-col>
+</ion-row>
+  <button ion-button clear round (click)="addService()" class="confirm">{{'Confirm'|translate}}</button>
+  </ion-content>
+  

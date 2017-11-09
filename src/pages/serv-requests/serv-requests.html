@@ -1,0 +1,48 @@
+
+<ion-header>
+
+<ion-navbar>
+<ion-title>{{'Service Requests'|translate}}</ion-title>
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content #content>
+<div *ngFor="let msg of messages">
+    <ion-row *ngIf="msg.sender != senderUID">
+      <ion-col col-2>
+        <img class="mobile" src="assets/imgs/iPhone 67 – 11.png">
+      </ion-col>
+      <ion-col col-10 *ngIf="msg.image == null">
+        <p class="text">{{msg.msg}}</p>
+        <div class="dicbutons">
+        <button ion-button clear icon-only (click)="gochat()">
+            <ion-icon class="cardicon" name="ios-chatbubbles" ></ion-icon>
+        </button>
+        <button ion-button clear icon-only> 
+            <ion-icon class="cardicon" name="ios-create"></ion-icon>
+        </button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="msg.sender == senderUID">
+            <ion-col col-2>
+              <img class="mobile" src="assets/imgs/iPhone 67 – 11.png">
+            </ion-col>
+            <ion-col col-10 *ngIf="msg.image == null">
+              <p class="text">{{msg.msg}}</p>
+              <div class="dicbutons">
+              <button ion-button clear icon-only (click)="gochat()">
+                  <ion-icon class="cardicon" name="ios-chatbubbles" ></ion-icon>
+              </button>
+              <button ion-button clear icon-only> 
+                  <ion-icon class="cardicon" name="ios-create"></ion-icon>
+              </button>
+              </div>
+            </ion-col>
+          </ion-row>
+</div>
+
+
+</ion-content>

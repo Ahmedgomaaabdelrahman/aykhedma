@@ -1,0 +1,64 @@
+
+<ion-header>
+
+<ion-navbar>
+<ion-title>
+  <ion-row>
+    <ion-col col-10>
+        {{chatService.activeChatWith.name}}
+    </ion-col>
+    <ion-col col-2>
+      <ion-icon class="call" name="call"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content #content >
+<ion-list padding>
+  <div *ngFor="let msg of messages">
+    <ion-row *ngIf="msg.sender != senderUID">
+      <ion-col col-2>
+        <img class="text2" src="assets/imgs/iPhone 67 – 11.png">
+      </ion-col>
+      <ion-col col-10 *ngIf="msg.image == null">
+        <textarea class="text2" placeholder="">{{msg.msg}}</textarea>
+      </ion-col>
+      <ion-col col-10 *ngIf="msg.image != null">
+        <img class="text2 imgMsg" [src]="msg.image" >
+      </ion-col>
+    </ion-row>
+
+    
+    <ion-row *ngIf="msg.sender == senderUID">
+      <ion-col col-10 *ngIf="msg.image == null">
+        <textarea class="text" placeholder="">{{msg.msg}}</textarea>
+      </ion-col>
+      <ion-col col-10 *ngIf="msg.image != null">
+        <img class="text imgMsg" [src]="msg.image">
+      </ion-col>
+      <ion-col col-2>
+        <img src="assets/imgs/iPhone 67 – 11.png">
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-list>
+<ion-footer no-lines class="chatfooter">
+<ion-row class="grayrow">
+  <ion-col col-2 (click)="uploadImg()">
+    <ion-icon class="camera" name="ios-camera-outline"></ion-icon>
+  </ion-col>
+  <ion-col col-8>
+    <ion-input [(ngModel)]="message" name="message" class=textbuttom></ion-input>
+  </ion-col>
+  <ion-col col-2>
+    <button class="camera" [disabled]="message == null || message.trim()==''" (click)="sendMsg()">
+      <ion-icon  name="send"></ion-icon>
+    </button>
+  </ion-col>
+</ion-row>
+
+</ion-footer>
+</ion-content>

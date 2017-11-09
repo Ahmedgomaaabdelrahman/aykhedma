@@ -1,0 +1,25 @@
+
+<ion-header>
+
+<ion-navbar>
+<ion-title>{{'Mobile Phones'|translate}}</ion-title>
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-row *ngFor="let item of catItems">
+<ion-col col-2>
+<img class="mobile" *ngIf="item.images.length > 0" [src]="mainService.imageUrl+item.images[0].image_url"
+    (click)="goToAddDetails(item)">
+</ion-col>
+<ion-col>
+<p class="text">{{item.title}}</p>
+<span class="pricemobile">{{item.price}}</span>
+<ion-icon class="icons" class="icons" name="call" ></ion-icon>
+<ion-icon class="icons" class="icons" name="mail" (click)="goToChat(item.user.person)"></ion-icon>
+</ion-col>
+</ion-row>
+</ion-content>

@@ -1,0 +1,75 @@
+
+<ion-header>
+
+<ion-navbar>
+<ion-title>Technicians</ion-title>
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-item class="select">
+<ion-select [(ngModel)]="technicians">
+<ion-option selected="true" >Cleaning</ion-option>
+<ion-option >Remodeling Kitchens</ion-option>
+<ion-option >Concrete work</ion-option>
+<ion-option >Electrical wiring</ion-option>
+<ion-option >Landscaping</ion-option>
+<ion-option >Maid service</ion-option>
+<ion-option >Pest control</ion-option>
+</ion-select>
+</ion-item>
+      
+<ion-row>
+<ion-col col-11 class="found">
+75 found in your area
+</ion-col>
+<ion-col col-1>
+<img class="graypin" src="assets/imgs/graymappin.png">
+</ion-col>
+</ion-row>
+
+<ion-list>
+
+<ion-item class="item" (click)="gomaptech()">
+<img class="imgrate" src="assets/imgs/rate.png">
+<ion-icon class="imgstar" name="star"></ion-icon>
+<span class="ratenumber">4.5</span>
+<ion-avatar item-start>
+<img class="techimg" src="assets/imgs/builder1.png">
+</ion-avatar>
+<h2>James Riyadi</h2>
+<h3>Individual</h3>
+<p>35 hr</p>
+<img class="flag" src="assets/imgs/flag.jpg">
+</ion-item>
+
+<ion-item class="item">
+<img class="imgrate" src="assets/imgs/rate.png">
+<ion-icon class="imgstar" name="star"></ion-icon>
+<span class="ratenumber">4.5</span>
+<ion-avatar item-start>
+<img class="techimg" src="assets/imgs/builder1.png">
+</ion-avatar>
+<h2>James Riyadi</h2>
+<h3>Individual</h3>
+<p>35 hr</p>
+<img class="flag" src="assets/imgs/flag.jpg">
+</ion-item>
+
+<ion-item class="item">
+<img class="imgrate" src="assets/imgs/rate.png">
+<ion-icon class="imgstar" name="star"></ion-icon>
+<span class="ratenumber">4.5</span>
+<ion-avatar item-start>
+<img class="techimg" src="assets/imgs/builder1.png">
+</ion-avatar>
+<h2>James Riyadi</h2>
+<h3>Individual</h3>
+<p>35 hr</p>
+<img class="flag" src="assets/imgs/flag.jpg">
+</ion-item>
+</ion-list>
+</ion-content>

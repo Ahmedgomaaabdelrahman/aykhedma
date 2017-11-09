@@ -1,0 +1,71 @@
+page-per-hotels {
+    .header-md::after{
+        background-image:none;
+    }    
+    .content,.toolbar-background{
+        background-color: $color-background;
+    }
+    .toolbar-title{
+        color: rgba(66, 66, 66, 0.67);
+        font-size: 1.7rem;
+        text-align: center;
+        padding-right: 60px;
+    }
+    .divdetails{
+        width: 100%;
+        height: 126px;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 0 3px rgba(128, 128, 128, 0.61);
+        margin-top: 40px;    
+        position: relative;
+    }
+    .resimg{
+        height: 140px;
+        width: 160px;
+        border-radius: 20px;
+        margin: 5px;
+        margin-top: -22px;
+    }
+    .mappin{
+        height: 10px;
+        white-space: 10px;
+    }
+    .map{
+        color: $color-sky;
+        font-weight: 600;
+    }
+    .connect{
+        order: 1;
+        border-radius: 15px;
+        font-size: 1rem;
+        
+        margin-right: 4px;
+        margin-left: 4px;
+        color: rgba(0, 0, 0, 0.57);
+        border: 1px solid #26bfe4;
+        font-weight: 600;
+    }
+    .stars{
+        color:$color-orange;
+      
+    }
+    .resname{
+        color: $color-font;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+    .input{
+        background-color: white;
+    }
+    
+    .item-md.item-block .item-inner{
+        margin: 0;
+    }
+    .searchico{
+        color:$color-font;
+    }
+    .item{
+        border-radius: 30px;
+    }
+}

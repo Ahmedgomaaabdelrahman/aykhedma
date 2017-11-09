@@ -1,0 +1,36 @@
+<ion-header>
+
+<ion-navbar>
+<ion-title >
+<ion-row >
+<ion-col col-2>
+  <ion-icon class="icon" name="mail" (click)="inbox()"></ion-icon>
+</ion-col>
+<ion-col col-2>
+  <ion-icon class="icon" name="ios-person-outline" (click)="profile()"></ion-icon>
+</ion-col>
+<ion-col col-8 class="titlename">
+  {{'Schedule'|translate}}
+</ion-col>
+</ion-row>     
+</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-row class="card">
+    <ion-col col-4>
+      <img src="assets/imgs/power.jpg">
+    </ion-col>
+    <ion-col col-8>
+      <p class="cardtit">Power Outage</p><p class="dateitem">7/5/2017</p>
+      <p class="name">Mohamed Essam</p>
+      <p class="details">
+          Power OutagePower OutagePower OutagePower Outage
+      </p>
+    </ion-col>
+  </ion-row>
+  </ion-list>
+
+</ion-content>

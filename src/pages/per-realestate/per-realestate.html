@@ -1,0 +1,62 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+       {{'Real estate'|translate}}
+  </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-row>
+        <ion-col col-10>
+      <ion-segment [(ngModel)]="icons" class="buttons">
+        <ion-segment-button  value="Rent" class="rentbtn">
+        {{'Rent'|translate}}
+        </ion-segment-button>
+        <ion-segment-button   value="Buy" class="rentbtn" pressed="true">
+        {{'Buy'|translate}}
+        </ion-segment-button>
+      </ion-segment>
+    </ion-col>
+    <ion-col col-2 class="colsearch"><ion-icon class="search" name="search"></ion-icon></ion-col>
+    </ion-row>
+  <ion-list style="margin-top: 25px;">
+  <ion-row >
+    <ion-col col-5>
+<img class="itemimg" src="assets/imgs/home1.png" (click)="godetails()">
+  </ion-col>
+  <ion-col col-7 class="details">
+  <p class="itemdetails">Rodney wong</p>
+  <p class="sold">Appartment for sold</p>
+  <p class="itemdetails">37 Hane Route</p>
+  <p class="time">35 {{'min'|translate}}</p>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col col-5>
+  <img class="itemimg" src="assets/imgs/home2.jpg">
+    </ion-col>
+    <ion-col col-7 class="details">
+    <p class="itemdetails">Rodney wong</p>
+    <p class="sold">Appartment for sold</p>
+    <p class="itemdetails">37 Hane Route</p>
+    <p class="time">2 {{'hr'|translate}}</p>
+    </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-5>
+    <img class="itemimg" src="assets/imgs/home3.jpg">
+      </ion-col>
+      <ion-col col-7 class="details">
+      <p class="itemdetails">Rodney wong</p>
+      <p class="sold">Appartment for sold</p>
+      <p class="itemdetails">37 Hane Route</p>
+      <p class="time">5 {{'days'|translate}}</p>
+      </ion-col>
+      </ion-row>
+</ion-list>
+</ion-content>

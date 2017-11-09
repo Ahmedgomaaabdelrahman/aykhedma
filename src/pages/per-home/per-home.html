@@ -1,0 +1,74 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title >
+      <ion-row>
+        <ion-col col-1>
+            <ion-icon class="icon" name="ios-person-outline" (click)="editprofile()"></ion-icon>
+        </ion-col>
+        <ion-col col-1>
+            <ion-icon class="icon" name="mail"(click)="goinbox()"></ion-icon>
+        </ion-col>
+        <ion-col col-2 class="titlename">
+            <ion-icon name="settings" (click)="settings()"></ion-icon>
+        </ion-col>
+        <ion-col col-5 class="titlename">
+            {{'Home'|translate}}
+        </ion-col>
+        <ion-col col-2 class="titlename" (click)="firstHome()">
+            {{'Adds'|translate}}
+        </ion-col>
+      </ion-row>     
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-input type="text" placeholder="{{'search'|translate}}" class="input"></ion-input>
+    
+<ion-list>
+<ion-row class="rowitems">
+<!-- <ion-col col-6 >
+<img src="assets/imgs/iPhone 67 – 7.png" (click)="gosellitems()">
+<p>{{'Sell items'|translate}}</p>
+</ion-col> -->
+  
+<ion-col col-6 >
+    <img src="assets/imgs/iPhone 67 – 5.png" (click)="goServicesProv()">
+    <p>{{'Services Providers'|translate}}</p>
+</ion-col>
+  
+<ion-col col-6 >
+<img src="assets/imgs/iPhone 67 – 5.png" (click)="gotechnicians()">
+<p>{{'Technicians'|translate}}</p>
+</ion-col>
+</ion-row>
+<ion-row  class="rowitems">
+<ion-col col-6 >
+<img src="assets/imgs/iPhone 67 – 6.png" (click)="gorealestate()">
+<p>{{'Real estate'|translate}}</p>
+</ion-col>
+<ion-col col-6 >
+<img src="assets/imgs/iPhone 67 – 9.png" (click)="gohotel()">
+<p>{{'Hotels'|translate}}</p>
+</ion-col>
+</ion-row>
+<ion-row  class="rowitems">
+<ion-col col-6 >
+<img src="assets/imgs/iPhone 67 – 10.png" (click)="gorestaurant()">
+<p>{{'Restaurants'|translate}}</p>
+</ion-col>
+<ion-col col-6 *ngFor="let category of salesCategory" (click)="goitemdetails(category.id)">
+    <img [src]="mainService.imageUrl+category.img">
+    <p>{{category.name_ar}}</p>
+</ion-col>
+</ion-row>
+</ion-list>
+
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+     
+</ion-content>

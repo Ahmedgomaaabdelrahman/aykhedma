@@ -1,0 +1,45 @@
+page-profile {
+.content{
+    background-color: $color-background;
+}
+.prorileimg{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    display: block;
+    margin-top: 15px;
+    border-radius: 12px;
+}
+.name{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.7rem;
+    color: $color-font;
+}
+.toolbar-title {
+    color: rgba(66, 66, 66, 0.67);
+    font-size: 1.7rem;
+    text-align: center;
+    padding-left: 0px !important;
+    padding-right: 0 !important;
+}    
+.icon{
+    color: $color-sky;
+    font-size: 3rem;
+}
+.colimg
+{
+    text-align: center;
+    background-color: white;
+    border-radius: 15px;
+    height: 100px;
+    color: $color-font;
+}
+.itemimg{
+    height: 50px;
+    width: 50px;
+}
+.firstrow{
+    margin-top: 40px;
+}
+}

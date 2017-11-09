@@ -1,0 +1,76 @@
+page-youradds {
+
+.toolbar-background{
+    background-color: white;
+    
+}
+.toolbar-title{
+    color: rgba(66, 66, 66, 0.67);
+    font-size: 1.7rem;
+    text-align: center;
+    padding-right: 60px;
+}
+.select{
+    font-size: 1.8rem;
+    color: $color-sky;
+    font-weight: 600;
+    text-align: center;
+}
+.label{
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: $color-font2;
+}
+.label[stacked]{
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+.txtarea{
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 3px 3px 0px rgba(128, 128, 128, 0.42);
+    height: 100px;
+    width: 100%;  
+    padding: 10px;
+}
+img{
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    display: block;
+    margin-top: 5px;
+}
+.textimg{
+    text-align: center;
+    margin-top: 2px;
+    color: #0f9fc1;
+}
+.confirm{
+    margin-right: 13px;
+    margin-left: 13px;
+    display: inline-block;
+    text-transform: none;
+    font-size: 1.8rem;
+    margin-top: 20px;
+    border: 4px solid rgba(167, 161, 161, 0.64);
+    width: 40%;
+    height: 45px;
+    color: $color-sky;
+}
+.icon{
+    color: $color-sky;
+    font-size: 3rem;
+}  
+.rowitem{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px lightgrey;
+    margin-top: 10px;
+}
+.mobile{
+    height: 30px;
+    width: 30px;
+  
+}
+}

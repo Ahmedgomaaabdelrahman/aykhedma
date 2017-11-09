@@ -1,0 +1,54 @@
+page-login {
+.header-md::after{
+    background-image:none;
+}
+.toolbar-background{
+    background-color: white;
+    color: rgba(66, 66, 66, 0.74);
+}
+.toolbar-title{
+    color: $color-font;
+}
+.titlename{
+text-align: center;
+
+
+}
+  
+.welcome{
+    color: $color-font;
+    font-weight: 400;
+    margin-top: 60px !important;
+    padding-left: 25px;
+    padding-right: 25px;
+    
+}
+.anyservices{
+    color: orange;
+    font-weight: 600;
+}    
+.signin{
+    width: 45%;
+    margin: auto;
+    display: block;
+    box-shadow: 0 0 4px grey;
+    height: 40px;
+    text-transform: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $color-sky;
+    margin-top: 75px;
+}
+.forget{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: $color-font2;
+    font-weight: 500;
+}
+.label{
+    color: gray;
+    font-size: 1.4rem;
+}
+}

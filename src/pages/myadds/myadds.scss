@@ -1,0 +1,45 @@
+page-myadds {
+    .header-md::after{
+        background-image:none;
+    }    
+    .content,.toolbar-background{
+        background-color: $color-background;
+    }
+    .toolbar-title{
+        color: rgba(66, 66, 66, 0.67);
+        font-size: 1.7rem;
+        text-align: center;
+        padding-right: 60px;
+    }
+    .icons{
+        padding-top: 15px;
+        font-size: 2.7rem;
+        color: $color-sky;
+    }
+    .text{
+        margin: 0;
+        font-size: 1.7rem;
+        color:$color-font;
+        font-weight: 500;
+    }
+    .mobile{
+        height: 30px;
+        width: 30px;
+      
+    }
+    .icon{
+        color: $color-sky;
+        font-size: 3rem;
+    }    
+    
+    .icons{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .rowitem{
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 0 10px lightgrey;
+        margin-top: 10px;
+    }
+}

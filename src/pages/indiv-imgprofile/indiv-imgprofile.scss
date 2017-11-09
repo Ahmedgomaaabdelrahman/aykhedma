@@ -1,0 +1,39 @@
+page-indiv-imgprofile {
+
+.header-md::after{
+background-image:none;
+}
+.toolbar-background{
+background-color: white; 
+}
+.toolbar-title {
+color: $color-font2;
+font-size: 1.7rem;
+}
+.personal{
+color:$color-sky;
+font-size: 1.7rem;
+}
+.locationstitle{
+color: $color-orange;
+font-size: 1.8rem;
+}
+.confirm{
+margin: auto;
+display: block;
+text-transform: none;
+font-size: 1.8rem;
+margin-top: 70px;
+border: 4px solid rgba(167, 161, 161, 0.64);
+width: 40%;
+height: 45px;
+color: $color-sky;
+}
+img{
+height: 300px;
+width: 240px;
+margin: auto;
+display: block;
+margin-top: 30px;
+}
+}

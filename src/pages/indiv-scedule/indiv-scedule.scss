@@ -1,0 +1,58 @@
+page-indiv-scedule {
+
+.toolbar-background{
+background-color: white;
+color: rgba(66, 66, 66, 0.74);
+}
+
+.toolbar-title{
+color: $color-font;
+}
+.titlename{
+text-align: center;  
+}
+.cardtit{
+font-size: 1.4rem;
+font-weight: 500;
+color: gray;
+margin-top: 0;
+color: $color-font;
+}
+.content{
+background-color: $color-background2;
+}
+img{
+height: 100px;
+border-radius: 10px;
+}
+.details{
+margin-bottom: 0;
+margin-top: 5px;
+font-size: 1rem;
+color: $color-font2;
+}
+.name{
+margin: 0;
+font-size: 1.3rem;
+color: $color-font;
+}
+
+.icon{
+color: $color-sky;
+font-size: 3rem;
+}    
+.toolbar-title{
+color: rgba(66, 66, 66, 0.67);
+font-size: 1.7rem;
+text-align: center;
+padding-right: 60px;
+}
+.card{
+background-color: white;
+box-shadow: 0 0 10px rgba(128, 128, 128, 0.36);
+border-radius: 10px;
+margin-top: 10px;
+}
+
+
+}

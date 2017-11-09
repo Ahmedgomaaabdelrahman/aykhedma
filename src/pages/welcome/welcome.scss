@@ -1,0 +1,43 @@
+page-welcome {
+.opentitle{
+    margin-top: 100px !important;
+    color: rgba(62, 58, 58, 0.97);;
+    font-weight: 600;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+.start{
+    margin-top: 20px;
+    color: rgba(128, 128, 128, 0.77);
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+.divbuttons{
+    margin-top: 60%;
+    display: grid;
+}
+.signup{
+    width: 40%;
+    margin: auto;
+    display: block;
+    height: 40px;
+    text-transform: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background-color: $color-sky;
+    margin-top: 20px;
+}
+.signin{
+    width: 40%;
+    margin: auto;
+    display: block;
+    box-shadow: 0 0 4px grey;
+    height: 40px;
+    text-transform: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $color-sky;
+}
+}

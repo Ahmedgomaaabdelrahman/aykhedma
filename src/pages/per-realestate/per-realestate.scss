@@ -1,0 +1,68 @@
+page-per-realestate {
+    .header-md::after{
+        background-image:none;
+    }
+    .toolbar-background{
+        background-color: white;
+        
+    }
+    .toolbar-title{
+        text-align: center;
+       
+        color: $color-font;
+    }
+.buttons{
+    box-shadow: 0 0 1px rgba(128, 128, 128, 0.36);
+    border-radius: 20px;
+}
+ .rentbtn{
+    border-radius: 20px !important;
+    height: 45px !important;
+    color: $color-font !important;
+    font-size: 1.6rem !important;
+    text-transform: none !important;
+    background-color: white;  
+ }
+ .rentbtn:hover{
+    box-shadow: 0 0 10px #00ceff;
+    background-color: #00ceff ;
+    color: white !important;
+ }
+ .colsearch{
+    background-color: #F3F3F3;
+    border-radius: 20px;
+    height: 45px;
+}
+ .search{
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    background-color: #F3F3F3;
+    border-radius: 20px;
+    color: $color-font ;
+}
+.itemimg{
+    border-radius: 15px;
+}
+.details{
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.itemdetails{
+    color: $color-font2;
+    font-weight: 600;
+}
+.sold{
+    color:$color-sky;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 0;
+}
+.time{
+    text-align: end;
+    margin-top: -25px;
+    color: $color-font2;
+} 
+}

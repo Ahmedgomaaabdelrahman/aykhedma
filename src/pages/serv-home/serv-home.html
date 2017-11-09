@@ -1,0 +1,79 @@
+
+<ion-header>
+
+<ion-navbar>
+<ion-title>
+    <ion-row>
+            <ion-col col-10 text-center>
+            {{'Home'|translate}}
+                </ion-col>
+        <ion-col col-2>
+            <ion-icon name="settings" (click)="settings()" class="settingicon"></ion-icon>
+        </ion-col>
+        
+    </ion-row>
+</ion-title>
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+    <ion-row (click)="servreq()" class="rowitem" *ngIf="typeuser == 'servProvider'">
+        <ion-col col-2>
+          <img src="assets/imgs/iPhone 67 – 8.png"> 
+        </ion-col>
+        <ion-col col-10>
+          {{'Service Requests'|translate}}
+        </ion-col>
+    </ion-row >
+
+    <ion-row (click)="addservice()" class="rowitem" *ngIf="typeuser == 'servProvider'">
+    <ion-col col-2>
+    <img src="assets/imgs/iPhone 67 – 4.png"> 
+    </ion-col>
+    <ion-col col-10>
+    {{'Add Service'|translate}}
+    </ion-col>
+    </ion-row>
+
+    <!-- this item for individual Technician & Technicicans office-->
+    <ion-row (click)="Schedule()" class="rowitem" *ngIf="typeuser == 'ss'">
+        <ion-col col-2>
+          <img src="assets/imgs/iPhone 67 – 2.png"> 
+        </ion-col>
+        <ion-col col-10>
+          {{'Schedule'|translate}}
+        </ion-col>
+    </ion-row>
+
+    <ion-row (click)="tasks()" class="rowitem" *ngIf="typeuser == 'ss'">
+        <ion-col col-2 >
+            <img src="assets/imgs/iPhone 67 – 1.png"> 
+        </ion-col>
+        <ion-col col-10>
+            {{'Assign Tasks'|translate}}
+        </ion-col>
+    </ion-row>
+
+    <ion-row (click)="addtec()" class="rowitem" *ngIf="typeuser == 'ss'">
+        <ion-col col-2>
+            <img src="assets/imgs/Artboard – 1.png"> 
+        </ion-col>
+        <ion-col col-10>
+            {{'Add Technician'|translate}}
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="rowitem" *ngIf="typeuser == 'servProvider'">
+        <ion-col col-2>
+            <img src="assets/imgs/iPhone 67 – 3.png"> 
+        </ion-col>
+        <ion-col col-10>
+             {{'Sign Out'|translate}}
+        </ion-col>
+    </ion-row>
+
+</ion-list>
+</ion-content>

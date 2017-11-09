@@ -1,0 +1,41 @@
+page-per-map {
+  .map {
+    height: 80%
+  }
+  #map {
+    width: 100%;
+    height: 80%;
+  }
+.header-md::after{
+    background-image:none;
+}
+.toolbar-title{
+    text-align: center;
+
+    font-size: 1.8rem;
+    color: $color-orange;
+}
+.toolbar-background{
+    background-color: $color-background;
+}
+    .content{
+    background-color: $color-background;
+}
+.input{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 1px rgba(128, 128, 128, 0.16);
+
+}
+.confirm{
+    margin: auto;
+    display: block;
+    text-transform: none;
+    font-size: 1.8rem;
+    margin-top: 20px;
+    border: 4px solid rgba(167, 161, 161, 0.64);
+    width: 40%;
+    height: 45px;
+    color: $color-sky;
+}
+}

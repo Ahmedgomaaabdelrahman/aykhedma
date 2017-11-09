@@ -1,0 +1,53 @@
+page-per-realdetails {
+    .header-md::after{
+        background-image:none;
+    }    
+    .content,.toolbar-background{
+        background-color:$color-background;
+    }
+    .toolbar-title{
+        color: rgba(66, 66, 66, 0.67);
+        font-size: 1.7rem;
+        text-align: center;
+        padding-right: 60px;
+    }
+    .imghead{
+        height: 100px;
+        width: 150px;
+        border-radius: 20px;
+        margin: auto;
+        display: block;
+    
+    }
+    .firstcard{
+        border-radius: 20px;
+       
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+    }
+    .cardheader{
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $color-font;
+    }
+    .secondcard{
+        width: 100%;
+        margin: 0;
+        border-radius: 20px;
+       
+    }
+    .icons{
+        padding-top: 15px;
+        font-size: 2.7rem;
+        color: $color-sky;
+    }
+    .text{
+        font-size: 1.2rem;
+    }
+    .price{
+        margin-top: 14px;
+        font-size: 2rem;
+        color: $color-orange;
+    }
+}

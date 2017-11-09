@@ -1,0 +1,40 @@
+page-signup {
+    .header-md::after{
+        background-image:none;
+    }
+    .toolbar-background{
+        background-color: white;
+    }
+    
+    .titlename{
+        color: gray;
+        text-align: center;
+    }
+    .choose{
+        color: $color-font;
+        padding-right: 25px;
+        padding-left: 25px;
+        margin-top: 60px;
+    }
+    .creat{
+        color: gray;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    .divbuttons{
+        margin-top: 65px;
+    }
+    .buttons{
+        width: 80%;
+        height: 50px;
+        box-shadow: 0 0 5px grey;
+        color: $color-sky;
+        margin-top:20px;
+        margin: auto;
+        display: block;
+        margin-top: 25px;
+        text-transform: none;
+        font-size: 1.9rem;
+    }
+
+}

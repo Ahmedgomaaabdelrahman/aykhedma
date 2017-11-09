@@ -1,0 +1,83 @@
+page-per-techrate {
+    .header-md::after{
+        background-image:none;
+    }    
+    .content,.toolbar-background{
+        background-color: $color-background;
+    }
+    .toolbar-title{
+        color: rgba(66, 66, 66, 0.67);
+        font-size: 1.7rem;
+        text-align: center;
+        padding-right: 60px;
+    }
+   
+    .techimg{
+        height: 70px !important;
+        width: 70px !important;
+        background-color: lightgrey;
+    }
+    .flag{
+        height: 20px;
+        width: 30px;
+        position: absolute;
+        margin-left: -38px;
+        margin-top: -15px;
+    }
+    
+    .item{
+        height: 135px;
+        box-shadow: 0 0 16px rgba(38, 191, 228, 0.25);
+        margin-top: 10px;
+        background-color: rgba(255, 249, 249, 0);
+    }
+    h2{
+        color: $color-font;
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    h3{
+        color: $color-font;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    p{
+        color: gray;
+    }
+    .row{
+        background-color: white;
+    }
+    .star{
+        font-size: 3rem;
+        color: $color-orange;
+    }
+   
+    .confirm{
+        margin: auto;
+        display: block;
+        text-transform: none;
+        font-size: 1.8rem;
+        margin-top: 20px;
+        border: 4px solid rgba(167, 161, 161, 0.64);
+        width: 40%;
+        height: 45px;
+        color: $color-sky;
+    }
+    .rowstar{
+        text-align: center;
+        margin: auto;
+        display: block;
+        height: 60px;
+        padding-top: 15px;
+        border-radius: 20px;
+        width: 60%;
+        background-color: #F3F3F3 !important;
+        box-shadow: 0 3px 10px rgba(128, 128, 128, 0.27);
+    
+    
+    
+    
+    
+    
+    }
+}

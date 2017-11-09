@@ -1,0 +1,35 @@
+<ion-header>
+  
+<ion-navbar>
+<ion-title >
+  <ion-row>
+    <ion-col col-2>
+        <ion-icon class="icon" name="ios-person-outline" (click)="profile()"></ion-icon>
+    </ion-col>
+    <ion-col col-2>
+        <ion-icon class="icon" name="mail" (click)="notification()"></ion-icon>
+    </ion-col>
+    <ion-col col-8 class="titlename">
+      {{'Settings'|translate}}
+    </ion-col>
+  </ion-row>     
+</ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+    <ion-item *ngIf="MainService.lang == 'ar'">
+        <ion-label>{{'Language'|translate}}</ion-label>
+        <ion-toggle [(ngModel)]="toggleStatus"  checked="false" (ionChange)="Change_Toggle('en')"></ion-toggle>
+      </ion-item>
+      <ion-item *ngIf="MainService.lang == 'en'">
+          <ion-label>{{'Language'|translate}}</ion-label>
+          <ion-toggle [(ngModel)]="toggleStatus"  checked="true" (ionChange)="Change_Toggle('ar')"></ion-toggle>
+        </ion-item>
+  <ion-item (click)="about()">{{'About'|translate}}</ion-item>
+  <ion-item (click)="terms()">{{'Terms And Conditions'|translate}}</ion-item>
+  <ion-item (click)="signout()">{{'Sign Out'|translate}}</ion-item>
+
+</ion-list>
+</ion-content>

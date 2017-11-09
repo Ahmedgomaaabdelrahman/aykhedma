@@ -1,0 +1,67 @@
+<ion-header>
+
+<ion-navbar>
+<ion-title >
+  <ion-row>
+    <ion-col col-2>
+        <ion-icon class="icon" name="ios-person-outline" (click)="editprofile()"></ion-icon>
+    </ion-col>
+    <ion-col col-2>
+        <ion-icon class="icon" name="mail"(click)="goinbox()"></ion-icon>
+    </ion-col>
+    <ion-col col-8 class="titlename">
+        {{'Your Adds'|translate}}
+    </ion-col>
+  </ion-row>     
+</ion-title>
+</ion-navbar>
+</ion-header>
+
+  <ion-content padding>
+      <ion-row class="rowitem" (click)="DeleteAdds()">
+          <ion-col col-2>
+          <img class="mobile" src="assets/imgs/iPhone 67 – 14.png">
+          </ion-col>
+          <ion-col>
+          <p class="text">Iphone 6s 64G in perfect condition</p>
+          </ion-col>
+          </ion-row>
+  <form>
+    <P class="select">{{'Select Category'|translate}}</P>
+  <ion-item style="margin-top: -20px;">
+    <ion-label  stacked class="label">{{'Item Title'|translate}}</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+    <p class="label">{{'item Description:'|translate}}</p>
+  <ion-row><ion-col col-3></ion-col>
+            <ion-col col-9><textarea class="txtarea" placeholder=""></textarea></ion-col>
+  </ion-row>
+  <ion-item>
+    <ion-label  stacked class="label">{{'Mobile Number'|translate}}</ion-label>
+    <ion-input type="tel"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label  stacked class="label">{{'E-Mail'|translate}}</ion-label>
+    <ion-input type="email"></ion-input>
+    </ion-item>
+  </form>
+  <ion-row>
+    <ion-col col-4>
+  <img  src="assets/imgs/Artboard – 11.png">
+  <p class="textimg">{{'Add Photo'|translate}}</p>
+  </ion-col>
+  <ion-col col-4>
+  <img src="assets/imgs/Artboard – 12.png">
+  <p class="textimg">{{'Add Video'|translate}}</p>
+  </ion-col>
+  <ion-col col-4>
+  <img src="assets/imgs/Artboard – 13.png">
+  <p class="textimg">{{'Add Audio'|translate}}</p>
+  </ion-col>
+  </ion-row>
+  <div>
+  <button ion-button clear round class="confirm">{{'Confirm'|translate}}</button>
+  <button ion-button clear round class="confirm">{{'Delete'|translate}}</button>
+</div>
+</ion-content>
+  

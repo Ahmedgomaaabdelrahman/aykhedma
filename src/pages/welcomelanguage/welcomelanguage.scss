@@ -1,0 +1,47 @@
+page-welcomelanguage {
+    .header-md::after{
+        background-image:none;
+    }
+    .back-button.show-back-button {
+        display: none;
+    }
+
+
+    img{
+        height: 250px;
+        width: 250px;
+        margin: auto;
+        display: block;
+    }
+    .divbutton{
+        background-color: gray;
+        height: 250px;
+        width: 250px;
+        margin: auto;
+    }
+    .englishbutton{
+        position: absolute;
+        top: -61px;
+        width: 136px;
+        right: 63px;
+        height: 75px;
+        background-color: #26bfe4;
+        color: white;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .arabicbutton{
+        width: 136px;
+        height: 75px;
+        background-color: #26bfe4;
+        position: absolute;
+        left: 65px;
+        top: -63px;
+        color: white;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .fahb{
+        background-color: #26bfe4;
+    }
+}

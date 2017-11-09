@@ -1,0 +1,41 @@
+
+<ion-header>
+
+    <ion-navbar>
+      <ion-title >
+        <ion-row>
+          <ion-col col-1>
+              <ion-icon class="icon" name="ios-person-outline" (click)="editprofile()"></ion-icon>
+          </ion-col>
+          <ion-col col-1>
+              <ion-icon class="icon" name="mail"(click)="goinbox()"></ion-icon>
+          </ion-col>
+          <ion-col col-2 class="titlename">
+              <ion-icon name="settings" (click)="settings()"></ion-icon>
+          </ion-col>
+          <ion-col col-5 class="titlename">
+              {{'Home'|translate}}
+          </ion-col>
+          <ion-col col-2 class="titlename" (click)="secondHome()">
+              {{'Categories'|translate}}
+          </ion-col>
+        </ion-row>
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+
+  <ion-row *ngFor="let specialAdd of specialAdds" class="rowitem">
+  <ion-col col-2>
+    <img class="mobile" src="assets/imgs/LGG3.jpg">
+  </ion-col>
+  <ion-col>
+  <p class="text">{{specialAdd.title}} &nbsp; : &nbsp; {{specialAdd.description}}</p>
+  <span *ngIf="specialAdd.price > 0" class="pricemobile">{{specialAdd.price}}</span>
+  <ion-icon class="icons" class="icons" name="call" ></ion-icon>
+  <ion-icon class="icons" class="icons" name="mail" (click)="goToChat(specialAdd.user.person)"></ion-icon>
+  </ion-col>
+  </ion-row>
+
+  </ion-content>

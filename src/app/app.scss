@@ -14,3 +14,132 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+$color-sky:rgb(38, 191, 228);
+$color-font:rgba(0, 0, 0, 0.57);
+$color-font2:rgb(160, 154, 154);
+$color-orange:#ff9100;
+// $color-background: #F3F3F3;
+$color-background:rgba(241, 241, 241, 0.78);
+$color-background2:rgba(241, 241, 241, 0.78);
+.toolbar-background{
+    color: white;
+}
+.pricemobile{
+    font-size: 2.2rem;
+    color: $color-orange;
+    font-weight: 600;
+    padding-right: 120px;
+}
+[dir ='rtl'] .pricemobile{
+    font-size: 2.2rem;
+    color: $color-orange;
+    font-weight: 600;
+    padding-right: 10px;
+    padding-left: 116px;
+}
+.imgrate{
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    right: 10px;
+    margin-top: -38px;
+    z-index: 0;
+}
+[dir ='rtl'] .imgrate{
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    right: 78%;
+    margin-top: -38px;
+    z-index: 0;
+}
+.ratenumber{
+    position: absolute;
+    right: 36px;
+    z-index: 1;
+    color: white;
+}
+[dir ='rtl'] .ratenumber{
+    position: absolute;
+    right: 85%;
+    z-index: 1;
+    color: white;
+}
+.imgstar{
+    right: -15px;
+    margin-top: -25.9px;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    z-index: 1;
+    color:white;
+}
+[dir ='rtl'] .imgstar{
+    right: 86%;
+    margin-top: -25.9px;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    z-index: 1;
+    color:white;
+}
+
+.toolbar-title{
+    color: rgba(66, 66, 66, 0.67);
+    font-size: 1.7rem;
+    text-align: center;
+    padding-right: 60px;
+}
+[dir ='rtl'] .toolbar-title{
+    color: rgba(66, 66, 66, 0.67);
+    font-size: 1.7rem;
+    text-align: center;
+    padding-left: 62px ;
+    padding-right: 0;
+}
+
+   
+.dateitem{
+    margin: 0;
+    position: absolute;
+    left: 67%;
+    top: 8px;
+    color: $color-orange;
+    font-size: 1.5rem;
+    font-weight: 600;
+    }
+    [dir ='rtl'] .dateitem{
+    margin: 0;
+    position: absolute;
+    left: 7%;
+    top: 8px;
+    color: $color-orange;
+    font-size: 1.5rem;
+    font-weight: 600;
+    }
+    .flag{
+        height: 20px;
+        width: 30px;
+        position: absolute;
+        margin-left: -38px;
+        margin-top: -15px;
+    }
+    [dir ='rtl'] .flag {
+        height: 20px;
+        width: 30px;
+        position: absolute;
+        margin-right: -45px;
+        margin-top: -10px;
+    }
+   .alert-radio-icon {
+        border-color: #488aff;
+        padding: 5px;
+        margin: 20px;
+    }
+    .back-button.show-back-button{
+        display: inline-block;
+    }
+    [dir ='rtl'] .back-button.show-back-button {
+        display: inline-block;
+        transform: rotate(180deg);
+    }

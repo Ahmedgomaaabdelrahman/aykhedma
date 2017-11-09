@@ -1,0 +1,96 @@
+
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>{{'Hotels'|translate}}</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+       
+        <ion-item class="item">
+            <ion-icon class="searchico" name="search" item-left primary></ion-icon>
+            <ion-input type="text"  placeholder="{{'Search Hotels...'|translate}}" class="input"></ion-input>        
+          </ion-item>
+        
+    <div class="divdetails">
+      <ion-row >
+        <ion-col col-6>
+          <img class="resimg" src="assets/imgs/hotel1.jpg" (click)=gohotel()>
+        </ion-col>
+        <ion-col col-6>
+          <p class="resname">Hotel Pintage</p>
+          <p style="font-size: 1.5rem;">
+          <ion-icon class="stars" name="star"></ion-icon>
+          <ion-icon class="stars" name="star"></ion-icon>
+          <ion-icon class="stars" name="star"></ion-icon>
+          <ion-icon class="stars" name="star"></ion-icon>
+          <ion-icon class="stars" name="ios-star-outline"></ion-icon>
+          </p>
+          <a class="map" (click)="map()"><img class="mappin" src="assets/imgs/Mappin2.png">{{'show on map'|translate}}</a>
+          <a class="connect">{{'Contact'|translate}}</a>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="divdetails">
+        <ion-row>
+          <ion-col col-6>
+            <img class="resimg" src="assets/imgs/hotel2.jpg">
+          </ion-col>
+          <ion-col col-6>
+            <p class="resname">Grand Hotel</p>
+            <p style="font-size: 1.5rem;">
+            <ion-icon class="stars" name="star"></ion-icon>
+            <ion-icon class="stars" name="star"></ion-icon>
+            <ion-icon class="stars" name="star"></ion-icon>
+            <ion-icon class="stars" name="star"></ion-icon>
+            <ion-icon class="stars" name="ios-star-outline"></ion-icon>
+            </p>
+            <a class="map" (click)="map()"><img class="mappin" src="assets/imgs/Mappin2.png">{{'show on map'|translate}}</a>
+            <a class="connect">{{'Contact'|translate}}</a>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="divdetails">
+          <ion-row>
+            <ion-col col-6>
+              <img class="resimg" src="assets/imgs/hotel3.jpg">
+            </ion-col>
+            <ion-col col-6>
+              <p class="resname">Four Seasons</p>
+              <p style="font-size: 1.5rem;">
+              <ion-icon class="stars" name="star"></ion-icon>
+              <ion-icon class="stars" name="star"></ion-icon>
+              <ion-icon class="stars" name="star"></ion-icon>
+              <ion-icon class="stars" name="star"></ion-icon>
+              <ion-icon class="stars" name="ios-star-outline"></ion-icon>
+              </p>
+              <a class="map" (click)="map()"><img class="mappin" src="assets/imgs/Mappin2.png">{{'show on map'|translate}}</a>
+              <a class="connect">{{'Contact'|translate}}</a>
+            </ion-col>
+          </ion-row>
+        </div>
+        <div class="divdetails">
+            <ion-row>
+              <ion-col col-6>
+                <img class="resimg" src="assets/imgs/hotel4.jpg">
+              </ion-col>
+              <ion-col col-6>
+                <p class="resname">Hotel Pintage</p>
+                <p style="font-size: 1.5rem;">
+                <ion-icon class="stars" name="star"></ion-icon>
+                <ion-icon class="stars" name="star"></ion-icon>
+                <ion-icon class="stars" name="star"></ion-icon>
+                <ion-icon class="stars" name="star"></ion-icon>
+                <ion-icon class="stars" name="ios-star-outline"></ion-icon>
+                </p>
+                <a class="map" (click)="map()"><img class="mappin" src="assets/imgs/Mappin2.png">{{'show on map'|translate}}</a>
+                <a class="connect">{{'Contact'|translate}}</a>
+              </ion-col>
+            </ion-row>
+          </div> 
+    </ion-content>
+    
+    

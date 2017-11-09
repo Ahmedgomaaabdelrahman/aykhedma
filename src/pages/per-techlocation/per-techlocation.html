@@ -1,0 +1,46 @@
+
+<ion-header>
+
+<ion-navbar>
+<ion-title>{{'Techlocations'|translate}}</ion-title>
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-item class="select">
+<ion-select [(ngModel)]="technicians">
+<ion-option selected="true" >{{'Cleaning'|translate}}</ion-option>
+<ion-option >{{'Remodeling Kitchens'|translate}}</ion-option>
+<ion-option >{{'Concrete work'|translate}}</ion-option>
+<ion-option >{{'Electrical wiring'|translate}}</ion-option>
+<ion-option >{{'Landscaping'|translate}}</ion-option>
+<ion-option >{{'Maid service'|translate}}</ion-option>
+<ion-option >{{'Pest control'|translate}}</ion-option>
+</ion-select>
+</ion-item>
+<ion-row>
+<ion-col col-11 class="found">
+75 found in your area
+</ion-col>
+<ion-col col-1>
+<img class="graypin" src="assets/imgs/graymappin.png">
+</ion-col>
+</ion-row>
+<ion-list>
+<img src="assets/imgs/map.png"> 
+<ion-item class="item" (click)="gotechrate()">
+    <img class="imgrate" src="assets/imgs/rate.png">
+    <ion-icon class="imgstar" name="star"></ion-icon>
+    <span class="ratenumber">4.5</span>
+    <ion-avatar item-start>
+    <img class="techimg" src="assets/imgs/builder1.png">
+    </ion-avatar>
+    <h2>James Riyadi</h2>
+    <h3>Individual</h3>
+    <p>35 {{'hr'|translate}}</p>
+    <img class="flag" src="assets/imgs/flag.jpg">
+    </ion-item>
+  </ion-list>
+</ion-content>

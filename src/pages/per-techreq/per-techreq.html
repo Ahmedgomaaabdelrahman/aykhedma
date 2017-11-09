@@ -1,0 +1,47 @@
+
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>Request Tochnician</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+    <form>
+      <P class="select">Select Category</P>
+    <ion-item style="margin-top: -20px;">
+      <ion-label  stacked class="label">Item Title</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+      <p class="label">item Decscription:</p>
+    <ion-row><ion-col col-3></ion-col>
+              <ion-col col-9><textarea class="txtarea" placeholder=""></textarea></ion-col>
+    </ion-row>
+    <ion-item>
+      <ion-label  stacked class="label">Phone Number</ion-label>
+      <ion-input type="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  stacked class="label">E-Mail</ion-label>
+      <ion-input type="email"></ion-input>
+      </ion-item>
+    </form>
+    <ion-row>
+      <ion-col col-4>
+    <img  src="assets/imgs/Artboard – 11.png">
+    <p class="textimg">Add Photo</p>
+    </ion-col>
+    <ion-col col-4>
+    <img src="assets/imgs/Artboard – 12.png">
+    <p class="textimg">Add Video</p>
+    </ion-col>
+    <ion-col col-4>
+    <img src="assets/imgs/Artboard – 13.png">
+    <p class="textimg">Add Audio</p>
+    </ion-col>
+    </ion-row>
+    <button ion-button clear round class="confirm" (click)="gotechnicians()">Confirm</button>
+    </ion-content>
+    

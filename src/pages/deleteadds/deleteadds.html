@@ -1,0 +1,59 @@
+
+<ion-header>
+
+<ion-navbar>
+<ion-title >
+<ion-row>
+<ion-col col-2>
+    <ion-icon class="icon" name="ios-person-outline" (click)="editprofile()"></ion-icon>
+</ion-col>
+<ion-col col-2>
+    <ion-icon class="icon" name="mail"(click)="goinbox()"></ion-icon>
+</ion-col>
+<ion-col col-8 class="titlename">
+    {{'Deleting Adds'|translate}}
+</ion-col>
+</ion-row>     
+</ion-title>
+</ion-navbar>
+</ion-header>
+<ion-content padding >
+<ion-row class="rowitem">
+<ion-col col-2>
+<img class="mobile" src="assets/imgs/iPhone 67 – 14.png">
+</ion-col>
+<ion-col>
+<p class="text">Iphone 6s 64G in perfect condition</p>
+</ion-col>
+</ion-row>
+<p class="reason">{{'Reason For Deleting Adds'|translate}}</p>
+<ion-list radio-group no-lines>
+<ion-item>
+  <ion-label>{{'You Are no longer Have The Item'|translate}}</ion-label>
+  <ion-radio  checked></ion-radio>
+</ion-item>
+<ion-item>
+  <ion-label>{{'Lack Of Buyers'|translate}}</ion-label>
+  <ion-radio ></ion-radio>
+</ion-item>
+<ion-item>
+  <ion-label>{{'The Item Got Corrupted'|translate}}</ion-label>
+  <ion-radio ></ion-radio>
+</ion-item>
+<ion-item>
+  <ion-label>{{'I Am Going To Keep the Item'|translate}}</ion-label>
+  <ion-radio ></ion-radio>
+</ion-item>
+<ion-item>
+  <ion-label>{{'Other Reason'|translate}}</ion-label>
+  <ion-radio ></ion-radio>
+</ion-item>
+<ion-row><ion-col col-2></ion-col>
+  <ion-col col-10><textarea class="txtarea" placeholder=""></textarea></ion-col>
+</ion-row>
+</ion-list>
+<div>
+    <button ion-button clear round class="confirm">{{'Delete'|translate}}</button>    
+  <button ion-button clear round class="confirm">{{'Confirm'|translate}}</button>
+</div>
+</ion-content>

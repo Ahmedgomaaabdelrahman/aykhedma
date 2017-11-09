@@ -1,0 +1,19 @@
+
+<ion-header>
+      <ion-navbar>
+        <ion-title >
+       {{'Other Categories'|translate}}
+        </ion-title>
+      </ion-navbar>
+    </ion-header>
+    <ion-content padding>
+ <ion-input type="text" placeholder="{{'Adds'|translate}}" class="input"></ion-input>
+ <ion-list>
+      <ion-row >
+      <ion-col col-6 *ngFor="let category of salesCategory" (click)="goitemdetails(category.id)">
+          <img [src]="mainService.imageUrl+category.img">
+          <p>{{category.name_ar}}</p>
+      </ion-col>
+      </ion-row>
+    </ion-list>
+    </ion-content>

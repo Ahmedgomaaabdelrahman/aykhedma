@@ -1,0 +1,57 @@
+page-per-firsthome {
+    .header-md::after{
+        background-image:none;
+    }
+    .back-button.show-back-button {
+        display: none !important;
+    }
+    .toolbar-background{
+        background-color: white;
+        color: rgba(66, 66, 66, 0.74);
+    }
+    .toolbar-title{
+        color: $color-font;
+    }
+    .titlename{
+        text-align: center; 
+        font-size: 2rem;
+    }
+  .toolbar-title {
+        color: rgba(66, 66, 66, 0.67);
+        font-size: 1.7rem;
+        text-align: center;
+        padding-left: 0px !important;
+        padding-right: 0 !important;
+    }    
+    .icons{
+        padding-top: 15px;
+        font-size: 2.7rem;
+        color: $color-sky;
+    }
+    .text{
+        margin: 0;
+        font-size: 1.7rem;
+        color:$color-font;
+        font-weight: 500;
+    }
+    .mobile{
+        height: 50px;
+        width: 50px;
+        margin-top: 5px;
+    }
+    .icon{
+        color: $color-sky;
+        font-size: 3rem;
+    }    
+    
+    .icons{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .rowitem{
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 0 10px lightgrey;
+        margin-top: 10px;
+    }
+}

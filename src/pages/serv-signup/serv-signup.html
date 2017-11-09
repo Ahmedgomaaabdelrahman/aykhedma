@@ -1,0 +1,42 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title class="signup">{{'Sign Up'|translate}}<br><span class="personal">{{'(Service Provider)'|translate}}</span></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form class="inputform">
+  <ion-item>
+    <ion-label  stacked  class="label">{{'Name'|translate}}</ion-label>
+    <ion-input  [(ngModel)]="person.name" name="name"type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  stacked class="label">{{'Mobile Number'|translate}}</ion-label>
+      <ion-input [(ngModel)]="person.mobile" name="Mobile" type="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  stacked class="label">{{'Password'|translate}}</ion-label>
+      <ion-input [(ngModel)]="person.password" name="pass" type="password" ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label  stacked class="label">{{'E-Mail'|translate}}</ion-label>
+        <ion-input [(ngModel)]="person.email" name="email" type="email" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  stacked class="label">{{'Company Type'|translate}}</ion-label>
+      <ion-input [(ngModel)]="person.companyType" name="companyType" type="text" ></ion-input>
+  </ion-item>
+  </form>
+  <ion-row>
+    <div style="margin-top: 30px;margin: auto;display: block;">
+      <button ion-button clear class="locationbtn" (click)="golocations()">{{'Location'|translate}}3</button><br>
+      <button ion-button clear class="locationbtn" (click)="getIndusty()">{{'Industries'|translate}} 3</button><br>
+      <button ion-button clear class="locationbtn" (click)="getCetificate()">{{'Certificates'|translate}} 3</button><br>
+    </div>
+</ion-row>
+<ion-row>
+    <button ion-button round clear class="signin"  (click)=confirm()>{{'Sign In'|translate}}</button>  
+</ion-row>
+<!-- [disabled]="!person.validate()" -->
+</ion-content>

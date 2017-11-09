@@ -1,0 +1,32 @@
+page-settings {
+
+
+.toolbar-background{
+    background-color: white;
+    color: rgba(66, 66, 66, 0.74);
+}
+
+.titlename{
+    text-align: start;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+    
+.icon{
+    color: $color-sky;
+    font-size: 3rem;
+}
+.label{
+    font-size: 1.9rem;
+    color: $color-font2;
+} 
+.toggle-md.toggle-checked .toggle-icon {
+    background-color: rgba(0, 161, 255, 0.23);
+
+}
+.toggle-md.toggle-checked .toggle-inner{
+    background-color: $color-sky;;
+}
+}

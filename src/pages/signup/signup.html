@@ -1,0 +1,21 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="titlename">{{'Sign Up'|translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<h2 class="choose">{{"Choose what's your type"|translate}}</h2>
+<p class="creat">{{'Create your account'|translate}}</p>
+<div class="divbuttons">
+  <button ion-button round clear class="buttons" (click)="gisignup()">{{'Personal'|translate}}</button>
+  <button ion-button round clear class="buttons"(click)="servsignup()">{{'Service Provider'|translate}}</button>
+  <button ion-button round clear class="buttons" (click)="indivSignup()">{{'Individual Technician'|translate}}</button>  
+  <button ion-button round clear class="buttons" (click)="indivSignup()">{{'Technician Office'|translate}}</button>
+
+</div>
+</ion-content>

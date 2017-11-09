@@ -1,0 +1,31 @@
+
+<ion-header>
+  <ion-navbar>
+      <ion-title class="signup">Sign up<br><span class="personal">(Service Provider)</span><br>
+      <span class="locationstitle">Industries</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+  
+  
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item>
+      <ion-select name="service_id1" [(ngModel)]="catid1">
+        <ion-option *ngFor="let category of Categories" [value]="category.id">{{category.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select name="service_id2" [(ngModel)]="catid2">
+        <ion-option *ngFor="let category of Categories" [value]="category.id">{{category.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select name="service_id3"[(ngModel)]="catid3">
+        <ion-option *ngFor="let category of Categories" [value]="category.id">{{category.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <button ion-button  [disabled]="!catid1 || !catid2 || !catid3" round clear class="confirm" (click)="pushCats()">{{'Confirm'|translate}}</button>
+</ion-content>
+  

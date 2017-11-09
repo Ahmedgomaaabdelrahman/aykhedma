@@ -1,0 +1,62 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title class="signup">{{'Sign Up'|translate}}<br><span class="personal">{{'(Individual Technician)'|translate}}</span></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form class="inputform">
+  <ion-item>
+    <ion-label  stacked class="label">{{'Name'|translate}}</ion-label>
+    <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  stacked class="label">{{'Mobile Number'|translate}}</ion-label>
+      <ion-input type="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  stacked class="label">{{'Password'|translate}}</ion-label>
+      <ion-input type="password" ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label  stacked class="label">{{'E-Mail'|translate}}</ion-label>
+        <ion-input type="email" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label  stacked class="label">{{'Company Type'|translate}}</ion-label>
+      <ion-input type="text" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label  stacked class="label">{{'Nationality'|translate}}</ion-label>
+    <ion-input type="text" ></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label  stacked class="label">{{'Available Houres'|translate}}</ion-label>
+  <ion-input type="number" ></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label  stacked class="label">{{'Years of Experience'|translate}}</ion-label>
+  <ion-input type="number" ></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label  stacked class="label">{{'Birth Date'|translate}}</ion-label>
+  <ion-input type="date" ></ion-input>
+</ion-item>
+  </form>
+  <ion-row>
+    <div style="margin-top: 30px;margin: auto;
+    display: block;">
+      <p  class="locationbtn" (click)="goimgprofile()">{{'Add profile Picture'|translate}}</p>
+      <p  class="locationbtn"(click)="imgid()">{{'identity card scan'|translate}}</p>
+      <p  class="locationbtn" (click)="lang()">{{'Languages'|translate}}</p>
+      <p class="locationbtn"(click)="signlocation()">{{'Locations'|translate}}</p>
+      <p class="locationbtn"(click)="certificate()">{{'Certificates'|translate}}</p>
+      <p class="locationbtn" (click)="goskills()">{{'Skills'|translate}}</p>
+      <p class="locationbtn"(click)="phonepage()">{{'Mobile Number'|translate}}</p>
+    </div>
+</ion-row>
+<ion-row>
+    <button ion-button round clear class="signin" (click)=goHome()>{{'Sign In'|translate}}</button>
+</ion-row>
+</ion-content>

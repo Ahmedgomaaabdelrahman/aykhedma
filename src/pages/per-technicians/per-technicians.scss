@@ -1,0 +1,54 @@
+page-per-technicians {
+    .header-md::after{
+        background-image:none;
+    }    
+    .content,.toolbar-background{
+        background-color: $color-background;
+    }
+    .toolbar-title{
+        color: rgba(66, 66, 66, 0.67);
+        font-size: 1.7rem;
+        text-align: center;
+        padding-right: 60px;
+    }
+    .select{
+        height: 50px !important;
+        width: 135%;
+        border-radius: 20px;
+        margin: auto;
+        margin-bottom: 15px;
+        color:$color-font;
+    }
+    .techimg{
+        height: 70px !important;
+        width: 70px !important;
+        background-color: lightgrey;
+    }
+    
+    
+    .item{
+        height: 135px;
+        box-shadow: 0 0 16px rgba(38, 191, 228, 0.25);
+        margin-top: 10px;
+    }
+    h2{
+        color: $color-font;
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    h3{
+        color: $color-font;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    p{
+        color: gray;
+    }
+    .row{
+        background-color: white;
+    }
+    .found{
+        color: $color-font;
+        font-weight: 500;
+    }
+}

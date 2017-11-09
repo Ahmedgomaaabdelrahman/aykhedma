@@ -1,0 +1,59 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{'Sell items'|translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form>
+  <ion-item class="select">
+    <ion-label>{{'Select Category'|translate}}</ion-label>
+    <ion-select name="sales_category_id" [(ngModel)]="salesRequest.sales_category_id">
+      <ion-option  *ngFor="let category of salesCategory" [value]="category.id">{{category.name_ar}}</ion-option>
+    </ion-select>
+  </ion-item>
+<ion-item style="margin-top: -20px;">
+  <ion-label  stacked class="label">{{'Item Title'|translate}}</ion-label>
+  <ion-input [(ngModel)]="salesRequest.title" name="title" type="text"></ion-input>
+</ion-item>
+  <p class="label">{{'item Description:'|translate}}</p>
+<ion-row>
+  <ion-col col-3></ion-col>
+  <ion-col col-9>
+    <textarea [(ngModel)]="salesRequest.description" name="description" class="txtarea" placeholder=""></textarea>
+  </ion-col>
+</ion-row>
+<ion-item>
+  <ion-label  stacked class="label">{{'Mobile Number'|translate}}</ion-label>
+  <ion-input [(ngModel)]="salesRequest.mobile" name="mobile" type="tel"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label  stacked class="label">{{'E-Mail'|translate}}</ion-label>
+  <ion-input [(ngModel)]="salesRequest.email" name="email" type="email"></ion-input>
+  </ion-item>
+</form>
+<ion-row>
+  <ion-col col-4>
+<img  src="assets/imgs/Artboard – 11.png" (click)="addImage()">
+<p class="textimg">{{'Add Photo'|translate}}</p>
+</ion-col>
+<ion-col col-4 (click)="recordVideo()">
+<img src="assets/imgs/Artboard – 12.png"  >
+<p class="textimg">{{'Add Video'|translate}}</p>
+</ion-col>
+<ion-col col-4 (click)="recordAudio()">
+<img src="assets/imgs/Artboard – 13.png">
+<p class="textimg">{{'Add Audio'|translate}}</p>
+</ion-col>
+</ion-row>
+<ion-row>
+  <ion-col col-4 *ngFor="let image of salesRequest.images">
+    <img src="data:image/jpeg;base64,{{image}}">
+  </ion-col>
+</ion-row>
+<button [disabled]="!salesRequest.validate()" ion-button clear round class="confirm" (click)="confirm()">{{'Confirm'|translate}}</button>
+</ion-content>
