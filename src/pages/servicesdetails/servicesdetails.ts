@@ -15,7 +15,8 @@ export class ServicesdetailsPage {
   public services : any [] = [];
   public mainService  = MainService;
   constructor(public navCtrl: NavController, public navParams: NavParams,public userService : UserProvider,public personService : PersonProvider) {
-      this.catid = this.navParams.data.categoryID;
+      this.catid = this.navParams.get('categoryID');
+      console.log(this.catid);
   }
 
   ionViewDidLoad() {

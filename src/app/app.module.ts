@@ -80,6 +80,8 @@ import {AdsDetailsPage} from "../pages/ads-details/ads-details";
 import {StreamingMedia} from "@ionic-native/streaming-media";
 import { ServiceProvProvider } from '../providers/service-prov/service-prov';
 import { ServServicesPage } from '../pages/serv-services/serv-services';
+import { ServicesdetailsPage } from '../pages/servicesdetails/servicesdetails';
+import { IndivdualProvider } from '../providers/indivdual/indivdual';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');}
@@ -134,7 +136,8 @@ export function createTranslateLoader(http: Http) {
     DeleteaddsPage,
     PerFirsthomePage,
     AdsDetailsPage,
-    ServServicesPage
+    ServServicesPage,
+    ServicesdetailsPage
 
   ],
   imports: [
@@ -204,7 +207,8 @@ export function createTranslateLoader(http: Http) {
     DeleteaddsPage,
     PerFirsthomePage,
     AdsDetailsPage,
-    ServServicesPage
+    ServServicesPage,
+    ServicesdetailsPage
   ],
   providers: [
     StatusBar,
@@ -221,7 +225,8 @@ export function createTranslateLoader(http: Http) {
     MediaCapture,
     File,
     StreamingMedia,
-    ServiceProvProvider
+    ServiceProvProvider,
+    IndivdualProvider
   ]
 })
 export class AppModule {}

@@ -5,7 +5,7 @@
 <ion-title>
   <ion-row>
     <ion-col col-10>
-        {{chatService.activeChatWith.name}}
+        <!-- {{chatService.activeChatWith.name}} -->
     </ion-col>
     <ion-col col-2>
       <ion-icon class="call" name="call"></ion-icon>
@@ -51,7 +51,7 @@
     <ion-icon class="camera" name="ios-camera-outline"></ion-icon>
   </ion-col>
   <ion-col col-8>
-    <ion-input [(ngModel)]="message" name="message" class=textbuttom></ion-input>
+    <ion-input [(ngModel)]="message" name="message" class="textbuttom"></ion-input>
   </ion-col>
   <ion-col col-2>
     <button class="camera" [disabled]="message == null || message.trim()==''" (click)="sendMsg()">

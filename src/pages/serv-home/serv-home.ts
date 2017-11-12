@@ -19,14 +19,11 @@ import { Person } from '../../models/person/person';
   templateUrl: 'serv-home.html',
 })
 export class ServHomePage {
-  public user : Person;
-  public typeuser : any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.user = this.navParams.data.persotupe;
-    switch (this.user.type){
-      case Person.USER_MODE : {this.typeuser = "ss"};
-      case Person.ServProv_MODE : {this.typeuser = "servProvider"};
-    }
+    // switch (this.user.type){
+    //   case Person.USER_MODE : {this.typeuser = "ss"};
+    //   case Person.ServProv_MODE : {this.typeuser = "servProvider"};
+    // }
   }
 
   ionViewDidLoad() {

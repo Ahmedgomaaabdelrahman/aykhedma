@@ -20,7 +20,7 @@
 
 <ion-content padding>
 <ion-list>
-    <ion-row (click)="servreq()" class="rowitem" *ngIf="typeuser == 'servProvider'">
+    <ion-row (click)="servreq()" class="rowitem">
         <ion-col col-2>
           <img src="assets/imgs/iPhone 67 – 8.png"> 
         </ion-col>
@@ -29,7 +29,7 @@
         </ion-col>
     </ion-row >
 
-    <ion-row (click)="addservice()" class="rowitem" *ngIf="typeuser == 'servProvider'">
+    <ion-row (click)="addservice()" class="rowitem">
     <ion-col col-2>
     <img src="assets/imgs/iPhone 67 – 4.png"> 
     </ion-col>
@@ -39,34 +39,34 @@
     </ion-row>
 
     <!-- this item for individual Technician & Technicicans office-->
-    <ion-row (click)="Schedule()" class="rowitem" *ngIf="typeuser == 'ss'">
+    <!-- <ion-row (click)="Schedule()" class="rowitem">
         <ion-col col-2>
           <img src="assets/imgs/iPhone 67 – 2.png"> 
         </ion-col>
         <ion-col col-10>
           {{'Schedule'|translate}}
         </ion-col>
-    </ion-row>
+    </ion-row> -->
 
-    <ion-row (click)="tasks()" class="rowitem" *ngIf="typeuser == 'ss'">
+    <!-- <ion-row (click)="tasks()" class="rowitem">
         <ion-col col-2 >
             <img src="assets/imgs/iPhone 67 – 1.png"> 
         </ion-col>
         <ion-col col-10>
             {{'Assign Tasks'|translate}}
         </ion-col>
-    </ion-row>
-
-    <ion-row (click)="addtec()" class="rowitem" *ngIf="typeuser == 'ss'">
+    </ion-row> -->
+<!-- 
+    <ion-row (click)="addtec()" class="rowitem">
         <ion-col col-2>
             <img src="assets/imgs/Artboard – 1.png"> 
         </ion-col>
         <ion-col col-10>
             {{'Add Technician'|translate}}
         </ion-col>
-    </ion-row>
+    </ion-row> -->
 
-    <ion-row class="rowitem" *ngIf="typeuser == 'servProvider'">
+    <ion-row class="rowitem">
         <ion-col col-2>
             <img src="assets/imgs/iPhone 67 – 3.png"> 
         </ion-col>

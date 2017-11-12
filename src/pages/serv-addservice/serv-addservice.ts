@@ -6,6 +6,7 @@ import { CommonMediaProvider } from '../../providers/common-media/common-media';
 import { UserProvider } from '../../providers/user/user';
 import { CommonProvider } from '../../providers/common/common';
 import { PersonProvider } from '../../providers/person/person';
+import { serviceImg } from '../../models/person/serviceimg';
 
 /**
  * Generated class for the ServAddservicePage page.
@@ -53,22 +54,26 @@ export class ServAddservicePage {
   }
 
   addImage(){
+    
     this.commonMediaService.galleryOrCamera().then((base64:string)=>{
-      console.log(base64);
-      this.service.images.push(base64);
+      let image = new serviceImg(base64);
+      console.log(image);
+      this.service.images.push(image);
+      console.log(this.service.images);
     }).catch((err)=>console.log(err))
   }
 
   addService(){
-    console.log(this.service.images);
+    // console.log(this.service.images);
     this.serviceprov.addService(this.service).subscribe((res)=>{
       console.log(res);
-      if(res.state == "202"){
-        this.commonService.successToast();
-        this.commonService.dismissLoading();
-        this.navCtrl.pop();
-      }
-      else {this.commonService.errorToast();console.log(res.state)}
+      this.commonService.successToast();
+      // this.commonService.dismissLoading();
+      this.navCtrl.pop();
+      // if(res.state == "202"){
+       
+      // }
+      // else {this.commonService.errorToast();console.log(res.state)}
     });
   }
 

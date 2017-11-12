@@ -8,6 +8,7 @@ import {CommonProvider} from "../../providers/common/common";
 import {PersonLoginCred} from "../../models/person/person-login-credentials";
 import {PersonFBCredentials} from "../../models/person/person-firebase-credentials";
 import {ChatProvider} from "../../providers/chat/chat";
+import { ServHomePage } from '../serv-home/serv-home';
 
 /**
  * Generated class for the LoginPage page.
@@ -41,7 +42,13 @@ export class LoginPage {
       this.personService.FBLogin(new PersonFBCredentials(person.email,this.password)).then(()=>{
         this.chatService.attachReceivedChatListener();
         this.commonService.successToast();
-        this.navCtrl.push(PerFirsthomePage);
+        if(person.type === "1"){
+          this.navCtrl.push(PerFirsthomePage);
+        }
+        else if(person.type === "2"){
+          this.navCtrl.push(ServHomePage);
+        }
+        
       }).catch((err)=>console.log(err));
     });
 

@@ -1,4 +1,5 @@
 import { servCertificate } from "../person/Sercertificate";
+import { serviceImg } from "../person/serviceimg";
 
 export class addService{
     public title : string;
@@ -7,7 +8,7 @@ export class addService{
     public audio_url : string;
     public service_provider_id: number;
     public service_category_id : number;
-    public images : string [] = [];
+    public images : serviceImg [] = [];
 
     constructor(){
 

@@ -1,16 +1,19 @@
 
 <ion-header>
-
-<ion-navbar>
-<ion-title>{{'Mobile Phones'|translate}}</ion-title>
-</ion-navbar>
-
+<ion-row>
+   
+    <ion-col col-10><ion-navbar>
+        <ion-title>{{'Mobile Phones'|translate}}</ion-title>
+        </ion-navbar>
+    </ion-col>
+    <ion-col col-2><ion-icon name="add" class="addicon" click="addNew()"></ion-icon></ion-col>
+</ion-row>
 </ion-header>
 
 
 <ion-content padding>
 
-<ion-row *ngFor="let item of catItems">
+<ion-row class="controw" *ngFor="let item of catItems">
 <ion-col col-2>
 <img class="mobile" *ngIf="item.images.length > 0" [src]="mainService.imageUrl+item.images[0].image_url"
     (click)="goToAddDetails(item)">

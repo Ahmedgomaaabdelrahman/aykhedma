@@ -48,9 +48,9 @@ export class ServChatPage {
 
   }
   sendMsg(image :string = null){
-      let chatMessage : ChatMessage =
+        let chatMessage : ChatMessage =
         new ChatMessage(this.message ,this.senderUID,this.receiverUID,image);
-      this.chatService.sendMessage(chatMessage)
+        this.chatService.sendMessage(chatMessage)
         .then(()=> this.message = '' ).catch((err)=>console.log(err));
   }
   uploadImg(){

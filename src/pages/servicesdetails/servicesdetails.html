@@ -16,13 +16,13 @@
 <ion-content>
   <ion-row *ngFor="let service of services">
     <ion-col col-2>
-    <img class="mobile" *ngIf="service.images.length > 0" [src]="mainService.imageUrl+item.images[0].image_url">
+    <img class="mobile" *ngIf="service.images.length > 0" [src]="mainService.imageUrl+service.images[0].service_url">
     </ion-col>
     <ion-col>
     <p class="text">{{service.title}}</p>
-    <span class="pricemobile">{{service.price}}</span>
+    <span class="mobile">{{service.price}}</span>
     <ion-icon class="icons" class="icons" name="call" ></ion-icon>
-    <ion-icon class="icons" class="icons" name="mail" (click)="goToChat(service.user.person)"></ion-icon>
+    <ion-icon class="icons" class="icons" name="mail" (click)="goToChat(service.person)"></ion-icon>
     </ion-col>
     </ion-row>
 </ion-content>

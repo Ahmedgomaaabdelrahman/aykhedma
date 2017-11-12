@@ -25,6 +25,6 @@ export class ServServicesPage {
     });
   }
   goitemdetails(categoryID:number){
-    this.navCtrl.push(ServicesdetailsPage,categoryID);
+    this.navCtrl.push(ServicesdetailsPage,{categoryID:categoryID});
   }
 }

@@ -8,6 +8,15 @@ import { PerLocationPage } from './../per-location/per-location';
 import { IndivLangPage } from './../indiv-lang/indiv-lang';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
+import { Person } from '../../models/person/person';
+import { IndividualTech } from '../../models/technician/individual-tech';
+import { IndivdualProvider } from '../../providers/indivdual/indivdual';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { CommonProvider } from '../../providers/common/common';
+import { ChatProvider } from '../../providers/chat/chat';
+import { PersonProvider } from '../../providers/person/person';
+import { PersonFBCredentials } from '../../models/person/person-firebase-credentials';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the IndivSignupPage page.
@@ -22,9 +31,16 @@ import {  NavController, NavParams } from 'ionic-angular';
   templateUrl: 'indiv-signup.html',
 })
 export class IndivSignupPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  public person : IndividualTech;
+  public personClass = Person ;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public indivdual :IndivdualProvider,
+    public personService : PersonProvider , public afAuth: AngularFireAuth , public commonService : CommonProvider,public chatService : ChatProvider) {
+  
+      switch (navParams.data.mode){
+        case Person.IndivTech_MODE :
+          this.person = new IndividualTech();
+      }
+    }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad IndivSignupPage');
@@ -52,5 +68,29 @@ export class IndivSignupPage {
   }
   goHome(){
     this.navCtrl.push(ServHomePage);
+  }
+
+
+
+  handlePersonRegister(uid : string ):Observable<any>
+  {
+    this.person.uid = uid ;
+    switch (this.person.type){
+      case Person.IndivTech_MODE : 
+        return this.indivdual.registName(this.person);
+    }
+  }
+  
+  confirm(){
+    this.personService.FBRegister(new PersonFBCredentials(this.person.email,this.person.password)).then(()=>{
+      this.handlePersonRegister(this.afAuth.auth.currentUser.uid).subscribe((person)=>{
+      this.personService.activePerson = this.personService.preparePersonObj(person);
+      this.chatService.attachReceivedChatListener();
+      this.commonService.successToast();
+      // case user only
+      this.navCtrl.push(ServHomePage,{persotupe:this.person});
+      });
+    }).catch((err)=>console.log(err));
+   
   }
 }

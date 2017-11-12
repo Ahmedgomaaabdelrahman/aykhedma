@@ -5,6 +5,7 @@ import {MainService} from "../../providers/main-service";
 import {ServChatPage} from "../serv-chat/serv-chat";
 import {PersonProvider} from "../../providers/person/person";
 import {AdsDetailsPage} from "../ads-details/ads-details";
+import { PerSellPage } from '../per-sell/per-sell';
 
 /**
  * Generated class for the PerItemdetailsPage page.
@@ -39,6 +40,9 @@ export class PerItemdetailsPage {
   }
   goToAddDetails(item : any){
     this.navCtrl.push(AdsDetailsPage,item);
+  }
+  addNew(){
+    this.navCtrl.push(PerSellPage);
   }
 
 }
