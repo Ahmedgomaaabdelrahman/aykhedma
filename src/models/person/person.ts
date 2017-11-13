@@ -21,7 +21,7 @@ export abstract class Person {
        this.email != null && this.email.trim() != "" &&
        this.password != null && this.password.trim() != "" &&
        this.mobile != null  &&
-      this.locations.length > 0)
+       this.locations.length > 0)
       return true ;
      else return false ;
 

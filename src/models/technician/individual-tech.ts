@@ -13,11 +13,7 @@ export class IndividualTech extends Technician{
   }
   public validate() : boolean{
     if(this.validateTech() &&
-      this.birthDate &&
-      this.profileImage &&
-      this.identityFront &&
-      this.identityBack &&
-      this.techCategoryID )
+      this.birthDate != null  )
       return true ;
     else return false ;
   }

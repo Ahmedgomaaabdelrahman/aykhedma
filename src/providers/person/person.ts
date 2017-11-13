@@ -9,6 +9,7 @@ import {Observable} from "rxjs";
 import {Person} from "../../models/person/person";
 import {User} from "../../models/user/user";
 import { ServiceProv } from '../../models/user/serviceprov';
+import { IndividualTech } from '../../models/technician/individual-tech';
 
 /*
   Generated class for the PersonProvider provider.
@@ -49,10 +50,13 @@ export class PersonProvider {
         break;
       case Person.ServProv_MODE : person = new ServiceProv();
         break;  
+      case Person.IndivTech_MODE : person = new IndividualTech();
+        break;   
     }
+    person.name = personObj.name ;
     person.email = personObj.email ;
     person.mobile = personObj.mobile ;
-    person.name = personObj.name ;
+    
     person.uid = personObj.u_id ;
     person.id = personObj.id;
     return person;

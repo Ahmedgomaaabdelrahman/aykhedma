@@ -82,6 +82,7 @@ import { ServiceProvProvider } from '../providers/service-prov/service-prov';
 import { ServServicesPage } from '../pages/serv-services/serv-services';
 import { ServicesdetailsPage } from '../pages/servicesdetails/servicesdetails';
 import { IndivdualProvider } from '../providers/indivdual/indivdual';
+import { Tecregist2Page } from '../pages/tecregist2/tecregist2';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');}
@@ -137,8 +138,8 @@ export function createTranslateLoader(http: Http) {
     PerFirsthomePage,
     AdsDetailsPage,
     ServServicesPage,
-    ServicesdetailsPage
-
+    ServicesdetailsPage,
+    Tecregist2Page
   ],
   imports: [
     BrowserModule,
@@ -208,6 +209,7 @@ export function createTranslateLoader(http: Http) {
     PerFirsthomePage,
     AdsDetailsPage,
     ServServicesPage,
+    Tecregist2Page,
     ServicesdetailsPage
   ],
   providers: [

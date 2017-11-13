@@ -14,7 +14,7 @@ import {  NavController, NavParams } from 'ionic-angular';
   templateUrl: 'indiv-imgprofile.html',
 })
 export class IndivImgprofilePage {
-
+  public imgsrc : string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

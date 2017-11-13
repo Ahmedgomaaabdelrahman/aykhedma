@@ -6,6 +6,7 @@ import { IndividualTech } from '../../models/technician/individual-tech';
 import { Skill } from '../../models/technician/Skill';
 import { techCertificate } from '../../models/technician/certificate';
 import { Phone } from '../../models/technician/phones';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the IndivdualProvider provider.
@@ -28,15 +29,24 @@ export class IndivdualProvider {
     console.log('Hello IndivdualProvider Provider');
   }
   
-   registName(technicion : IndividualTech){
+   register(technicion : IndividualTech) : Observable<any>{
      let body = {
-      name:technicion.name,
-      mobile:technicion.mobile,
-      password:technicion.password,
-      email:technicion.email,
-      type:technicion.type,
-      u_id:technicion.id,
-      Locatoin:technicion.locations
+      name  :technicion.name,
+      mobile : technicion.mobile,
+      password : technicion.password,
+      email : technicion.email,
+      type : technicion.type,
+      u_id : technicion.uid,  
+      nationality : technicion.nationality,
+      available_hours : technicion.availableHours,
+      experience : technicion.experience,
+      birth_date : technicion.birthDate,
+      profile_image : technicion.profileImage,
+      identity_front_url : technicion.identityFront,
+      identity_back_url : technicion.identityBack,
+      tech_category_id : technicion.techCategoryID,
+      office_tech_id : technicion.officeTechID,
+      Locatoin : technicion.locations
      };
      return this.http.post(this.techRegUrl,body).map((res) => res.json());
    }
@@ -66,26 +76,4 @@ export class IndivdualProvider {
      return this.http.post(this.setphonesUrl,body).map((res) => res.json());
    }
 
-   registRest(technicion : IndividualTech){
-    let body = {
-      nationality:technicion.nationality,
-      available_hours:technicion.availableHours,
-      experience:technicion.experience,
-      type:technicion.type
-     };
-     return this.http.post(this.setNewTechUrl,body).map((res) => res.json());
-   }
-
-
-   registBD(technicion : IndividualTech){
-    let body = {
-      birth_date:technicion.birthDate,
-      profile_image:technicion.profileImage,
-      identity_front_url:technicion.identityFront,
-      identity_back_url:technicion.identityBack,
-      tech_category_id:technicion.techCategoryID,
-      office_tech_id:technicion.officeTechID
-     };
-     return this.http.post(this.setindTecUrl,body).map((res) => res.json());
-   }
 }

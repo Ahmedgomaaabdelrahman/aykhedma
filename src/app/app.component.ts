@@ -13,6 +13,15 @@ import {PersonProvider} from "../providers/person/person";
 import {Person} from "../models/person/person";
 
 // import { HomePage } from '../pages/home/home';
+
+
+
+
+// Firebase Account :-
+// email : anyserviceksa@gmail.com
+// pass : ksaanyservice
+
+
 @Component({
   templateUrl: 'app.html'
 })

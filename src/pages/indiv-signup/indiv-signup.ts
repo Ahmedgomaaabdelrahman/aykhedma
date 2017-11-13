@@ -17,6 +17,8 @@ import { ChatProvider } from '../../providers/chat/chat';
 import { PersonProvider } from '../../providers/person/person';
 import { PersonFBCredentials } from '../../models/person/person-firebase-credentials';
 import { Observable } from 'rxjs/Observable';
+import { IndivScedulePage } from '../indiv-scedule/indiv-scedule';
+import { Tecregist2Page } from '../tecregist2/tecregist2';
 
 /**
  * Generated class for the IndivSignupPage page.
@@ -36,9 +38,8 @@ export class IndivSignupPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public indivdual :IndivdualProvider,
     public personService : PersonProvider , public afAuth: AngularFireAuth , public commonService : CommonProvider,public chatService : ChatProvider) {
   
-      switch (navParams.data.mode){
-        case Person.IndivTech_MODE :
-          this.person = new IndividualTech();
+      switch (this.navParams.data.mode){
+        case Person.IndivTech_MODE : this.person = new IndividualTech();
       }
     }
 
@@ -49,7 +50,9 @@ export class IndivSignupPage {
     this.navCtrl.push(IndivLangPage);
   }
   signlocation(){
-    this.navCtrl.push(PerLocationPage)
+      this.navCtrl.push(PerLocationPage,{
+        person : this.person
+      });
   }
   goskills(){
     this.navCtrl.push(IndivSkillsPage);
@@ -67,28 +70,30 @@ export class IndivSignupPage {
     this.navCtrl.push(IndivImgprofilePage);
   }
   goHome(){
-    this.navCtrl.push(ServHomePage);
+    this.navCtrl.push(IndivScedulePage);
+    
   }
 
 
 
   handlePersonRegister(uid : string ):Observable<any>
   {
-    this.person.uid = uid ;
-    switch (this.person.type){
-      case Person.IndivTech_MODE : 
-        return this.indivdual.registName(this.person);
-    }
+    this.person.uid = uid ; 
+    this.person.type = Person.IndivTech_MODE;
+    console.log(this.person.type);
+    return this.indivdual.register(this.person);
+     
   }
   
   confirm(){
-    this.personService.FBRegister(new PersonFBCredentials(this.person.email,this.person.password)).then(()=>{
-      this.handlePersonRegister(this.afAuth.auth.currentUser.uid).subscribe((person)=>{
+      this.personService.FBRegister(new PersonFBCredentials(this.person.email,this.person.password)).then(()=>{
+      this.handlePersonRegister(this.afAuth.auth.currentUser.uid).subscribe((person) => {
+      console.log(person);  
       this.personService.activePerson = this.personService.preparePersonObj(person);
       this.chatService.attachReceivedChatListener();
       this.commonService.successToast();
       // case user only
-      this.navCtrl.push(ServHomePage,{persotupe:this.person});
+      this.navCtrl.push(Tecregist2Page,{person:person});
       });
     }).catch((err)=>console.log(err));
    
