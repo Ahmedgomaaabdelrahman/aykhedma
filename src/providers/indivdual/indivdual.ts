@@ -51,7 +51,7 @@ export class IndivdualProvider {
      return this.http.post(this.techRegUrl,body).map((res) => res.json());
    }
 
-   setSkills(skill : Skill){
+   setSkills(name , ){
      let body = {
       name:skill.name,
       technician_id:skill.technician_id
@@ -59,19 +59,19 @@ export class IndivdualProvider {
      return this.http.post(this.setSkillsUrl,body).map((res) => res.json());
    }
 
-   techCetificate(cetificate : techCertificate){
+   techCetificate(image_url ,tecid){
     let body = {
-      name:cetificate.image_url,
-      technician_id:cetificate.technician_id
+      image_url : image_url,
+      technician_id : tecid
      };
      return this.http.post(this.setCertsUrl,body).map((res) => res.json());
    }
 
 
-   setPhones(Phone : Phone){
+   setPhones(mobile , tecid){
     let body = {
-      name:Phone.mobile,
-      technician_id:Phone.technician_id
+      mobile:mobile,
+      technician_id:tecid
      };
      return this.http.post(this.setphonesUrl,body).map((res) => res.json());
    }

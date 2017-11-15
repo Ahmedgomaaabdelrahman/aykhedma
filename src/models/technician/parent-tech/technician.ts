@@ -7,7 +7,7 @@ export abstract class Technician extends Person{
   public experience : number ;
   public phones: string[] ;
   public skills: string[] ;
-  public certificates: string[] ;
+  public serviceCats: string[] = [] ;
   constructor(){
     super();
   }

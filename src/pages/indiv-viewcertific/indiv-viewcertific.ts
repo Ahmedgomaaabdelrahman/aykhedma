@@ -18,7 +18,8 @@ import { ServProviderCats } from '../../models/person/servProvCats';
   templateUrl: 'indiv-viewcertific.html',
 })
 export class IndivViewcertificPage {
-  public person : ServiceProv;
+  public person : any;
+  public perid : any;
   public imgsrc : string;
   constructor(public com:CommonProvider,public navCtrl: NavController, public navParams: NavParams) {
     this.person = this.navParams.data.person;
@@ -34,6 +35,7 @@ export class IndivViewcertificPage {
    let image = new servCertificate(this.imgsrc);
   console.log(image);
   this.person.serviceCats.push(image);
+  console.log(this.person.serviceCats);
   this.navCtrl.pop();
  }
 }

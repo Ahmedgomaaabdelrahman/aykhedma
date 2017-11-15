@@ -17,7 +17,7 @@ import {Location} from "../../models/person/location";
   templateUrl: 'per-location.html',
 })
 export class PerLocationPage {
- public salesCategory : any[] = [] ;
+  public salesCategory : any[] = [] ;
   public person : Person;
   
   constructor(public navCtrl: NavController, public navParams: NavParams ,

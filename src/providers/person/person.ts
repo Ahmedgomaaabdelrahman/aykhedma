@@ -43,7 +43,7 @@ export class PersonProvider {
     };
     return this.http.post(this.personLoginUrl,body).map((res) => res.json());
   }
-  preparePersonObj(personObj : any):Person{
+  preparePersonObj(personObj : any) : Person{
     let person : Person ;
     switch(personObj.type) {
       case Person.USER_MODE : person = new User();

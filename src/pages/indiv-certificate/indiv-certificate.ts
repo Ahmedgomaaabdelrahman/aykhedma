@@ -20,10 +20,15 @@ import { Person } from '../../models/person/person';
   templateUrl: 'indiv-certificate.html',
 })
 export class IndivCertificatePage {
-  public person : Person;
+  public person : any;
+  public perid: any;
 
   constructor(public com:CommonProvider,public commonMediaService : CommonMediaProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.person = navParams.data.person;
+    this.perid = navParams.data.perid;
+
+    console.log(this.person);
+
   }
 
   ionViewDidLoad() {
@@ -36,7 +41,7 @@ addImage(){
     this.com.presentLoading("Please Wait ...");
     this.commonMediaService.galleryOrCamera().then((base64:string)=>{ 
     this.com.dismissLoading();
-    this.navCtrl.push(IndivViewcertificPage,{imageurl:base64,person:this.person});
+    this.navCtrl.push(IndivViewcertificPage,{imageurl:base64,person:this.person,perid:this.perid});
     // this.com.presentToast("basefromno1"+base64);
   }).catch((err)=>console.log(err))
 }

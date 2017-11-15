@@ -19,6 +19,7 @@ import { PersonFBCredentials } from '../../models/person/person-firebase-credent
 import { Observable } from 'rxjs/Observable';
 import { IndivScedulePage } from '../indiv-scedule/indiv-scedule';
 import { Tecregist2Page } from '../tecregist2/tecregist2';
+import { CommonMediaProvider } from '../../providers/common-media/common-media';
 
 /**
  * Generated class for the IndivSignupPage page.
@@ -36,11 +37,14 @@ export class IndivSignupPage {
   public person : IndividualTech;
   public personClass = Person ;
   constructor(public navCtrl: NavController, public navParams: NavParams,public indivdual :IndivdualProvider,
-    public personService : PersonProvider , public afAuth: AngularFireAuth , public commonService : CommonProvider,public chatService : ChatProvider) {
+    public personService : PersonProvider , public afAuth: AngularFireAuth ,
+    public commonMediaService : CommonMediaProvider, public commonService : CommonProvider,
+    public chatService : ChatProvider) {
   
       switch (this.navParams.data.mode){
         case Person.IndivTech_MODE : this.person = new IndividualTech();
       }
+      
     }
 
   ionViewDidLoad() {
@@ -64,11 +68,11 @@ export class IndivSignupPage {
     this.navCtrl.push(IndivCertificatePage);
   }
   imgid(){
-    this.navCtrl.push(IndivImgidPage);
+    this.navCtrl.push(IndivImgidPage,{
+      person : this.person
+    });
   }
-  goimgprofile(){
-    this.navCtrl.push(IndivImgprofilePage);
-  }
+ 
   goHome(){
     this.navCtrl.push(IndivScedulePage);
     
@@ -89,13 +93,22 @@ export class IndivSignupPage {
       this.personService.FBRegister(new PersonFBCredentials(this.person.email,this.person.password)).then(()=>{
       this.handlePersonRegister(this.afAuth.auth.currentUser.uid).subscribe((person) => {
       console.log(person);  
-      this.personService.activePerson = this.personService.preparePersonObj(person);
+      this.personService.activePerson = this.personService.preparePersonObj(person.output);
       this.chatService.attachReceivedChatListener();
       this.commonService.successToast();
       // case user only
-      this.navCtrl.push(Tecregist2Page,{person:person});
+      this.navCtrl.push(Tecregist2Page,{personid:person.output.id , person:this.person});
       });
     }).catch((err)=>console.log(err));
-   
+    
   }
+
+  addImage(){
+        this.commonService.presentLoading("Please Wait ...");
+        this.commonMediaService.galleryOrCamera().then((base64:string)=>{ 
+        this.commonService.dismissLoading();
+        this.navCtrl.push(IndivImgprofilePage,{imageurl:base64,person:this.person});
+        // this.com.presentToast("basefromno1"+base64);
+      }).catch((err)=>console.log(err))
+    }
 }

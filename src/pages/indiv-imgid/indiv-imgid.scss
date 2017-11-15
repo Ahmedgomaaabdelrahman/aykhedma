@@ -35,21 +35,19 @@ height: 200px;
 width: 100%;
 margin: auto;
 display: block;
-margin-top: 30px;
+
 }
 .confirm{
-    position: absolute;
-    margin-right: 29px;
-    margin-right: 26%;
-    margin-left: 26%;
+    margin-right: auto;
     display: block;
     text-transform: none;
     font-size: 1.8rem;
     margin-top: 30px;
     border: 4px solid rgba(167, 161, 161, 0.64);
-    width: 40%;
+    width: auto;
     height: 45px;
-    color: $color-sky;
+    color: #26bfe4;
+    margin-bottom: 10px;
     }
 
 }

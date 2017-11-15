@@ -5,7 +5,7 @@ export class IndividualTech extends Technician{
   public birthDate : Date ;
   public profileImage : string ;
   public identityFront : string ;
-  public identityBack : string ;_
+  public identityBack : string ;
   public techCategoryID : number ;
   public officeTechID : number ;
   constructor(){
