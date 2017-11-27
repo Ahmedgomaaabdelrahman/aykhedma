@@ -10,26 +10,27 @@
 
 <ion-content padding>
 <ion-row class="rowstar">
-<ion-icon class="star" name="star"></ion-icon>
-<ion-icon class="star" name="star"></ion-icon>
-<ion-icon class="star" name="star"></ion-icon>
-<ion-icon class="star" name="star"></ion-icon>
-<ion-icon class="star" name="ios-star-outline"></ion-icon>
+    <ion-icon class="star" name="star"></ion-icon>
+    <ion-icon class="star" name="star"></ion-icon>
+    <ion-icon class="star" name="star"></ion-icon>
+    <ion-icon class="star" name="star"></ion-icon>
+    <ion-icon class="star" name="ios-star-outline"></ion-icon>
 </ion-row>
 <ion-list>
 <ion-item class="item" >
 <img class="imgrate" src="assets/imgs/rate.png">
 <ion-icon class="imgstar" name="star"></ion-icon>
-<span class="ratenumber">4.5</span>
+<span class="ratenumber" *ngIf="tech.rate!=null">{{techss.rate}}</span>
+<span class="ratenumber" *ngIf="tech.rate==null">0</span>
 <ion-avatar item-start>
-<img class="techimg" src="assets/imgs/builder1.png">
+<img class="techimg" [src]="mainService.imageUrl+techss.profile_image">
 </ion-avatar>
-<h2>James Riyadi</h2>
-<h3>Individual</h3>
-<p>35 hr</p>
-<img class="flag" src="assets/imgs/flag.jpg">
+<h2>{{techss.name}}</h2>
+<!-- <h3>Individual</h3> -->
+<p>{{techss.available_hours}}</p>
+<!-- <img class="flag" src="assets/imgs/flag.jpg"> -->
 </ion-item>
-<button ion-button round clear class="confirm">Confirm</button>
+<button ion-button round clear class="confirm" (click)="confirm()">Confirm</button>
 
 </ion-list>
 </ion-content>

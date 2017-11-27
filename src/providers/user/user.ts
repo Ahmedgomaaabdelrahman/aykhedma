@@ -5,6 +5,7 @@ import {MainService} from "../main-service";
 import {User} from "../../models/user/user";
 import {Observable} from "rxjs";
 import {SalesRequest} from "../../models/user/sales/sales-request";
+import { TechRequest } from '../../models/technician/techRequest';
 
 /*
   Generated class for the UserProvider provider.
@@ -20,6 +21,8 @@ export class UserProvider {
   public setItemUrl : string = MainService.baseUrl+"setItems";
   public getSalesByCatUrl : string = MainService.baseUrl+"getadsbycatid/";
   public getServicesUrl : string = MainService.baseUrl+"servie/";
+  public techRequestUrl : string = MainService.baseUrl+"techRequest/";
+  
   constructor(public http: Http) {
     console.log('Hello UserProvider Provider');
   }
@@ -50,5 +53,9 @@ export class UserProvider {
   getServices(id : any) :Observable<any>{
     return this.http.get(this.getServicesUrl+id).map((res) => res.json());
   }
+  
+  searchTech(techreq : TechRequest):Observable<any>{
 
+    return this.http.post(this.techRequestUrl,techreq).map((res) => res.json());
+  }
 }

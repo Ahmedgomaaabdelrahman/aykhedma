@@ -10,7 +10,6 @@ import {AngularFireAuth} from "angularfire2/auth";
 
 /*
  Generated class for the ChatProvider provider.
-
  See https://angular.io/guide/dependency-injection for more info on providers
  and Angular DI.
  */

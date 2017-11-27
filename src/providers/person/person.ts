@@ -43,14 +43,14 @@ export class PersonProvider {
     };
     return this.http.post(this.personLoginUrl,body).map((res) => res.json());
   }
-  preparePersonObj(personObj : any) : Person{
+  preparePersonObj(personObj : any) : Person {
     let person : Person ;
     switch(personObj.type) {
-      case Person.USER_MODE : person = new User();
+      case "1" : person = new User();
         break;
-      case Person.ServProv_MODE : person = new ServiceProv();
+      case "2" : person = new ServiceProv();
         break;  
-      case Person.IndivTech_MODE : person = new IndividualTech();
+      case "3" : person = new IndividualTech();
         break;   
     }
     person.name = personObj.name ;

@@ -32,6 +32,7 @@ export class ServChatPage {
       this.chatService.activeChatWith = navParams.data ;
       this.senderUID = this.afAuth.auth.currentUser.uid ;
       this.receiverUID = this.chatService.activeChatWith.uid ;
+      
       console.log('receiverUID',this.receiverUID);
       console.log('senderUIDt',this.senderUID);
   }

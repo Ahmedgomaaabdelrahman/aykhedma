@@ -40,6 +40,7 @@ export class PerHomePage {
     console.log('ionViewDidLoad PerHomePage');
     this.userService.getSalesCategory().subscribe((res)=>{
       this.salesCategory = res ;
+      console.log(this.salesCategory);
     });
   }
 

@@ -9,42 +9,10 @@
 
 
 <ion-content padding>
-<ion-list>  
-<ion-row>
-  <ion-col col-2><img src="assets/imgs/Artboard – 4.png"></ion-col>
-  <ion-col col-10 class="text">{{'Cleaning'|translate}}</ion-col>
-  </ion-row>
-  <hr>
-  <ion-row (click)=goreq()>
-  <ion-col col-2><img src="assets/imgs/Artboard – 5.png"></ion-col>
-  <ion-col col-10 class="text">{{'Remodeling kitchens'|translate}}</ion-col>
-  </ion-row>
-  <hr>
-  <ion-row >
-  <ion-col col-2><img src="assets/imgs/Artboard – 9.png"></ion-col>
-  <ion-col col-10 class="text">{{'Concrete work'|translate}}</ion-col>
-  </ion-row>
-  <hr>
-  <ion-row>
-  <ion-col col-2><img src="assets/imgs/Artboard – 6.png"></ion-col>
-  <ion-col col-10 class="text">{{'Electrical wiring'|translate}}</ion-col>
-  </ion-row>
-  <hr>
-  <ion-row>
-  <ion-col col-2><img src="assets/imgs/Artboard – 8.png"></ion-col>
-  <ion-col col-10 class="text">{{'Landscaping'|translate}}</ion-col>
-  </ion-row>
-  <hr>
-  <ion-row>
-  <ion-col col-2><img src="assets/imgs/Artboard – 7.png"></ion-col>
-  <ion-col col-10 class="text">{{'Maid service'|translate}}</ion-col>
-  </ion-row>
-  <hr>
-  <ion-row>
-  <ion-col col-2>
-  <img src="assets/imgs/Artboard – 14.png"></ion-col>
-  <ion-col col-10 class="text">{{'Pest control'|translate}}</ion-col>
-  </ion-row>
-  <hr>          
+<ion-list >
+  <ion-row  *ngFor="let cat of cats" (click)="goreq(cat.id)">
+  <ion-col col-2><img [src]="mainService.imageUrl+cat.iamge_url"></ion-col>
+  <ion-col col-10 class="text">{{cat.name}}</ion-col>
+  </ion-row>  
 </ion-list>
 </ion-content>

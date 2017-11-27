@@ -1,6 +1,6 @@
 export class Skill {
-    constructor(public name: string, public technician_id : number) {
-        this.name = name;
+    constructor(public id: number, public technician_id : number) {
+        this.id = id;
         this.technician_id = technician_id;
     }
   }

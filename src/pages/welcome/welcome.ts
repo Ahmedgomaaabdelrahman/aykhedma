@@ -2,7 +2,7 @@ import { SignupPage } from './../signup/signup';
 import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
-
+import { SocialSharing } from '@ionic-native/social-sharing';
 /**
  * Generated class for the WelcomePage page.
  *
@@ -17,7 +17,7 @@ import {  NavController, NavParams } from 'ionic-angular';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private socialSharing: SocialSharing,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -29,4 +29,14 @@ login(){
 signup(){
   this.navCtrl.push(SignupPage);
 }
+
+goTwitter(){
+  document.textContent = "https://twitter.com/ashaghor1";
 }
+// goSnap(){
+//   document.textContent = "https://twitter.com/ashaghor1";
+// }
+
+}
+
+

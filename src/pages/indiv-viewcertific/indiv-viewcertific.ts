@@ -31,11 +31,11 @@ export class IndivViewcertificPage {
     // this.com.presentToast("basefromno2"+this.imgsrc);
     console.log("NewWWWWWWWW"+this.imgsrc);
   }
- confirm(){
-   let image = new servCertificate(this.imgsrc);
-  console.log(image);
-  this.person.serviceCats.push(image);
-  console.log(this.person.serviceCats);
-  this.navCtrl.pop();
+  confirm(){
+    let image = new servCertificate(this.imgsrc);
+    console.log(image);
+    this.person.serviceCats.push(image);
+    console.log(this.person.serviceCats);
+    this.navCtrl.pop();
  }
 }

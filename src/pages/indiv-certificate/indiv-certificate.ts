@@ -41,7 +41,7 @@ addImage(){
     this.com.presentLoading("Please Wait ...");
     this.commonMediaService.galleryOrCamera().then((base64:string)=>{ 
     this.com.dismissLoading();
-    this.navCtrl.push(IndivViewcertificPage,{imageurl:base64,person:this.person,perid:this.perid});
+    this.navCtrl.push(IndivViewcertificPage,{imageurl:"data:image/png;base64,"+base64,person:this.person,perid:this.perid});
     // this.com.presentToast("basefromno1"+base64);
   }).catch((err)=>console.log(err))
 }

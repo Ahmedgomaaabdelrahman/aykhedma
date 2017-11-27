@@ -10,6 +10,7 @@ export abstract class Technician extends Person{
   public serviceCats: string[] = [] ;
   constructor(){
     super();
+    this.type = Person.IndivTech_MODE;
   }
   public validateTech() : boolean{
     if(this.validatePerson() &&

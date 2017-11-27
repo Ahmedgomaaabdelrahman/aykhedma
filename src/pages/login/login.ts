@@ -9,6 +9,7 @@ import {PersonLoginCred} from "../../models/person/person-login-credentials";
 import {PersonFBCredentials} from "../../models/person/person-firebase-credentials";
 import {ChatProvider} from "../../providers/chat/chat";
 import { ServHomePage } from '../serv-home/serv-home';
+import { IndivScedulePage } from '../indiv-scedule/indiv-scedule';
 
 /**
  * Generated class for the LoginPage page.
@@ -47,6 +48,10 @@ export class LoginPage {
         }
         else if(person.type === "2"){
           this.navCtrl.push(ServHomePage);
+        }
+
+        else if(person.type === "3"){
+          this.navCtrl.push(IndivScedulePage,{id : person.id , person : person});
         }
         
       }).catch((err)=>console.log(err));

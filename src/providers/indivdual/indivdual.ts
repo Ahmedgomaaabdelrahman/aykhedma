@@ -23,8 +23,10 @@ export class IndivdualProvider {
   public setCertsUrl : string = MainService.baseUrl+"teccetifcat";
   public setNewTechUrl : string = MainService.baseUrl+"setnewtec";
   public setindTecUrl : string = MainService.baseUrl+"setindividualtec";
-
-
+  public gettechcatUrl : string = MainService.baseUrl+"gettechcat";
+  public conwithtechUrl : string = MainService.baseUrl+"connectwithtech/";
+  public myRequestsUrl : string = MainService.baseUrl+"myrequest/";
+  
   constructor(public http: Http) {
     console.log('Hello IndivdualProvider Provider');
   }
@@ -51,29 +53,55 @@ export class IndivdualProvider {
      return this.http.post(this.techRegUrl,body).map((res) => res.json());
    }
 
-   setSkills(name , ){
+   setSkills(skills : Skill []  = []){
+    let allbodies : any [] = [] ;
+     for(let skill of skills){
+      let body = {
+        tech_categories_id:skill.id,
+        technician_id:skill.technician_id
+       };
+       allbodies.push(body);  
+       console.log(allbodies);
+     }
+     return this.http.post(this.setSkillsUrl,allbodies).map((res) => res.json());
+   }
+
+   techCetificate(certs : techCertificate [] = []){
+    let allbodies : any [] = [] ;
+    for(let cert of certs){
      let body = {
-      name:skill.name,
-      technician_id:skill.technician_id
-     };
-     return this.http.post(this.setSkillsUrl,body).map((res) => res.json());
-   }
-
-   techCetificate(image_url ,tecid){
-    let body = {
-      image_url : image_url,
-      technician_id : tecid
-     };
-     return this.http.post(this.setCertsUrl,body).map((res) => res.json());
+       image_url:cert.image_url,
+       technician_id:cert.technician_id
+      };
+      allbodies.push(body);  
+      console.log(allbodies);
+    }
+     return this.http.post(this.setCertsUrl,allbodies).map((res) => res.json());
    }
 
 
-   setPhones(mobile , tecid){
-    let body = {
-      mobile:mobile,
-      technician_id:tecid
-     };
-     return this.http.post(this.setphonesUrl,body).map((res) => res.json());
+   setPhones(phones : Phone []= []){
+    let allbodies : any [] = [] ;
+     for(let phone of phones){
+      let body = {
+        mobile:phone.mobile,
+        technician_id:phone.technician_id
+       };
+       allbodies.push(body);  
+       console.log(allbodies);
+     }
+    
+     return this.http.post(this.setphonesUrl,allbodies).map((res) => res.json());
    }
-
+   
+   getSkills():Observable<any>{
+    return this.http.get(this.gettechcatUrl).map((res) => res.json());
+  }
+  
+   connectWtech(reqid , techid){
+    return this.http.get(this.conwithtechUrl+reqid+"/"+techid).map((res) => res.json());
+   }
+   getRequests(techid){
+    return this.http.get(this.myRequestsUrl+techid).map((res) => res.json());
+   }
 }

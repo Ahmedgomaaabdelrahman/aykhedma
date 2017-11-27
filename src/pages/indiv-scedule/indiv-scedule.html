@@ -19,18 +19,19 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-row class="card">
-    <ion-col col-4>
-      <img src="assets/imgs/power.jpg">
-    </ion-col>
-    <ion-col col-8>
-      <p class="cardtit">Power Outage</p><p class="dateitem">7/5/2017</p>
-      <p class="name">Mohamed Essam</p>
-      <p class="details">
-          Power OutagePower OutagePower OutagePower Outage
-      </p>
-    </ion-col>
+    <ion-row class="card" *ngFor="let req of requets" (click)="godetails(req)">
+      <ion-col col-4>
+        <img src="assets/imgs/power.jpg">
+      </ion-col>
+      <ion-col col-8>
+        <p class="cardtit">{{req.title}}</p><p class="dateitem">7/5/2017</p>
+       
+        <p class="details">
+          {{req.description}}
+        </p>
+      </ion-col>
   </ion-row>
+ 
   </ion-list>
 
 </ion-content>

@@ -13,13 +13,13 @@
     <ion-card class="firstcard">
    
     <ion-card-content>
-    <p class="text"> Hyatt Kauai RestaurantsGrand Hyatt Kauai RestaurantsGrand Hyatt Kauai RestaurantsGrand Hyatt Kauai RestaurantsGrand Hyatt Kauai RestaurantsGrand Hyatt Kauai Restaurants</p>
+    <p class="text">{{req.title}}</p>
     </ion-card-content>
     </ion-card>
     <p class="cardheader">{{'Informations:'|translate}}</p>
     <ion-card class="secondcard">
     <ion-card-content>
-    <P class="text">Hyatt Kauai RestaurantsGrand Hyatt Kauai RestaurantsGrand Hyatt Kauai RestaurantsGrand Hyatt Kauai RestaurantsGrand Hyatt Kauai RestaurantsGrand Hyatt Kauai Restaurants</P>
+    <P class="text">{{req.description}}</P>
     <p class="cardheader">{{'Images:'|translate}}</p>
     
     <ion-row>
@@ -31,11 +31,13 @@
     <p class="cardheader">{{'Address:'|translate}}</p>
     <ion-row>
     <ion-col col-10>
-    <p class="text"> Hyatt Kauai RestaurantsGrand Hyatt Kauai RestaurantsGrand Hyatt </p>  
+    <!-- <p class="text">  </p>   -->
     </ion-col>
     <ion-col col-1> <ion-icon class="icons" name="call"></ion-icon></ion-col>    
-    <ion-col col-1><ion-icon class="icons" name="mail"></ion-icon></ion-col>  
-    </ion-row>        
+    <ion-col col-1><ion-icon class="icons" name="mail" (click)="goToChat()"></ion-icon></ion-col>  
+    
+    </ion-row>     
+    <button ion-button block class="refuse" (click)="refuse()" >رفض الطلب</button>   
     </ion-card-content>
     </ion-card>
     </ion-content>

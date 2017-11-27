@@ -1,13 +1,10 @@
 import { PerTechlocationPage } from './../per-techlocation/per-techlocation';
 import { Component } from '@angular/core';
-import {  NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { MainService } from '../../providers/main-service';
+import { PerTechratePage } from '../per-techrate/per-techrate';
 
-/**
- * Generated class for the PerTechniciansPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 
 @Component({
@@ -15,14 +12,22 @@ import {  NavController, NavParams } from 'ionic-angular';
   templateUrl: 'per-technicians.html',
 })
 export class PerTechniciansPage {
-
+  public techs : any [] = [] ;
+  public tecNo : number ;
+  public mainService = MainService;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerTechniciansPage');
+    this.techs = this.navParams.data.techs;
+    this.tecNo = this.techs.length;
   }
-  gomaptech(){
-    this.navCtrl.push(PerTechlocationPage);
+  gomaptech(item : any){
+    this.navCtrl.push(PerTechratePage,{tech:item, reqid:item.id});
+  }
+
+  gomap(){
+    this.navCtrl.push(PerTechlocationPage , {tecNo : this.tecNo ,alltechs : this.techs});
   }
 }

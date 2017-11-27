@@ -83,6 +83,9 @@ import { ServServicesPage } from '../pages/serv-services/serv-services';
 import { ServicesdetailsPage } from '../pages/servicesdetails/servicesdetails';
 import { IndivdualProvider } from '../providers/indivdual/indivdual';
 import { Tecregist2Page } from '../pages/tecregist2/tecregist2';
+import { ShowtechcertPage } from '../pages/showtechcert/showtechcert';
+import { TechcertificatsPage } from '../pages/techcertificats/techcertificats';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');}
@@ -139,7 +142,9 @@ export function createTranslateLoader(http: Http) {
     AdsDetailsPage,
     ServServicesPage,
     ServicesdetailsPage,
-    Tecregist2Page
+    Tecregist2Page,
+    ShowtechcertPage,
+    TechcertificatsPage
   ],
   imports: [
     BrowserModule,
@@ -210,7 +215,9 @@ export function createTranslateLoader(http: Http) {
     AdsDetailsPage,
     ServServicesPage,
     Tecregist2Page,
-    ServicesdetailsPage
+    ServicesdetailsPage,
+    ShowtechcertPage,
+    TechcertificatsPage
   ],
   providers: [
     StatusBar,
@@ -221,6 +228,7 @@ export function createTranslateLoader(http: Http) {
     CommonMediaProvider,
     CommonProvider,
     UserProvider,
+    SocialSharing,
     PersonProvider,
     Geolocation,
     Camera,

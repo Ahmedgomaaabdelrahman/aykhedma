@@ -11,6 +11,7 @@ import {ChatMessage} from "../models/person/chat-message";
 import {ServChatPage} from "../pages/serv-chat/serv-chat";
 import {PersonProvider} from "../providers/person/person";
 import {Person} from "../models/person/person";
+import { PerTechlocationPage } from '../pages/per-techlocation/per-techlocation';
 
 // import { HomePage } from '../pages/home/home';
 
@@ -27,10 +28,10 @@ import {Person} from "../models/person/person";
 })
 export class MyApp {
   public  MainService = MainService;
+  
   rootPage:any = WelcomelanguagePage;
   @ViewChild('nav') nav:NavController;
-
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,public translate : TranslateService ,
+ constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,public translate : TranslateService ,
               public chatService : ChatProvider ,public personService : PersonProvider, public alertCtrl : AlertController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

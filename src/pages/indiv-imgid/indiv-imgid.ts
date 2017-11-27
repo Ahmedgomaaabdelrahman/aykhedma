@@ -34,14 +34,14 @@ addfront(){
     this.commonService.presentLoading("Please Wait ...");
     this.commonMediaService.galleryOrCamera().then((base64:string)=>{ 
     this.commonService.dismissLoading();
-    this.imgfront = base64;
+    this.imgfront = "data:image/png;base64,"+base64;
   }).catch((err)=>console.log(err))
 }
 addback(){
   this.commonService.presentLoading("Please Wait ...");
   this.commonMediaService.galleryOrCamera().then((base64:string)=>{ 
   this.commonService.dismissLoading();
-  this.imgback = base64;
+  this.imgback = "data:image/png;base64,"+base64;
   // this.com.presentToast("basefromno1"+base64);
 }).catch((err)=>console.log(err))
 }

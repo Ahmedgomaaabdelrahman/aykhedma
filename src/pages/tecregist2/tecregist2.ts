@@ -11,6 +11,8 @@ import { IndivImgprofilePage } from '../indiv-imgprofile/indiv-imgprofile';
 import { IndivScedulePage } from '../indiv-scedule/indiv-scedule';
 import { IndividualTech } from '../../models/technician/individual-tech';
 import { Technician } from '../../models/technician/parent-tech/technician';
+import { ShowtechcertPage } from '../showtechcert/showtechcert';
+import { TechcertificatsPage } from '../techcertificats/techcertificats';
 
 @Component({
   selector: 'page-tecregist2',
@@ -44,10 +46,10 @@ goskills(){
   this.navCtrl.push(IndivSkillsPage,{perid:this.personid});
 }
 phonepage(){
-  this.navCtrl.push(IndivPhonePage);
+  this.navCtrl.push(IndivPhonePage,{perid:this.personid});
 }
 certificate(){
-  this.navCtrl.push(IndivCertificatePage,{person:this.person , perid:this.personid});
+  this.navCtrl.push(TechcertificatsPage,{person:this.person , perid:this.personid});
 }
 imgid(){
   this.navCtrl.push(IndivImgidPage);

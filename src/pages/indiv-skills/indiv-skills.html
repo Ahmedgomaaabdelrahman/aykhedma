@@ -14,21 +14,27 @@
         <ion-list>
             <ion-item>
             <ion-label stacked >{{'Skill'|translate}} 1 :</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-select name="skill_id1" [(ngModel)]="skillid1">
+                <ion-option *ngFor="let skill of skills" [value]="skill.id">{{skill.name}}</ion-option>
+            </ion-select>
             </ion-item>
             <ion-item>
             <ion-label  stacked >{{'Skill'|translate}} 2 :</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-select name="skill_id2" [(ngModel)]="skillid2">
+                <ion-option *ngFor="let skill of skills" [value]="skill.id">{{skill.name}}</ion-option>
+              </ion-select>
             </ion-item>
             
             <ion-item>
               <ion-label stacked >{{'Skill'|translate}} 3 :</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-select name="skill_id3" [(ngModel)]="skillid3">
+                <ion-option *ngFor="let skill of skills" [value]="skill.id">{{skill.name}}</ion-option>
+              </ion-select>
             </ion-item>
            
             
             </ion-list>
-    <button ion-button round clear class="confirm">{{'Confirm'|translate}}</button>
+    <button ion-button round clear class="confirm" (click)="done()">{{'Confirm'|translate}}</button>
     
     </ion-content>
     

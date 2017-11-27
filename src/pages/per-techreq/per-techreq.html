@@ -2,7 +2,7 @@
 <ion-header>
     
       <ion-navbar>
-        <ion-title>Request Tochnician</ion-title>
+        <ion-title>{{'Request Technician'|translate}}</ion-title>
       </ion-navbar>
     
     </ion-header>
@@ -10,38 +10,39 @@
     
     <ion-content padding>
     <form>
-      <P class="select">Select Category</P>
+      <P class="select">{{'Select Category'|translate}}</P>
     <ion-item style="margin-top: -20px;">
-      <ion-label  stacked class="label">Item Title</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label  stacked class="label">{{'Item Title'|translate}}</ion-label>
+      <ion-input type="text" [(ngModel)]="techReq.title" name="title"></ion-input>
     </ion-item>
-      <p class="label">item Decscription:</p>
+      <p class="label">{{'item Description:'|translate}}</p>
     <ion-row><ion-col col-3></ion-col>
-              <ion-col col-9><textarea class="txtarea" placeholder=""></textarea></ion-col>
+              <ion-col col-9><textarea class="txtarea" [(ngModel)]="techReq.description" name="description" placeholder=""></textarea></ion-col>
     </ion-row>
     <ion-item>
-      <ion-label  stacked class="label">Phone Number</ion-label>
-      <ion-input type="tel"></ion-input>
+      <ion-label  stacked class="label">{{'Phone Number'|translate}}</ion-label>
+      <ion-input type="tel" [(ngModel)]="techReq.mobile" name="mobile"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label  stacked class="label">E-Mail</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-label  stacked class="label">{{'E-Mail'|translate}}
+      </ion-label>
+      <ion-input type="email" [(ngModel)]="techReq.email" name="email" ></ion-input>
       </ion-item>
     </form>
     <ion-row>
       <ion-col col-4>
-    <img  src="assets/imgs/Artboard – 11.png">
-    <p class="textimg">Add Photo</p>
+    <img  src="assets/imgs/Artboard – 11.png" (click)="addImage()">
+    <p class="textimg">{{'Add Photo'|translate}}</p>
     </ion-col>
     <ion-col col-4>
-    <img src="assets/imgs/Artboard – 12.png">
-    <p class="textimg">Add Video</p>
+    <img src="assets/imgs/Artboard – 12.png" (click)="recordVideo()">
+    <p class="textimg">{{'Add Video'|translate}}</p>
     </ion-col>
     <ion-col col-4>
-    <img src="assets/imgs/Artboard – 13.png">
-    <p class="textimg">Add Audio</p>
+    <img src="assets/imgs/Artboard – 13.png" (click)="recordAudio()">
+    <p class="textimg">{{'Add Audio'|translate}}</p>
     </ion-col>
     </ion-row>
-    <button ion-button clear round class="confirm" (click)="gotechnicians()">Confirm</button>
+    <button ion-button clear round class="confirm" (click)="search()">Confirm</button>
     </ion-content>
     
