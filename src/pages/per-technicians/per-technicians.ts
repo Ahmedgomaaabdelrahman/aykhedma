@@ -12,22 +12,26 @@ import { PerTechratePage } from '../per-techrate/per-techrate';
   templateUrl: 'per-technicians.html',
 })
 export class PerTechniciansPage {
-  public techs : any [] = [] ;
+  public techs : any;
   public tecNo : number ;
+  public alltechs : any [] = [];
   public mainService = MainService;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(this.navParams.data.techs);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerTechniciansPage');
     this.techs = this.navParams.data.techs;
-    this.tecNo = this.techs.length;
+    this.alltechs = this.techs.technician;
+    console.log(this.techs.technician);
+    this.tecNo = this.techs.technician.length;
   }
   gomaptech(item : any){
-    this.navCtrl.push(PerTechratePage,{tech:item, reqid:item.id});
+    this.navCtrl.push(PerTechratePage,{tech:item, reqid:this.techs.request_id});
   }
 
   gomap(){
-    this.navCtrl.push(PerTechlocationPage , {tecNo : this.tecNo ,alltechs : this.techs});
+    this.navCtrl.push(PerTechlocationPage , {tecNo : this.tecNo , alltechs : this.alltechs ,reqid : this.techs.request_id });
   }
 }

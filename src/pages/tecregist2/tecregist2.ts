@@ -58,7 +58,7 @@ goimgprofile(){
   this.navCtrl.push(IndivImgprofilePage);
 }
 goHome(){
-  this.navCtrl.push(IndivScedulePage);
+  this.navCtrl.push(IndivScedulePage , {id:this.personid});
   
 }
 }

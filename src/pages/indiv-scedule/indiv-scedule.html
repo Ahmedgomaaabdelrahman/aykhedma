@@ -18,13 +18,13 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <ion-list *ngIf="requets.lenght > 0">
     <ion-row class="card" *ngFor="let req of requets" (click)="godetails(req)">
       <ion-col col-4>
-        <img src="assets/imgs/power.jpg">
+        <img [src]="mainService.imageUrl+req.request_image[0].image_url">
       </ion-col>
       <ion-col col-8>
-        <p class="cardtit">{{req.title}}</p><p class="dateitem">7/5/2017</p>
+        <p class="cardtit">{{req.title}}</p><p class="dateitem">{{req.created_at | date:'shortDate'}}</p>
        
         <p class="details">
           {{req.description}}
@@ -33,5 +33,9 @@
   </ion-row>
  
   </ion-list>
+
+<p style="font-size:20px;text-align:center">
+  لم يتم طلبك من العملاء الحاليين
+</p>
 
 </ion-content>

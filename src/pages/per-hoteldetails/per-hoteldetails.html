@@ -9,7 +9,7 @@
     
     
     <ion-content padding>
-    <img class="imghead" src="assets/imgs/hotel1.jpg">
+    <img class="imghead" [src]="mainService.imageUrl+req.request_image[0].image_url">
     <ion-card class="firstcard">
    
     <ion-card-content>
@@ -23,21 +23,20 @@
     <p class="cardheader">{{'Images:'|translate}}</p>
     
     <ion-row>
-    <ion-col col-3><img  src="assets/imgs/hotel1.jpg"></ion-col>
-    <ion-col col-3><img  src="assets/imgs/hotel1.jpg"></ion-col>
-    <ion-col col-3><img  src="assets/imgs/hotel1.jpg"></ion-col>
-    <ion-col col-3><img  src="assets/imgs/hotel1.jpg"></ion-col>
+    <ion-col col-3 *ngFor="let img of req.request_image">
+        <img class="cimg" [src]="mainService.imageUrl+img.image_url">
+    </ion-col>
     </ion-row>
     <p class="cardheader">{{'Address:'|translate}}</p>
     <ion-row>
     <ion-col col-10>
-    <!-- <p class="text">  </p>   -->
+    <p class="text"> {{req.person.locations[0].address}} </p>  
     </ion-col>
     <ion-col col-1> <ion-icon class="icons" name="call"></ion-icon></ion-col>    
     <ion-col col-1><ion-icon class="icons" name="mail" (click)="goToChat()"></ion-icon></ion-col>  
     
     </ion-row>     
-    <button ion-button block class="refuse" (click)="refuse()" >رفض الطلب</button>   
+    <button ion-button block class="refuse" (click)="refuse()">رفض الطلب</button>   
     </ion-card-content>
     </ion-card>
     </ion-content>

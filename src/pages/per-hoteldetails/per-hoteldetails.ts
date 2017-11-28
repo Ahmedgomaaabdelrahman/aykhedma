@@ -4,6 +4,7 @@ import { IndivdualProvider } from '../../providers/indivdual/indivdual';
 import { CommonProvider } from '../../providers/common/common';
 import { ServChatPage } from '../serv-chat/serv-chat';
 import { PersonProvider } from '../../providers/person/person';
+import { MainService } from '../../providers/main-service';
 
 /**
  * Generated class for the PerHoteldetailsPage page.
@@ -20,6 +21,7 @@ import { PersonProvider } from '../../providers/person/person';
 export class PerHoteldetailsPage {
  public req : any;
 public person : any;
+ public mainService = MainService;
   constructor(public personService : PersonProvider,public comm:CommonProvider,public ind :IndivdualProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.req = this.navParams.data.req;
     this.person = this.navParams.data.person;

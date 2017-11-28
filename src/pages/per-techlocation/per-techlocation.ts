@@ -1,5 +1,5 @@
 import { PerTechratePage } from './../per-techrate/per-techrate';
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { MainService } from '../../providers/main-service';
@@ -21,16 +21,18 @@ export class PerTechlocationPage {
   public map :any;
   public flag : boolean = false;
   public markers = [];
-  public alltechs : any [] = [] ;
+  public alltechs : any;
   public tecNo : number ;
   public techNow : any;
+  public reqid : any;
+
   public mainService = MainService;
-  constructor(private geolocation: Geolocation,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public zone: NgZone,private geolocation: Geolocation,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     this.alltechs = this.navParams.data.alltechs;
-
+    this.reqid = this.navParams.data.reqid;
     console.log(this.alltechs);
     this.tecNo = this.navParams.data.tecNo;
 
@@ -38,7 +40,7 @@ export class PerTechlocationPage {
     this.loadMap();
   }
   gotechrate(){
-    this.navCtrl.push(PerTechratePage);
+    this.navCtrl.push(PerTechratePage , {tech : this.techNow , reqid:this.reqid});
   }
 
 
@@ -80,21 +82,23 @@ export class PerTechlocationPage {
               
                });
                marker.addListener('click', function(e) {
-                
+                var a = parseFloat(e.latLng.lat()).toFixed(4);
+                console.log(a);
+                var b = parseFloat(e.latLng.lng()).toFixed(4);
+                console.log(b);
+
                 for(var i = 0; i < self.alltechs.length ; i++){
-                  let postech = {lat : self.alltechs[i].lat,lng : self.alltechs[i].lng}
-                    if(marker.pos == postech){
-                          self.techNow = self.alltechs[i];
-                          console.log(self.techNow);
-                          self.flag = true;
-                    }
-                    else{
-                      console.log("GRRRRRRRRRRRRRR");
-                    }
+                  let postech = {lat : self.alltechs[i].lat,lng : self.alltechs[i].lng};
+                  console.log(postech);
+                  if(a == self.alltechs[i].lat && b == self.alltechs[i].lng){
+                    self.techNow = self.alltechs[i];
+                    console.log(self.techNow);
+                    self.flag = true;
+                  }
+                  console.log("latLng "+ a);
+                  console.log("LatLng "+ b);
                 }
                 console.log("GOWAAAAAAAAAAAAA");
-                
-                // console.log(this.flag);
               });
                console.log(pos);
                
@@ -110,6 +114,12 @@ export class PerTechlocationPage {
      // handleLocationError(false, infoWindow, map.getCenter());
     }
   
+
+    
+
+
+
+
 
       // var uluru = {lat:31.2262, lng:29.9567};
       // var map = new google.maps.Map(document.getElementById('map'), {
@@ -161,11 +171,8 @@ export class PerTechlocationPage {
     //   console.log('Error getting location', error);
     // });
   }
-
    
-
-
-  addMarker(LatLng){
+ addMarker(LatLng){
     let marker  = new google.maps.Marker({
       map: this.map,
       animation: google.maps.Animation.DROP,

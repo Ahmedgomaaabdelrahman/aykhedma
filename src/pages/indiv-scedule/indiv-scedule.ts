@@ -5,6 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { IndivdualProvider } from '../../providers/indivdual/indivdual';
 import { PerHoteldetailsPage } from '../per-hoteldetails/per-hoteldetails';
 import { concat } from 'rxjs/observable/concat';
+import { MainService } from '../../providers/main-service';
 
 /**
  * Generated class for the IndivScedulePage page.
@@ -22,8 +23,9 @@ export class IndivScedulePage {
   public requets : any ;
   public id : any;
   public person : any;
+  public mainService = MainService;
   constructor(public indvidual:IndivdualProvider,public navCtrl: NavController, public navParams: NavParams) {
-
+  
   }
 
   ionViewDidLoad() {
@@ -31,11 +33,13 @@ export class IndivScedulePage {
     this.id = this.navParams.data.id;
     this.person = this.navParams.data.person;
 
-    console.log(this.id);
-    this.indvidual.getRequests(this.id).subscribe((res)=>{
-         console.log(res);
-         this.requets = res ;
-    });
+    console.log("Scedual"+this.id);
+    setInterval(function(){
+        this.indvidual.getRequests(this.id).subscribe((res)=>{
+      console.log(res);
+      this.requets = res ;});  
+    }, 1000);
+    
   }
   inbox(){
     this.navCtrl.push(ServRequestsPage);

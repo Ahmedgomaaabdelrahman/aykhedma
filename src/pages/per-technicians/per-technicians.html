@@ -33,7 +33,7 @@
 
 <ion-list>
 
-<ion-item *ngFor="let tech of techs" class="item" (click)="gomaptech(tech)">
+<ion-item *ngFor="let tech of alltechs" class="item" (click)="gomaptech(tech)">
 <img class="imgrate" src="assets/imgs/rate.png">
 <ion-icon class="imgstar" name="star"></ion-icon>
 <span class="ratenumber" *ngIf="tech.rate!=null">{{tech.rate}}</span>
