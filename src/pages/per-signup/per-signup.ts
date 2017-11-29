@@ -58,6 +58,7 @@ export class PerSignupPage {
         this.personService.activePerson = this.personService.preparePersonObj(person);
         this.chatService.attachReceivedChatListener();
         this.commonService.successToast();
+        this.personService.currentUser = person;
         // case user only
         this.navCtrl.push(PerFirsthomePage);
       });

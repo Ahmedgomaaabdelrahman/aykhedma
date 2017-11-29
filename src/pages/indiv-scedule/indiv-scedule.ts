@@ -20,10 +20,11 @@ import { MainService } from '../../providers/main-service';
   templateUrl: 'indiv-scedule.html',
 })
 export class IndivScedulePage {
-  public requets : any ;
+  public requets : any [] = [] ;
   public id : any;
   public person : any;
   public mainService = MainService;
+  public flag : number;
   constructor(public indvidual:IndivdualProvider,public navCtrl: NavController, public navParams: NavParams) {
   
   }
@@ -32,14 +33,19 @@ export class IndivScedulePage {
     console.log('ionViewDidLoad IndivScedulePage');
     this.id = this.navParams.data.id;
     this.person = this.navParams.data.person;
-
-    console.log("Scedual"+this.id);
-    setInterval(function(){
-        this.indvidual.getRequests(this.id).subscribe((res)=>{
-      console.log(res);
-      this.requets = res ;});  
-    }, 1000);
     
+    console.log("Scedual"+this.id);
+    this.indvidual.getRequests(this.id).subscribe((res)=>{
+      console.log(res);
+      this.requets = res ;
+      if(this.requets.length < 1){
+        this.flag = 1;
+      }
+      else{
+        this.flag = 0;
+      }
+    });  
+  
   }
   inbox(){
     this.navCtrl.push(ServRequestsPage);

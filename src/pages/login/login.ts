@@ -43,6 +43,7 @@ export class LoginPage {
       this.personService.FBLogin(new PersonFBCredentials(person.email,this.password)).then(()=>{
         this.chatService.attachReceivedChatListener();
         this.commonService.successToast();
+        this.personService.currentUser = person;
         if(person.type === "1"){
           this.navCtrl.push(PerFirsthomePage);
         }

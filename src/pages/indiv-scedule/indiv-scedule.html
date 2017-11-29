@@ -18,7 +18,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list *ngIf="requets.lenght > 0">
+  <ion-list>
     <ion-row class="card" *ngFor="let req of requets" (click)="godetails(req)">
       <ion-col col-4>
         <img [src]="mainService.imageUrl+req.request_image[0].image_url">
@@ -34,7 +34,7 @@
  
   </ion-list>
 
-<p style="font-size:20px;text-align:center">
+<p *ngIf="flag == 1" style="font-size:20px;text-align:center">
   لم يتم طلبك من العملاء الحاليين
 </p>
 

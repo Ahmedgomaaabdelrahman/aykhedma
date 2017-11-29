@@ -52,7 +52,7 @@
 </ion-row>
 <ion-row>
   <ion-col col-4 *ngFor="let image of salesRequest.images">
-    <img src="data:image/jpeg;base64,{{image}}">
+    <img src="{{image}}">
   </ion-col>
 </ion-row>
 <button [disabled]="!salesRequest.validate()" ion-button clear round class="confirm" (click)="confirm()">{{'Confirm'|translate}}</button>

@@ -86,6 +86,8 @@ import { Tecregist2Page } from '../pages/tecregist2/tecregist2';
 import { ShowtechcertPage } from '../pages/showtechcert/showtechcert';
 import { TechcertificatsPage } from '../pages/techcertificats/techcertificats';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { EditaccountPage } from '../pages/editaccount/editaccount';
+
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');}
@@ -144,7 +146,8 @@ export function createTranslateLoader(http: Http) {
     ServicesdetailsPage,
     Tecregist2Page,
     ShowtechcertPage,
-    TechcertificatsPage
+    TechcertificatsPage,
+    EditaccountPage
   ],
   imports: [
     BrowserModule,
@@ -217,7 +220,8 @@ export function createTranslateLoader(http: Http) {
     Tecregist2Page,
     ServicesdetailsPage,
     ShowtechcertPage,
-    TechcertificatsPage
+    TechcertificatsPage,
+    EditaccountPage
   ],
   providers: [
     StatusBar,

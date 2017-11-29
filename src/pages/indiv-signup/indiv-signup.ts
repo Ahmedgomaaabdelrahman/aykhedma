@@ -96,6 +96,7 @@ export class IndivSignupPage {
       this.personService.activePerson = this.personService.preparePersonObj(person.output);
       this.chatService.attachReceivedChatListener();
       this.commonService.successToast();
+      this.personService.currentUser = person;
       // case user only
       this.navCtrl.push(Tecregist2Page,{personid:person.output.id , person:this.person});
       });

@@ -21,15 +21,15 @@
   
   <ion-content padding>
   
-<ion-row class="rowitem" (click)="youradds()">
-<ion-col col-2>
-<img class="mobile" src="assets/imgs/iPhone 67 – 14.png">
-</ion-col>
-<ion-col>
-<p class="text">Iphone 6s 64G in perfect condition</p>
-</ion-col>
+<ion-row *ngFor="let add of adds" class="rowitem" (click)="youradds(add)">
+  <ion-col col-2>
+    <img class="mobile" [src]="mainService.imageUrl+add.images[0].image_url">
+  </ion-col>
+  <ion-col>
+    <p class="text">{{add.description}}</p>
+  </ion-col>
 </ion-row>
-<ion-row class="rowitem">
+<!-- <ion-row class="rowitem">
 <ion-col col-2>
 <img class="mobile" src="assets/imgs/iPhone 67 – 12.png">
 </ion-col>
@@ -92,7 +92,7 @@
     <ion-col>
     <p class="text">Iphone 6s 64G in perfect condition</p>
     </ion-col>
-    </ion-row>
+    </ion-row> -->
   
   </ion-content>
   

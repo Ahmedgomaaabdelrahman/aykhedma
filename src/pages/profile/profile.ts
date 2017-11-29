@@ -5,6 +5,7 @@ import { ServRequestsPage } from './../serv-requests/serv-requests';
 import { SettingsPage } from './../settings/settings';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
+import { EditaccountPage } from '../editaccount/editaccount';
 
 
 
@@ -27,7 +28,7 @@ export class ProfilePage {
     this.navCtrl.push(ServRequestsPage);
   }
   SignUP(){
-    this.navCtrl.push(PerSignupPage)
+    this.navCtrl.push(EditaccountPage);
   }
   logout(){
     console.log('exit');

@@ -76,6 +76,7 @@ export class ServSignupPage {
       this.personService.activePerson = this.personService.preparePersonObj(person);
       this.chatService.attachReceivedChatListener();
       this.commonService.successToast();
+      this.personService.currentUser = person;
       // case user only
       this.navCtrl.push(ServHomePage,{persotupe:this.person});
       });

@@ -20,11 +20,14 @@ import { IndividualTech } from '../../models/technician/individual-tech';
 @Injectable()
 export class PersonProvider {
   public activePerson :Person = null;
+  
+  public currentUser : any;
 
   public personLoginUrl : string = MainService.baseUrl+"login";
   public getPersonUrl : string = MainService.baseUrl+"getuser/";
-
-
+  public updatePersonUrl : string = MainService.baseUrl+"updatenormaluser/";
+  public updateTechUrl : string = MainService.baseUrl+"updatetechbicion/"; 
+  public getAddsUrl : string = MainService.baseUrl+"getusersadds/";
 
 
   constructor(public http: Http,public afAuth: AngularFireAuth) {
@@ -65,4 +68,32 @@ export class PersonProvider {
     return this.http.get(this.getPersonUrl+uid).map((res) => res.json()).map((res)=> this.preparePersonObj(res));
   }
 
+
+  userUpdate(name,mobile,email,password,img?)
+  {   let user = {
+      name : name ,
+      mobile : mobile ,
+      password : password ,
+      email : email ,
+      profile_image :img
+
+    };
+   return this.http.put(this.updatePersonUrl+this.currentUser.id,user).map((res) => res.json());
+  }
+
+
+  techUpdate(name,mobile,email,password,img)
+  {   let user = {
+      name : name ,
+      mobile : mobile ,
+      password : email ,
+      email : password ,
+      profile_image :img
+
+    };
+   return this.http.put(this.updateTechUrl+this.currentUser.id,user).map((res) => res.json());
+  }
+  getAdds(){
+    return this.http.get(this.getAddsUrl+this.currentUser.id).map((res) => res.json());
+   }
 }

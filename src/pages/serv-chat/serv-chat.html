@@ -20,7 +20,7 @@
   <div *ngFor="let msg of messages">
     <ion-row *ngIf="msg.sender != senderUID">
       <ion-col col-2>
-        <img class="text2" src="assets/imgs/iPhone 67 – 11.png">
+        <img  src="assets/imgs/iPhone 67 – 11.png">
       </ion-col>
       <ion-col col-10 *ngIf="msg.image == null">
         <textarea class="text2" placeholder="">{{msg.msg}}</textarea>
