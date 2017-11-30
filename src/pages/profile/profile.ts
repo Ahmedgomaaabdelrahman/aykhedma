@@ -6,6 +6,10 @@ import { SettingsPage } from './../settings/settings';
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
 import { EditaccountPage } from '../editaccount/editaccount';
+import { PersonProvider } from '../../providers/person/person';
+import { MainService } from '../../providers/main-service';
+import { LoginPage } from '../login/login';
+import { WelcomePage } from '../welcome/welcome';
 
 
 
@@ -14,12 +18,18 @@ import { EditaccountPage } from '../editaccount/editaccount';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
+  public usernow : any ;
+  public mainService = MainService;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public personProvider:PersonProvider,public navCtrl: NavController, public navParams: NavParams) {
+        this.usernow = this.personProvider.currentUser;
+        console.log(this.usernow);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
+    this.usernow = this.personProvider.currentUser;
+    console.log(this.usernow);
   }
   settings(){
     this.navCtrl.push(SettingsPage);
@@ -31,6 +41,8 @@ export class ProfilePage {
     this.navCtrl.push(EditaccountPage);
   }
   logout(){
+    this.personProvider.currentUser = null;
+    this.navCtrl.setRoot(WelcomePage);
     console.log('exit');
   }
   notification(){

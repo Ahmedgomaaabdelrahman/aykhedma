@@ -39,6 +39,10 @@ export class PersonProvider {
   FBLogin(personFBCred : PersonFBCredentials): Promise<any>{
     return this.afAuth.auth.signInWithEmailAndPassword(personFBCred.email , personFBCred.password);
   }
+  FBUpdate(){
+    var user = this.afAuth.auth.currentUser;
+    return user;
+  }
   personLogin(personLoginCred : PersonLoginCred ):Observable<any>{
     let body = {
       mobile : personLoginCred.mobile ,
@@ -69,8 +73,9 @@ export class PersonProvider {
   }
 
 
-  userUpdate(name,mobile,email,password,img?)
-  {   let user = {
+  userUpdate(name,mobile,email,password,img)
+  { 
+    let user = {
       name : name ,
       mobile : mobile ,
       password : password ,
@@ -83,7 +88,8 @@ export class PersonProvider {
 
 
   techUpdate(name,mobile,email,password,img)
-  {   let user = {
+  {   
+    let user = {
       name : name ,
       mobile : mobile ,
       password : email ,

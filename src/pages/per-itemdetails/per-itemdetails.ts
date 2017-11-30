@@ -22,10 +22,12 @@ import { PerSellPage } from '../per-sell/per-sell';
 export class PerItemdetailsPage {
   public catItems : any[] = [];
   public catID : number ;
+  public cname : string;
   public mainService  = MainService ;
   constructor(public navCtrl: NavController, public navParams: NavParams , public userService : UserProvider ,
               public personService : PersonProvider) {
-    this.catID = this.navParams.data ;
+    this.catID = this.navParams.data.categoryID ;
+    this.cname = this.navParams.data.name ;
   }
 
   ionViewDidLoad() {

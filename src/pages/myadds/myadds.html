@@ -22,7 +22,7 @@
   <ion-content padding>
   
 <ion-row *ngFor="let add of adds" class="rowitem" (click)="youradds(add)">
-  <ion-col col-2>
+  <ion-col col-2 *ngIf="add.images.length > 0">
     <img class="mobile" [src]="mainService.imageUrl+add.images[0].image_url">
   </ion-col>
   <ion-col>

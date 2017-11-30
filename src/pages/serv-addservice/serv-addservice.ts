@@ -56,7 +56,7 @@ export class ServAddservicePage {
   addImage(){
     
     this.commonMediaService.galleryOrCamera().then((base64:string)=>{
-      let image = new serviceImg(base64);
+      let image = new serviceImg("data:image/png;base64,"+base64);
       console.log(image);
       this.service.images.push(image);
       console.log(this.service.images);

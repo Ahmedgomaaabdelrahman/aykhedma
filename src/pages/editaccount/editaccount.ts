@@ -4,6 +4,7 @@ import { PersonProvider } from '../../providers/person/person';
 import { CommonProvider } from '../../providers/common/common';
 import { CommonMediaProvider } from '../../providers/common-media/common-media';
 import { MainService } from '../../providers/main-service';
+import { PersonFBCredentials } from '../../models/person/person-firebase-credentials';
 
 
 @Component({
@@ -35,11 +36,29 @@ export class EditaccountPage {
   }).catch((err)=>console.log(err))
 }
   userUpdate(inputs : any){
-    this.personProvider.userUpdate(inputs.name,inputs.mobile,inputs.email,inputs.password,this.imgurl).subscribe((res)=>{
-      console.log(res);
-      this.personProvider.currentUser = res;
+    var user =  this.personProvider.FBUpdate();
+    user.updateEmail(inputs.email).then(()=>{
+      user.updatePassword(inputs.password).then(()=>{
+        if(this.personProvider.currentUser.type == "1" ||this.personProvider.currentUser.type == "2"){
+          this.personProvider.userUpdate(inputs.name,inputs.mobile,inputs.email,inputs.password,this.imgurl).subscribe((res)=>{
+            console.log(res);
+            this.personProvider.currentUser = res;
+          })
+        }
+        else if(this.personProvider.currentUser.type == "3"){
+          this.personProvider.techUpdate(inputs.name,inputs.mobile,inputs.email,inputs.password,this.imgurl).subscribe((res)=>{
+            console.log(res);
+            this.personProvider.currentUser = res;
+          })
+        }
+        
+      });
+      })
+ 
+    
+     
       this.navCtrl.pop();
-    });
+    
   }
 
   

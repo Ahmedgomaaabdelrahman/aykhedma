@@ -58,6 +58,7 @@ export class MyApp {
 
      platform.setDir('rtl', true);
      this.translate.setDefaultLang('ar');
+     this.MainService.lang = 'ar';
   }
   chatMsgReceiveAlert(senderUid : string) {
     let alert = this.alertCtrl.create({

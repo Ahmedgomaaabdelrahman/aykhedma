@@ -44,8 +44,8 @@ export class PerHomePage {
     });
   }
 
-  goitemdetails(categoryID:number){
-    this.navCtrl.push(PerItemdetailsPage,categoryID);
+  goitemdetails(name_ar:string,categoryID:number){
+    this.navCtrl.push(PerItemdetailsPage,{categoryID:categoryID , name : name_ar});
   }
   gosellitems(){
     this.navCtrl.push(PerSellPage);

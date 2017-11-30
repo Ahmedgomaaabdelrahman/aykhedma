@@ -95,7 +95,7 @@ export class IndivdualProvider {
    }
    
    getSkills():Observable<any>{
-    return this.http.get(this.gettechcatUrl).map((res) => res.json());
+    return this.http.get(this.gettechcatUrl+"?lang="+MainService.lang).map((res) => res.json());
   }
   
    connectWtech(reqid , techid){

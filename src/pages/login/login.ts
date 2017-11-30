@@ -46,6 +46,7 @@ export class LoginPage {
         this.personService.currentUser = person;
         if(person.type === "1"){
           this.navCtrl.push(PerFirsthomePage);
+         
         }
         else if(person.type === "2"){
           this.navCtrl.push(ServHomePage);
@@ -57,6 +58,7 @@ export class LoginPage {
         
       }).catch((err)=>console.log(err));
     });
-
+   
+    
   }
 }

@@ -21,6 +21,10 @@ export class MyaddsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyaddsPage');
+    this.person.getAdds().subscribe((res)=>{
+      console.log(res);
+      this.adds = res;
+    });
   }
   youradds(add : any){
     this.navCtrl.push(YouraddsPage,{add : add});

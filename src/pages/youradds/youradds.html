@@ -18,50 +18,67 @@
 </ion-header>
 
   <ion-content padding>
+  <form #f="ngForm"  (ngSubmit)="updateAdd(f.value)">
       <ion-row class="rowitem" (click)="DeleteAdds()">
-          <ion-col col-2>
-          <img class="mobile" src="assets/imgs/iPhone 67 – 14.png">
-          </ion-col>
-          <ion-col>
-          <p class="text">Iphone 6s 64G in perfect condition</p>
-          </ion-col>
-          </ion-row>
-  <form>
-    <P class="select">{{'Select Category'|translate}}</P>
+        <ion-col col-2 *ngIf="Add.images.length > 0">
+         <img class="mobile" [src]="mainService.imageUrl+Add.images[0].image_url">
+        </ion-col>
+        <ion-col>
+         <p class="text">{{Add.title}}</p>
+        </ion-col>
+      </ion-row>
+
+  <ion-item class="select">
+    <ion-label style="width: 30px;min-width: 30px;display: inherit;">{{'Select Category'|translate}}</ion-label>
+    <ion-select   [ngModel]="Add.sales_category_id" name="sales_category_id">
+      <ion-option  *ngFor="let category of salesCategory" [value]="category.id">{{category.name_ar}}</ion-option>
+    </ion-select>
+  </ion-item>
   <ion-item style="margin-top: -20px;">
     <ion-label  stacked class="label">{{'Item Title'|translate}}</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input [ngModel]="Add.title" name="title" type="text"></ion-input>
   </ion-item>
     <p class="label">{{'item Description:'|translate}}</p>
-  <ion-row><ion-col col-3></ion-col>
-            <ion-col col-9><textarea class="txtarea" placeholder=""></textarea></ion-col>
+  <ion-row>
+    <ion-col col-3></ion-col>
+    <ion-col col-9>
+      <textarea [ngModel]="Add.description" name="description" class="txtarea" placeholder=""></textarea>
+    </ion-col>
   </ion-row>
   <ion-item>
     <ion-label  stacked class="label">{{'Mobile Number'|translate}}</ion-label>
-    <ion-input type="tel"></ion-input>
+    <ion-input  [ngModel]="Add.mobile"  name="mobile" type="tel"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label  stacked class="label">{{'E-Mail'|translate}}</ion-label>
-    <ion-input type="email"></ion-input>
+    <ion-input  [ngModel]="Add.email" name="email" type="email"></ion-input>
     </ion-item>
   </form>
   <ion-row>
-    <ion-col col-4>
-  <img  src="assets/imgs/Artboard – 11.png">
-  <p class="textimg">{{'Add Photo'|translate}}</p>
-  </ion-col>
-  <ion-col col-4>
-  <img src="assets/imgs/Artboard – 12.png">
-  <p class="textimg">{{'Add Video'|translate}}</p>
-  </ion-col>
-  <ion-col col-4>
-  <img src="assets/imgs/Artboard – 13.png">
-  <p class="textimg">{{'Add Audio'|translate}}</p>
-  </ion-col>
-  </ion-row>
-  <div>
-  <button ion-button clear round class="confirm">{{'Confirm'|translate}}</button>
-  <button ion-button clear round class="confirm">{{'Delete'|translate}}</button>
-</div>
+    <ion-col col-4 (click)="addImage()">
+      <img  src="assets/imgs/Artboard – 11.png">
+      <p class="textimg">{{'Add Photo'|translate}}</p>
+    </ion-col>
+    <ion-col col-4 (click)="recordVideo()">
+      <img src="assets/imgs/Artboard – 12.png">
+      <p class="textimg">{{'Add Video'|translate}}</p>
+    </ion-col>
+    <ion-col col-4 (click)="recordAudio()">
+      <img src="assets/imgs/Artboard – 13.png">
+      <p class="textimg">{{'Add Audio'|translate}}</p>
+    </ion-col>
+    </ion-row>
+    <ion-row *ngIf="Add.images.length > 0">
+      <ion-col style="text-align:center" col-3 *ngFor="let img of Add.images">
+        <img [src]="mainService.imageUrl+img.image_url">
+        <br>
+        <ion-icon name="close" (click)="deleteImg(img.id)"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <div>
+      <button type="submit" ion-button clear round class="confirm" (click)="updateAdd(f.value)">{{'Confirm'|translate}}</button>
+      <button ion-button clear round class="confirm" (click)="DeleteAdds()">{{'Delete'|translate}}</button>
+    </div>
 </ion-content>
   

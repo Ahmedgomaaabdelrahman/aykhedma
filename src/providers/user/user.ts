@@ -22,10 +22,17 @@ export class UserProvider {
   public getSalesByCatUrl : string = MainService.baseUrl+"getadsbycatid/";
   public getServicesUrl : string = MainService.baseUrl+"servie/";
   public techRequestUrl : string = MainService.baseUrl+"techRequest/";
+
+  public updateItemUrl : string = MainService.baseUrl+"updatesalesitem/";
+  public setImgItemUrl : string = MainService.baseUrl+"insertnewimagesforspicficitem/";
+  public deleteImgItemUrl : string = MainService.baseUrl+"deleteimagefromsalesitem/";
+  public deleteItemUrl : string = MainService.baseUrl+"deleteadds/";
   
+
   constructor(public http: Http) {
     console.log('Hello UserProvider Provider');
   }
+
   register(user : User):Observable<any>{
       let body = {
         name: user.name,
@@ -57,5 +64,31 @@ export class UserProvider {
   searchTech(techreq : TechRequest):Observable<any>{
 
     return this.http.post(this.techRequestUrl,techreq).map((res) => res.json());
+  }
+
+  updateItem(addid,title,description,mobile,email,video_url,audio_url,show,sales_category_id){
+    let add = {
+      title:title,
+      description:description,
+      mobile:mobile,
+      email:email,
+      video_url:video_url,
+      audio_url:audio_url,
+      show:show,
+      sales_category_id:sales_category_id
+      };
+     return this.http.put(this.updateItemUrl+addid,add).map((res) => res.json()); 
+  }
+
+  setNewImg(addid , images : any[]){
+    return this.http.post(this.setImgItemUrl+addid,images).map((res) => res.json());
+  }
+
+  deleteItem(addid){
+    return this.http.delete(this.deleteItemUrl+addid).map((res)=> res.json());
+  }
+
+  deleteItemImg(imgid){
+    return this.http.delete(this.deleteImgItemUrl+imgid).map((res)=> res.json());
   }
 }

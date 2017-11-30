@@ -49,7 +49,7 @@ export class PerSellPage {
   }
   addImage(){
     this.commonMediaService.galleryOrCamera().then((base64:string)=>{
-      this.salesRequest.images.push("data:image/png;base64"+base64);
+      this.salesRequest.images.push("data:image/png;base64,"+base64);
     }).catch((err)=>console.log(err))
   }
   confirm(){

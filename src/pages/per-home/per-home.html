@@ -47,9 +47,10 @@
 </ion-row>
 
 <ion-row  class="rowitems">
-<ion-col col-6 *ngFor="let category of salesCategory" (click)="goitemdetails(category.id)">
+<ion-col col-6 *ngFor="let category of salesCategory" (click)="goitemdetails(category.name_ar,category.id)">
     <img [src]="mainService.imageUrl+category.img">
-    <p>{{category.name_ar}}</p>
+    <p *ngIf="mainService.lang == 'ar'">{{category.name_ar}}</p>
+    <p *ngIf="mainService.lang == 'en'">{{category.name_en}}</p>
 </ion-col>
 </ion-row>
 </ion-list>
