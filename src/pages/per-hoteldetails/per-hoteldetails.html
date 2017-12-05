@@ -9,7 +9,7 @@
     
     
     <ion-content padding>
-    <img class="imghead" [src]="mainService.imageUrl+req.request_image[0].image_url">
+    <img class="imghead" *ngIf="req.request_image.length > 0" [src]="mainService.imageUrl+req.request_image[0].image_url">
     <ion-card class="firstcard">
    
     <ion-card-content>
@@ -24,7 +24,7 @@
     
     <ion-row>
     <ion-col col-3 *ngFor="let img of req.request_image">
-        <img class="cimg" [src]="mainService.imageUrl+img.image_url">
+        <img class="cimg" *ngIf="req.request_image.length > 0" [src]="mainService.imageUrl+img.image_url">
     </ion-col>
     </ion-row>
     <p class="cardheader">{{'Address:'|translate}}</p>
@@ -36,7 +36,7 @@
     <ion-col col-1><ion-icon class="icons" name="mail" (click)="goToChat()"></ion-icon></ion-col>  
     
     </ion-row>     
-    <button ion-button block class="refuse" (click)="refuse()">رفض الطلب</button>   
+    <button ion-button block class="refuse" (click)="refuse()">{{'Refuse Order'|translate}}</button>   
     </ion-card-content>
     </ion-card>
     </ion-content>

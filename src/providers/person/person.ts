@@ -28,7 +28,8 @@ export class PersonProvider {
   public updatePersonUrl : string = MainService.baseUrl+"updatenormaluser/";
   public updateTechUrl : string = MainService.baseUrl+"updatetechbicion/"; 
   public getAddsUrl : string = MainService.baseUrl+"getusersadds/";
-
+  public AboutUrl : string = MainService.baseUrl+"getaboutpolicy";
+  public getTechsUrl : string = MainService.baseUrl+"gettechtorate/"
 
   constructor(public http: Http,public afAuth: AngularFireAuth) {
     console.log('Hello PersonProvider Provider');
@@ -101,5 +102,11 @@ export class PersonProvider {
   }
   getAdds(){
     return this.http.get(this.getAddsUrl+this.currentUser.id).map((res) => res.json());
+   }
+   getAbout(){
+    return this.http.get(this.AboutUrl+"?lang="+MainService.lang).map((res) => res.json());
+   }
+   getMytechs(){
+    return this.http.get(this.getTechsUrl+this.currentUser.id).map((res) => res.json());
    }
 }

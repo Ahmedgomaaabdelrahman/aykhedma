@@ -82,6 +82,7 @@ export class IndivSignupPage {
 
   handlePersonRegister(uid : string ):Observable<any>
   {
+    console.log("USerID"+uid)
     this.person.uid = uid ; 
     this.person.type = Person.IndivTech_MODE;
     console.log(this.person.type);
@@ -105,9 +106,11 @@ export class IndivSignupPage {
   }
 
   addImage(){
-        this.commonService.presentLoading("Please Wait ...");
+        
         this.commonMediaService.galleryOrCamera().then((base64:string)=>{ 
-        this.navCtrl.push(IndivImgprofilePage,{imageurl:"data:image/png;base64,"+base64,person:this.person});
+        this.commonService.presentLoading("Please Wait ...");
+        let img = "data:image/png;base64,"+base64;
+        this.navCtrl.push(IndivImgprofilePage,{imageurl:img,person:this.person});
         this.commonService.dismissLoading();
         // this.com.presentToast("basefromno1"+base64);
       }).catch((err)=>console.log(err))

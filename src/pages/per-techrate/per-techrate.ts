@@ -21,6 +21,7 @@ import { PerFirsthomePage } from '../per-firsthome/per-firsthome';
 })
 export class PerTechratePage {
   public techss : any;
+  public rateNo:number=0;
   public reqid : any;
   public mainService = MainService;
   constructor(public com : CommonProvider,public tech : IndivdualProvider,public navCtrl: NavController, public navParams: NavParams) {

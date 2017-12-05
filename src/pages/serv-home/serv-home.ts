@@ -5,6 +5,8 @@ import { ServAddservicePage } from './../serv-addservice/serv-addservice';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Person } from '../../models/person/person';
+import { PersonProvider } from '../../providers/person/person';
+import { WelcomePage } from '../welcome/welcome';
 
 /**
  * Generated class for the ServHomePage page.
@@ -19,7 +21,7 @@ import { Person } from '../../models/person/person';
   templateUrl: 'serv-home.html',
 })
 export class ServHomePage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public personProvider:PersonProvider,public navCtrl: NavController, public navParams: NavParams) {
     // switch (this.user.type){
     //   case Person.USER_MODE : {this.typeuser = "ss"};
     //   case Person.ServProv_MODE : {this.typeuser = "servProvider"};
@@ -46,5 +48,10 @@ export class ServHomePage {
   }
   settings(){
     this.navCtrl.push(SettingsPage);
+  }
+  logout(){
+    this.personProvider.currentUser = null;
+    this.navCtrl.setRoot(WelcomePage);
+    console.log('exit');
   }
 }

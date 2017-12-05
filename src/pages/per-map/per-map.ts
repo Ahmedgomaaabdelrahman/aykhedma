@@ -43,10 +43,11 @@ export class PerMapPage {
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-      google.maps.event.addListener(this.map, 'click', (event) => {
-        this.setMapOnAll(null);
-        this.addMarker(event.latLng);
-      });
+      this.addMarker(latLng);
+      // google.maps.event.addListener(this.map, 'click', (event) => {
+      //   this.setMapOnAll(null);
+      //   this.addMarker(event.latLng);
+      // });
       this.addMarker(this.map.getCenter());
     }).catch((error) => {
       console.log('Error getting location', error);
@@ -61,7 +62,7 @@ export class PerMapPage {
     });
     this.lat = LatLng.lat() ;
     this.lng = LatLng.lng() ;
-    let content = "<h4>Here</h4>";
+    let content = "<h6>Here</h6>";
     //this.addInfoWindow(marker, content);
     let infoWindow = new google.maps.InfoWindow({
       content: content

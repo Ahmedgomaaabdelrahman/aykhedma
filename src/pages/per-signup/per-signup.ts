@@ -46,11 +46,10 @@ export class PerSignupPage {
     });
   }
   handlePersonRegister(uid : string ):Observable<any>
-  {
+  {console.log("USerID"+uid);
     this.person.uid = uid ;
-    switch (this.person.type){
-      case Person.USER_MODE : return this.userService.register(this.person);
-    }
+    console.log(this.person);
+    return this.userService.register(this.person);   
   }
   confirm(){
     this.personService.FBRegister(new PersonFBCredentials(this.person.email,this.person.password)).then(()=>{

@@ -23,11 +23,13 @@ export class TechcertificatsPage {
     console.log('ionViewDidLoad TechcertificatsPage');
   }
   addImage(){
-    this.com.presentLoading("Please Wait ...");
+   
     this.commonMediaService.galleryOrCamera().then((base64:string)=>{ 
-    this.com.dismissLoading();
-    this.navCtrl.push(ShowtechcertPage,{imageurl:"data:image/png;base64,"+base64,person:this.person,perid:this.perid});
+      this.com.presentLoading("Please Wait ...");
+      let img = "data:image/png;base64,"+base64;
+    this.navCtrl.push(ShowtechcertPage,{imageurl:img,person:this.person,perid:this.perid});
     // this.com.presentToast("basefromno1"+base64);
+    this.com.dismissLoading();
   }).catch((err)=>console.log(err))
 }
 confirm(){

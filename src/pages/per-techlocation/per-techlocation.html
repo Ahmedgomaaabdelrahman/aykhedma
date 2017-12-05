@@ -37,8 +37,8 @@
 <ion-item  *ngIf="flag" class="item" (click)="gotechrate()">
     <img class="imgrate" src="assets/imgs/rate.png">
     <ion-icon class="imgstar" name="star"></ion-icon>
-    <!-- <span *ngIf="techNow.rate" class="ratenumber">{{techNow.rate}}</span> -->
-    <span class="ratenumber">0</span>
+    <span *ngIf="techNow.rate" class="ratenumber">{{techNow.rate}}</span>
+    <span *ngIf="techNow.rate==null" class="ratenumber">0</span>
     <ion-avatar item-start>
     <img class="techimg" [src]="mainService.imageUrl+techNow.profile_image">
     </ion-avatar>

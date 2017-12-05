@@ -20,18 +20,26 @@ export class EditaccountPage {
               public personProvider:PersonProvider,
               public navCtrl: NavController, 
               public navParams: NavParams) {
-                this.imgurl = this.mainService.imageUrl+this.personProvider.currentUser.profile_image;
+               
   }
 
   ionViewDidLoad() {
     console.log(this.personProvider.currentUser);
     console.log('ionViewDidLoad EditaccountPage');
+    if(this.personProvider.currentUser.type == "1" || this.personProvider.currentUser.type == "2"){
+      this.imgurl = this.mainService.imageUrl+this.personProvider.currentUser.profile_image;      
+    }
+    else if(this.personProvider.currentUser.type == "3"){
+      this.imgurl = this.mainService.imageUrl+this.personProvider.currentUser.technation[0].indvudal_tech[0].profile_image;      
+    }
   }
   addImage(){
-    this.com.presentLoading("Please Wait ...");
+   
     this.commonMediaService.galleryOrCamera().then((base64:string)=>{ 
-    this.com.dismissLoading();
+    this.com.presentLoading("Please Wait ...");
     this.imgurl = "data:image/png;base64,"+base64;
+    this.com.dismissLoading();
+    
     // this.com.presentToast("basefromno1"+base64);
   }).catch((err)=>console.log(err))
 }

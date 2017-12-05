@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>editaccount</ion-title>
+    <ion-title>{{'Edit Profile'|translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -20,6 +20,7 @@
       src="assets/imgs/iPhone 67 – 11.png">
     <img *ngIf="personProvider.currentUser.profile_image"height="60px" width="60px"name="image"
       src="{{imgurl}}">
+  
     <!-- <img height="60px" width="60px" src="assets/imgs/iPhone 67 – 11.png" alt=""> -->
   </div>
   <ion-item>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {  NavController, NavParams } from 'ionic-angular';
+import { PersonProvider } from '../../providers/person/person';
 
 /**
  * Generated class for the TermsPage page.
@@ -14,12 +15,18 @@ import {  NavController, NavParams } from 'ionic-angular';
   templateUrl: 'terms.html',
 })
 export class TermsPage {
+ public terms :any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private  personService :PersonProvider,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TermsPage');
+    this.personService.getAbout().subscribe((res)=>{
+      this.terms = res.policy;
+      console.log(res);
+      console.log(this.terms);
+    });
   }
 
 }

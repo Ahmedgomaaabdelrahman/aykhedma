@@ -18,8 +18,15 @@
 
 <ion-content padding>
 <ion-list>
+
+
   <ion-row *ngIf="usernow.profile_image != null">
-    <img class="prorileimg" [src]="mainService.imageUrl+usernow.profile_image">
+    <img class="prorileimg" *ngIf="usernow.type == '3'" height="60px" width="60px"name="image"
+    [src]="mainService.imageUrl+usernow.technation[0].indvudal_tech[0].profile_image">
+
+
+
+    <img class="prorileimg" *ngIf="usernow.type == '1'" [src]="mainService.imageUrl+usernow.profile_image">
   </ion-row>
   <ion-row *ngIf="usernow.profile_image == null">
     <img class="prorileimg" src="assets/imgs/iPhone 67 – 11.png"> 
@@ -39,20 +46,22 @@
   <img class="itemimg" src="assets/imgs/profile-4.png" (click)="SignUP()">
   <p>{{'Edit Profile'|translate}}</p>
 </ion-col>
+
+<ion-col col-6 class="colimg">
+  <img class="itemimg" src="assets/imgs/profile-5.png" (click)="logout()">
+  <p>{{'Sign Out'|translate}}</p>
+</ion-col>
+
+
+
+<ion-col col-6 class="colimg" *ngIf="usernow.type == '2'">
+  <img class="itemimg" src="assets/imgs/profile-3.png" (click)="notification()">
+  <p>{{'Notifications'|translate}}</p>
+</ion-col>
 </ion-row>
 
-<ion-row class="firstrow">
-  <ion-col col-6 class="colimg">
-    <img class="itemimg" src="assets/imgs/profile-5.png" (click)="logout()">
-    <p>{{'Sign Out'|translate}}</p>
-  </ion-col>
+<!-- <ion-row class="firstrow">
 
-  
-
-  <ion-col col-6 class="colimg" *ngIf="usernow.type == '2'">
-    <img class="itemimg" src="assets/imgs/profile-3.png" (click)="notification()">
-    <p>{{'Notifications'|translate}}</p>
-  </ion-col>
-</ion-row>
+</ion-row> -->
 </ion-list>
 </ion-content>

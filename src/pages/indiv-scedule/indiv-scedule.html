@@ -21,7 +21,8 @@
   <ion-list>
     <ion-row class="card" *ngFor="let req of requets" (click)="godetails(req)">
       <ion-col col-4>
-        <img [src]="mainService.imageUrl+req.request_image[0].image_url">
+        
+        <img *ngIf="req.request_image.length > 0" [src]="mainService.imageUrl+req.request_image[0].image_url">
       </ion-col>
       <ion-col col-8>
         <p class="cardtit">{{req.title}}</p><p class="dateitem">{{req.created_at | date:'shortDate'}}</p>

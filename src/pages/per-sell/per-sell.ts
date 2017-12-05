@@ -53,8 +53,9 @@ export class PerSellPage {
     }).catch((err)=>console.log(err))
   }
   confirm(){
-    this.commonService.presentLoading("Please Wait ...");
+  
       this.userService.setItem(this.salesRequest).subscribe((res)=>{
+        this.commonService.presentLoading("Please Wait ...");
         if(res.State == "202"){
           this.commonService.successToast();
           this.commonService.dismissLoading();

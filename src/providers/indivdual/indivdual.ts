@@ -26,7 +26,7 @@ export class IndivdualProvider {
   public gettechcatUrl : string = MainService.baseUrl+"gettechcat";
   public conwithtechUrl : string = MainService.baseUrl+"connectwithtech/";
   public myRequestsUrl : string = MainService.baseUrl+"myrequest/";
-  
+  public rateUrl : string = MainService.baseUrl+"ratetechnation";
   constructor(public http: Http) {
     console.log('Hello IndivdualProvider Provider');
   }
@@ -103,5 +103,13 @@ export class IndivdualProvider {
    }
    getRequests(techid){
     return this.http.get(this.myRequestsUrl+techid).map((res) => res.json());
+   }
+   rating(tecid , uid , rate){
+     let body = {
+      technician_id: tecid,
+      user_id : uid,
+      rate: rate
+     };
+    return this.http.post(this.rateUrl,body).map((res) => res.json());
    }
 }

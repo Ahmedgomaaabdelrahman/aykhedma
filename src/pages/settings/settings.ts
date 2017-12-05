@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams,Platform } from 'ionic-angular';
 import {TranslateService} from "@ngx-translate/core";
 import {MainService} from "../../providers/main-service";
+import { RatemytechsPage } from '../ratemytechs/ratemytechs';
+import { PersonProvider } from '../../providers/person/person';
+import { WelcomePage } from '../welcome/welcome';
 
 
 @Component({
@@ -16,7 +19,8 @@ export class SettingsPage {
   public toggleStatus:any;
   public MainService : MainService = MainService ;
   
-  constructor(public navCtrl: NavController,
+  constructor(public personService : PersonProvider,
+              public navCtrl: NavController,
               public navParams: NavParams,
               private translate: TranslateService,
               public platform: Platform) {
@@ -49,5 +53,13 @@ export class SettingsPage {
       console.log(type);
       console.log("English");
     }
+  }
+  gotoTechs(){
+    this.navCtrl.push(RatemytechsPage);
+  }
+  logout(){
+    this.personService.currentUser = null;
+    this.navCtrl.setRoot(WelcomePage);
+    console.log('exit');
   }
 }

@@ -50,9 +50,9 @@ export class IndivScedulePage {
   inbox(){
     this.navCtrl.push(ServRequestsPage);
   }
-  // profile(){
-  //   this.navCtrl.push(PerHoteldetailsPage);
-  // }
+  profile(){
+    this.navCtrl.push(ProfilePage);
+  }
   godetails(req){
     console.log(req);
     this.navCtrl.push(PerHoteldetailsPage,{req : req , person : req.person});

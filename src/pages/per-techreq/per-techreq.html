@@ -10,12 +10,12 @@
     
     <ion-content padding>
     <form>
-      <P class="select">{{'Select Category'|translate}}</P>
+      <!-- <P class="select">{{'Select Category'|translate}}</P> -->
     <ion-item style="margin-top: -20px;">
-      <ion-label  stacked class="label">{{'Item Title'|translate}}</ion-label>
+      <ion-label  stacked class="label">{{'Problem Title'|translate}}</ion-label>
       <ion-input type="text" [(ngModel)]="techReq.title" name="title"></ion-input>
     </ion-item>
-      <p class="label">{{'item Description:'|translate}}</p>
+      <p class="label">{{'Problem Description'|translate}}</p>
     <ion-row><ion-col col-3></ion-col>
               <ion-col col-9><textarea class="txtarea" [(ngModel)]="techReq.description" name="description" placeholder=""></textarea></ion-col>
     </ion-row>
@@ -43,6 +43,6 @@
     <p class="textimg">{{'Add Audio'|translate}}</p>
     </ion-col>
     </ion-row>
-    <button ion-button clear round class="confirm" (click)="search()">Confirm</button>
+    <button ion-button clear round class="confirm" (click)="search()">{{'Confirm'|translate}}</button>
     </ion-content>
     

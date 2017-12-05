@@ -2,7 +2,7 @@
 <ion-header>
 
 <ion-navbar>
-<ion-title>Rate Technician</ion-title>
+<ion-title>{{'Rate Technician'|translate}}</ion-title>
 </ion-navbar>
 
 </ion-header>
@@ -10,27 +10,33 @@
 
 <ion-content padding>
 <ion-row class="rowstar">
-    <ion-icon class="star" name="star"></ion-icon>
-    <ion-icon class="star" name="star"></ion-icon>
-    <ion-icon class="star" name="star"></ion-icon>
-    <ion-icon class="star" name="star"></ion-icon>
-    <ion-icon class="star" name="ios-star-outline"></ion-icon>
+    <ion-icon *ngIf="techss.rate>=1" name="star"></ion-icon>
+    <ion-icon *ngIf="techss.rate>=2" name="star"></ion-icon>
+    <ion-icon *ngIf="techss.rate>=3" name="star"></ion-icon>
+    <ion-icon *ngIf="techss.rate>=4" name="star"></ion-icon>
+    <ion-icon *ngIf="techss.rate>=5" name="star"></ion-icon>
+    <ion-icon *ngIf="techss.rate%1!=0" name="star-half"></ion-icon>
+    <ion-icon *ngIf="techss.rate==0" name="star-outline"></ion-icon>
+    <ion-icon *ngIf="techss.rate<=1" name="star-outline"></ion-icon>
+    <ion-icon *ngIf="techss.rate<=2" name="star-outline"></ion-icon>
+    <ion-icon *ngIf="techss.rate<=3" name="star-outline"></ion-icon>
+    <ion-icon *ngIf="techss.rate<=4" name="star-outline"></ion-icon>
 </ion-row>
 <ion-list>
 <ion-item class="item" >
 <img class="imgrate" src="assets/imgs/rate.png">
 <ion-icon class="imgstar" name="star"></ion-icon>
-<span class="ratenumber" *ngIf="tech.rate!=null">{{techss.rate}}</span>
-<span class="ratenumber" *ngIf="tech.rate==null">0</span>
+<span class="ratenumber" *ngIf="techss.rate!=null">{{techss.rate}}</span>
+<span class="ratenumber" *ngIf="techss.rate==null">0</span>
 <ion-avatar item-start>
 <img class="techimg" [src]="mainService.imageUrl+techss.profile_image">
 </ion-avatar>
 <h2>{{techss.name}}</h2>
 <!-- <h3>Individual</h3> -->
-<p>{{techss.available_hours}}</p>
+<p>{{techss.available_hours}}hr</p>
 <!-- <img class="flag" src="assets/imgs/flag.jpg"> -->
 </ion-item>
-<button ion-button round clear class="confirm" (click)="confirm()">Confirm</button>
+<button ion-button round clear class="confirm" (click)="confirm()">{{'Confirm'|translate}}</button>
 
 </ion-list>
 </ion-content>

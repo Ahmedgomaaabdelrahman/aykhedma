@@ -73,11 +73,12 @@ page-per-techrate {
         width: 60%;
         background-color: #F3F3F3 !important;
         box-shadow: 0 3px 10px rgba(128, 128, 128, 0.27);
-    
-    
-    
-    
-    
-    
+     }
+
+     ion-icon[name='star']{
+        color:orange;
+    }
+    ion-icon[name='star-outline']{
+        color:orange;
     }
 }

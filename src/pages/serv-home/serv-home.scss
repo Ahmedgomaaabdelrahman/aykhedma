@@ -2,6 +2,9 @@ page-serv-home {
 .content{
     background-color: $color-background2;
 }
+.back-button.show-back-button {
+    display: none !important;
+}
 .toolbar-title{
     color: rgba(66, 66, 66, 0.67);
     font-size: 1.7rem;
