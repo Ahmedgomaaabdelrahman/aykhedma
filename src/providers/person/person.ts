@@ -21,7 +21,7 @@ import { IndividualTech } from '../../models/technician/individual-tech';
 export class PersonProvider {
   public activePerson :Person = null;
   
-  public currentUser : any;
+  public currentUser : any = null;
 
   public personLoginUrl : string = MainService.baseUrl+"login";
   public getPersonUrl : string = MainService.baseUrl+"getuser/";

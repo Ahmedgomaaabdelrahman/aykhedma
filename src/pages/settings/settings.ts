@@ -9,6 +9,7 @@ import {MainService} from "../../providers/main-service";
 import { RatemytechsPage } from '../ratemytechs/ratemytechs';
 import { PersonProvider } from '../../providers/person/person';
 import { WelcomePage } from '../welcome/welcome';
+import { CommonProvider } from "../../providers/common/common";
 
 
 @Component({
@@ -23,7 +24,8 @@ export class SettingsPage {
               public navCtrl: NavController,
               public navParams: NavParams,
               private translate: TranslateService,
-              public platform: Platform) {
+              public platform: Platform,
+              public comm:CommonProvider,) {
   }
 
   ionViewDidLoad() {
@@ -36,7 +38,14 @@ export class SettingsPage {
     this.navCtrl.push(ServRequestsPage);
   }
   profile(){
-    this.navCtrl.push(ProfilePage);
+    if(this.personService.currentUser == null){
+       
+       this.comm.presentToast("يجب التسجيل اولا");
+      this.navCtrl.push(WelcomePage);
+    }
+    else{
+      this.navCtrl.push(ProfilePage);
+    }
   }
   terms(){ this.navCtrl.push(TermsPage);}
   Change_Toggle(type) {
@@ -55,7 +64,16 @@ export class SettingsPage {
     }
   }
   gotoTechs(){
-    this.navCtrl.push(RatemytechsPage);
+
+    if(this.personService.currentUser == null){
+       
+       this.comm.presentToast("يجب التسجيل اولا");
+      this.navCtrl.push(WelcomePage);
+    }
+    else{
+     this.navCtrl.push(RatemytechsPage);
+    }
+    
   }
   logout(){
     this.personService.currentUser = null;

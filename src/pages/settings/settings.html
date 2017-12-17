@@ -7,7 +7,7 @@
         <ion-icon class="icon" name="ios-person-outline" (click)="profile()"></ion-icon>
     </ion-col>
     <ion-col col-2>
-        <ion-icon class="icon" name="mail" (click)="notification()"></ion-icon>
+        <!--<ion-icon class="icon" name="mail" (click)="notification()"></ion-icon>-->
     </ion-col>
     <ion-col col-8 class="titlename">
       {{'Settings'|translate}}
@@ -29,8 +29,8 @@
         </ion-item>
   <ion-item (click)="about()">{{'About'|translate}}</ion-item>
   <ion-item (click)="terms()">{{'Terms And Conditions'|translate}}</ion-item>
-  <ion-item (click)="gotoTechs()">{{'Rate Technitions'|translate}}</ion-item>
-  <ion-item (click)="logout()">{{'Sign Out'|translate}}</ion-item>
+  <ion-item *ngIf="personService.currentuser != null " (click)="gotoTechs()">{{'Rate Technitions'|translate}}</ion-item>
+  <ion-item *ngIf="personService.currentuser != null " (click)="logout()">{{'Sign Out'|translate}}</ion-item>
 
 </ion-list>
 </ion-content>

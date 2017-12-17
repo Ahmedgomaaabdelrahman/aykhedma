@@ -1,3 +1,4 @@
+import { WelcomePage } from './../welcome/welcome';
 import { ServRequestsPage } from './../serv-requests/serv-requests';
 import { ProfilePage } from './../profile/profile';
 import { SettingsPage } from './../settings/settings';
@@ -7,7 +8,8 @@ import {  NavController, NavParams } from 'ionic-angular';
 import {ServChatPage} from "../serv-chat/serv-chat";
 import {User} from "../../models/user/user";
 import {UserProvider} from "../../providers/user/user";
-import {PersonProvider} from "../../providers/person/person";
+import { PersonProvider } from "../../providers/person/person";
+import { CommonProvider } from "../../providers/common/common";
 
 /**
  * Generated class for the PerFirsthomePage page.
@@ -23,7 +25,7 @@ import {PersonProvider} from "../../providers/person/person";
 })
 export class PerFirsthomePage {
   public specialAdds : any[] = [] ;
-  constructor(public navCtrl: NavController, public navParams: NavParams ,
+  constructor(public comm:CommonProvider,public navCtrl: NavController, public navParams: NavParams,
               public userService : UserProvider , public personService: PersonProvider) {
   }
 
@@ -40,7 +42,16 @@ export class PerFirsthomePage {
     this.navCtrl.push(SettingsPage);
   }
   editprofile(){
-    this.navCtrl.push(ProfilePage);
+    if(this.personService.currentUser == null){
+       
+      this.comm.presentToast("يجب التسجيل اولا");
+      this.navCtrl.push(WelcomePage);
+    }
+    else{
+      this.navCtrl.push(ProfilePage);
+    }
+       
+      
   }
   goinbox(){
     this.navCtrl.push(ServRequestsPage);

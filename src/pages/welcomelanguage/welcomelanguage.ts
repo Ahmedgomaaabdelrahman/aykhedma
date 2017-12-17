@@ -1,3 +1,4 @@
+import { PerHomePage } from './../per-home/per-home';
 import { MyaddsPage } from './../myadds/myadds';
 import { WelcomePage } from './../welcome/welcome';
 import { Component } from '@angular/core';
@@ -25,11 +26,11 @@ export class WelcomelanguagePage {
     console.log('ionViewDidLoad WelcomelanguagePage');
   }
   Arabic(){
-    this.navCtrl.push(WelcomePage);
+    this.navCtrl.push(PerHomePage);
   }
   English(){
     MainService.lang = 'en';
-    this.navCtrl.push(WelcomePage);
+    this.navCtrl.push(PerHomePage);
     
   }
 }

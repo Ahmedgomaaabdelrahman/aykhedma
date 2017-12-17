@@ -6,6 +6,8 @@ import {ServChatPage} from "../serv-chat/serv-chat";
 import {PersonProvider} from "../../providers/person/person";
 import {AdsDetailsPage} from "../ads-details/ads-details";
 import { PerSellPage } from '../per-sell/per-sell';
+import { CommonProvider } from "../../providers/common/common";
+import { WelcomePage } from "../welcome/welcome";
 
 /**
  * Generated class for the PerItemdetailsPage page.
@@ -25,7 +27,7 @@ export class PerItemdetailsPage {
   public cname : string;
   public mainService  = MainService ;
   constructor(public navCtrl: NavController, public navParams: NavParams , public userService : UserProvider ,
-              public personService : PersonProvider) {
+              public personService : PersonProvider,public comm:CommonProvider,) {
     this.catID = this.navParams.data.categoryID ;
     this.cname = this.navParams.data.name ;
   }
@@ -38,13 +40,28 @@ export class PerItemdetailsPage {
     });
   }
   goToChat(person : any){
+      if(this.personService.currentUser == null){
+       
+       this.comm.presentToast("يجب التسجيل اولا");
+      this.navCtrl.push(WelcomePage);
+    }
+    else{
     this.navCtrl.push(ServChatPage,this.personService.preparePersonObj(person));
+    }
   }
   goToAddDetails(item : any){
     this.navCtrl.push(AdsDetailsPage,item);
   }
   addNew(){
-    this.navCtrl.push(PerSellPage);
+    if(this.personService.currentUser == null){
+       
+       this.comm.presentToast("يجب التسجيل اولا");
+      this.navCtrl.push(WelcomePage);
+    }
+    else{
+      this.navCtrl.push(PerSellPage);
+    }
+    
   }
 
 }
