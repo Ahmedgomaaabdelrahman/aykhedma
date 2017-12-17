@@ -14,6 +14,9 @@ import { MainService } from '../../providers/main-service';
 import { UserProvider } from '../../providers/user/user';
 import { PerItemdetailsPage } from '../per-itemdetails/per-itemdetails';
 import { ServServicesPage } from '../serv-services/serv-services';
+import { PersonProvider } from "../../providers/person/person";
+import { CommonProvider } from "../../providers/common/common";
+import { WelcomePage } from "../welcome/welcome";
 
 /**
  * Generated class for the PerHomePage page.
@@ -30,7 +33,7 @@ import { ServServicesPage } from '../serv-services/serv-services';
 export class PerHomePage {
   public salesCategory : any[] = [] ;
   public mainService = MainService ;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public userService : UserProvider) {
+  constructor(public comm:CommonProvider,public navCtrl: NavController,public personService: PersonProvider, public navParams: NavParams,public userService : UserProvider) {
     for (let i = 0; i < 30; i++) {
       this.salesCategory.push( this.salesCategory.length );
     }
@@ -51,7 +54,15 @@ export class PerHomePage {
     this.navCtrl.push(PerSellPage);
   }
   gotechnicians(){
-    this.navCtrl.push(PerTechcatPage);
+     if(this.personService.currentUser == null){
+      this.comm.presentToast("يجب التسجيل اولا");
+      this.navCtrl.push(WelcomePage);
+    }
+    else{
+       this.navCtrl.push(PerTechcatPage);
+    }
+
+   
   }
   gorealestate(){
     this.navCtrl.push(PerRealestatePage);
@@ -69,7 +80,13 @@ export class PerHomePage {
     this.navCtrl.push(SettingsPage);
   }
   editprofile(){
-    this.navCtrl.push(ProfilePage);
+    if(this.personService.currentUser == null){
+      this.comm.presentToast("يجب التسجيل اولا");
+      this.navCtrl.push(WelcomePage);
+    }
+    else{
+      this.navCtrl.push(ProfilePage);
+    }
   }
   goinbox(){
     this.navCtrl.push(ServRequestsPage);

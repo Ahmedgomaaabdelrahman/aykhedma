@@ -4,6 +4,9 @@ import { UserProvider } from '../../providers/user/user';
 import { ServChatPage } from '../serv-chat/serv-chat';
 import { PersonProvider } from '../../providers/person/person';
 import { MainService } from '../../providers/main-service';
+import { CommonProvider } from "../../providers/common/common";
+import { WelcomePage } from "../welcome/welcome";
+import { PerTechcatPage } from "../per-techcat/per-techcat";
 
 
 @Component({
@@ -14,7 +17,7 @@ export class ServicesdetailsPage {
   public catid : any;
   public services : any [] = [];
   public mainService  = MainService;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public userService : UserProvider,public personService : PersonProvider) {
+  constructor(public comm:CommonProvider,public navCtrl: NavController, public navParams: NavParams,public userService : UserProvider,public personService : PersonProvider) {
       this.catid = this.navParams.get('categoryID');
       console.log(this.catid);
   }
@@ -30,7 +33,15 @@ export class ServicesdetailsPage {
   }
 
   goToChat(person : any){
-    this.navCtrl.push(ServChatPage,this.personService.preparePersonObj(person));
+
+    if(this.personService.currentUser == null){
+      this.comm.presentToast("يجب التسجيل اولا");
+      this.navCtrl.push(WelcomePage);
+    }
+    else{
+       this.navCtrl.push(ServChatPage,this.personService.preparePersonObj(person));
+    }
+    
   }
   
    
