@@ -16,9 +16,13 @@
       <ion-option  *ngFor="let category of salesCategory" [value]="category.id">{{category.name_ar}}</ion-option>
     </ion-select>
   </ion-item>
-<ion-item style="margin-top: -20px;">
+<ion-item>
   <ion-label  stacked class="label">{{'Item Title'|translate}}</ion-label>
   <ion-input [(ngModel)]="salesRequest.title" name="title" type="text"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label  stacked class="label">{{'Item Price'|translate}}</ion-label>
+  <ion-input [(ngModel)]="salesRequest.price" name="price" type="number"></ion-input>
 </ion-item>
   <p class="label">{{'item Description:'|translate}}</p>
 <ion-row>

@@ -33,9 +33,12 @@ page-servicesdetails {
         padding-right: 5px;
     }
     .row{
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: 0 0 10px lightgrey;
-        margin-top: 10px;
+            width: 90%;
+            background-color: white;
+            border-radius: 15px;
+            -webkit-box-shadow: 0 0 10px lightgrey;
+            box-shadow: 0 0 10px lightgrey;
+            margin-top: 10px;
+            margin: 20px auto 0;
     }
 }

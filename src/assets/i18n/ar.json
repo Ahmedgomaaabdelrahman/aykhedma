@@ -1,5 +1,5 @@
 {
-  "Sign In":"تسجبل الدخول",
+  "Sign In":"تسجيل الدخول",
   "Sign Up":"تسجيل عضوية",
   "Welcome to":"مرحبا بكم في",
   "any Services":"أي خدمة",
@@ -19,6 +19,7 @@
   "Settings":"الاعدادات",
   "Language":"اللغة",
   "About":"عن أي خدمة",
+  "Terms":"الشروط",
   "Terms And Conditions":"الآحكام و الشروط",
   "Sign Out":"تسجيل خروج",
   "Service Requests":"طلبات الخدمة",
@@ -126,7 +127,8 @@
   "Problem Description":"تفاصيل المشكله",
   "Purchase ,Sell ,fix it":"بيع واشترى وصلح",
   "You were as numerous as the stars":"كانك نجم فى",
-  "of the sky":"السماء"
+  "of the sky":"السماء",
+  "Item Price":"سعر المنتج"
 
 
 
