@@ -12,6 +12,7 @@ import {ServChatPage} from "../pages/serv-chat/serv-chat";
 import {PersonProvider} from "../providers/person/person";
 import {Person} from "../models/person/person";
 import { PerTechlocationPage } from '../pages/per-techlocation/per-techlocation';
+import { PerHomePage } from '../pages/per-home/per-home';
 
 // import { HomePage } from '../pages/home/home';
 
@@ -29,7 +30,7 @@ import { PerTechlocationPage } from '../pages/per-techlocation/per-techlocation'
 export class MyApp {
   public  MainService = MainService;
   
-  rootPage:any = WelcomelanguagePage;
+  rootPage:any = PerHomePage;
   @ViewChild('nav') nav:NavController;
  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,public translate : TranslateService ,
               public chatService : ChatProvider ,public personService : PersonProvider, public alertCtrl : AlertController) {
