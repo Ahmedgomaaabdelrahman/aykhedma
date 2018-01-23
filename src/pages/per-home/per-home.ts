@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
 import { PerFirsthomePage } from './../per-firsthome/per-firsthome';
 import { ProfilePage } from './../profile/profile';
 import { ServRequestsPage } from './../serv-requests/serv-requests';
@@ -18,6 +20,7 @@ import { PersonProvider } from "../../providers/person/person";
 import { CommonProvider } from "../../providers/common/common";
 import { WelcomePage } from "../welcome/welcome";
 
+import { Geolocation } from '@ionic-native/geolocation';
 /**
  * Generated class for the PerHomePage page.
  *
@@ -33,7 +36,10 @@ import { WelcomePage } from "../welcome/welcome";
 export class PerHomePage {
   public salesCategory : any[] = [] ;
   public mainService = MainService ;
-  constructor(public comm:CommonProvider,public navCtrl: NavController,public personService: PersonProvider, public navParams: NavParams,public userService : UserProvider) {
+  public searchInput : any;
+  public showSearch : boolean = false ;
+  public searchItems : any [] = [];
+  constructor(public http: Http,private geolocation: Geolocation,public comm:CommonProvider,public navCtrl: NavController,public personService: PersonProvider, public navParams: NavParams,public userService : UserProvider) {
     for (let i = 0; i < 30; i++) {
       this.salesCategory.push( this.salesCategory.length );
     }
@@ -45,6 +51,40 @@ export class PerHomePage {
       this.salesCategory = res ;
       console.log(this.salesCategory);
     });
+   
+  }
+
+  getItems(){
+    if(this.searchInput != ''){
+      this.showSearch = true;
+      this.geolocation.getCurrentPosition().then((resp) => {
+        // resp.coords.latitude
+        // resp.coords.longitude
+        console.log(resp);
+        console.log(resp.coords);
+        this.getCityName(resp.coords.latitude,resp.coords.longitude).subscribe((res)=>{
+          console.log(res);
+          console.log(res.results[0].address_components[3].long_name);
+          
+            this.userService.searchItems(this.searchInput,res.results[0].address_components[3].long_name).subscribe((res)=>{
+             this.searchItems = res;
+             console.log(res);
+           });
+          
+        });
+       }).catch((error) => {
+         console.log('Error getting location', error);
+       });
+    }
+    else {
+      this.showSearch = false ;
+    }
+    
+  }
+  getCityName(lat : number , lng : number):Observable<any>{
+    return this.http.get("https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=AIzaSyCYFqMKHgmsx_Jn0PailkhqazDIeOCS-oQ&language=en")
+      .map((res) => res.json());
+    // res.results[res.results.length-2].address_components[0].long_name
   }
 
   goitemdetails(name_ar:string,categoryID:number){

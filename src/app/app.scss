@@ -43,6 +43,9 @@ $color-background2:rgba(241, 241, 241, 0.78);
     padding-right: 10px;
     padding-left: 116px;
 }
+[dir ='ltr'] .icons  {
+     float: right;
+}
 .imgrate{
     height: 70px;
     width: 70px;

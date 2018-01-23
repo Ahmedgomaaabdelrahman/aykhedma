@@ -6,6 +6,7 @@ export class SalesRequest {
   public email : string ;
   public sales_category_id : number ;
   public user_id : number ;
+  public city : string;
   public images : string[] = [] ;
   public video_url : string ;
   public audio_url : string ;
@@ -17,6 +18,7 @@ export class SalesRequest {
       this.price != null &&
       this.description != null && this.description.trim() != "" &&
       this.email != null && this.email.trim() != "" &&
+      this.city != null && this.city.trim() != "" &&
       this.mobile != null && this.sales_category_id != null &&
       this.user_id != null && this.images.length > 0)
     return true ;

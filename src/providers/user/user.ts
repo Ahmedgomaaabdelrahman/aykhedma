@@ -22,6 +22,7 @@ export class UserProvider {
   public getSalesByCatUrl : string = MainService.baseUrl+"getadsbycatid/";
   public getServicesUrl : string = MainService.baseUrl+"servie/";
   public techRequestUrl : string = MainService.baseUrl+"techRequest/";
+  public searchUrl : string = MainService.baseUrl+"searchsalesitem/";
 
   public updateItemUrl : string = MainService.baseUrl+"updatesalesitem/";
   public setImgItemUrl : string = MainService.baseUrl+"insertnewimagesforspicficitem/";
@@ -32,7 +33,10 @@ export class UserProvider {
   constructor(public http: Http) {
     console.log('Hello UserProvider Provider');
   }
-
+  
+  searchItems(keyword , cname){
+    return this.http.get(this.searchUrl+keyword+"/"+cname).map((res) => res.json());
+  }
   register(user : User):Observable<any>{
       let body = {
         name: user.name,
@@ -45,8 +49,8 @@ export class UserProvider {
        };
       return this.http.post(this.userRegisterUrl,body).map((res) => res.json());
   }
-  getSalesByCat(catID : number):Observable<any>{
-    return this.http.get(this.getSalesByCatUrl+catID).map((res) => res.json());
+  getSalesByCat(catID : number , cname : string):Observable<any>{
+    return this.http.get(this.getSalesByCatUrl+catID+"/"+cname).map((res) => res.json());
   }
   getSpecialAdds():Observable<any>{
     return this.http.get(this.getSpecialAddsUrl).map((res) => res.json());

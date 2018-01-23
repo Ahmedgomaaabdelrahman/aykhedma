@@ -26,27 +26,42 @@
 
 
 <ion-content padding>
-    <ion-input type="text" placeholder="{{'search'|translate}}" class="input"></ion-input>
+    <ion-input type="text" [(ngModel)]="searchInput" (ionChange)="getItems()" placeholder="{{'search'|translate}}" class="input"></ion-input>
     
 <ion-list>
-<ion-row class="rowitems">
+<ion-row *ngIf="!showSearch" class="rowitems">
 <!-- <ion-col col-6 >
 <img src="assets/imgs/iPhone 67 – 7.png" (click)="gosellitems()">
 <p>{{'Sell items'|translate}}</p>
 </ion-col> -->
   
 <ion-col col-6 >
-    <img src="assets/imgs/iPhone 6-7.png" (click)="goServicesProv()">
+    <img src="assets/imgs/Serivice provider.png" (click)="goServicesProv()">
     <p>{{'Services Providers'|translate}}</p>
 </ion-col>
   
 <ion-col col-6 >
-<img src="assets/imgs/iPhone 6-7 – 2.png" (click)="gotechnicians()">
+<img src="assets/imgs/Technician.png" (click)="gotechnicians()">
 <p>{{'Technicians'|translate}}</p>
 </ion-col>
 </ion-row>
+<div  *ngIf="showSearch">
+    <ion-row class="controw"   *ngFor="let item of searchItems">
+        <ion-col col-2>
+        <img class="mobile" *ngIf="item.images.length > 0" [src]="mainService.imageUrl+item.images[0].image_url"
+            (click)="goToAddDetails(item)">
+        </ion-col>
+        <ion-col>
+        <p class="text">{{item.title}}</p>
+        <span class="pricemobile">{{item.price}}</span>
+        <ion-icon class="icons" class="icons" name="call" ></ion-icon>
+        <ion-icon class="icons" class="icons" name="mail" (click)="goToChat(item.user.person)"></ion-icon>
+        </ion-col>
+    </ion-row>
+</div>
 
-<ion-row  class="rowitems">
+
+<ion-row *ngIf="!showSearch"  class="rowitems">
 <ion-col col-6 *ngFor="let category of salesCategory" (click)="goitemdetails(category.name_ar,category.id)">
     <img [src]="mainService.imageUrl+category.img">
     <p *ngIf="mainService.lang == 'ar'">{{category.name_ar}}</p>
