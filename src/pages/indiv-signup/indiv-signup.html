@@ -24,6 +24,12 @@
         <ion-input [(ngModel)]="person.email" name="email" type="email" ></ion-input>
     </ion-item>
     <ion-item>
+      <ion-label stacked class="label">{{'Job'|translate}}</ion-label>
+      <ion-select name="skill_id1" [(ngModel)]="person.techCategoryID" placeholder="اختار المهنة">
+          <ion-option *ngFor="let skill of skills" [value]="skill.id">{{skill.name}}</ion-option>
+      </ion-select>
+      </ion-item>
+    <!-- <ion-item>
       <ion-label  stacked class="label">{{'Company Type'|translate}}</ion-label>
       <ion-input [(ngModel)]="person.companyType" name="companyType" type="text" ></ion-input>
   </ion-item>
@@ -42,18 +48,18 @@
 <ion-item>
   <ion-label  stacked class="label">{{'Birth Date'|translate}}</ion-label>
   <ion-input  [(ngModel)]="person.birthDate" name="birthDate"type="date" ></ion-input>
-</ion-item>
+</ion-item> -->
   </form>
   <ion-row>
     <div style="margin-top: 30px;margin: auto;
     display: block;">
       <p class="locationbtn"(click)="signlocation()">{{'Locations'|translate}}</p>
       <p  class="locationbtn" (click)="addImage()">{{'Add profile Picture'|translate}}</p>
-      <p  class="locationbtn"(click)="imgid()">{{'identity card scan'|translate}}</p>
+      <!-- <p  class="locationbtn"(click)="imgid()">{{'identity card scan'|translate}}</p> -->
     </div>
 
 </ion-row>
 <ion-row>
-    <button ion-button round clear class="signin" (click)="confirm()">{{'Attach Images'|translate}}</button>
+    <button ion-button round clear class="signin" (click)="confirm()">{{'Sign up'|translate}}</button>
 </ion-row>
 </ion-content>

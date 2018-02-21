@@ -11,8 +11,8 @@
 <ion-content padding>
 <ion-list >
   <ion-row  *ngFor="let cat of cats" (click)="goreq(cat.id)">
-  <ion-col col-2><img [src]="mainService.imageUrl+cat.iamge_url"></ion-col>
-  <ion-col col-10 class="text">{{cat.name}}</ion-col>
+  <ion-col col-4><img class="serimg" [src]="mainService.imageUrl+cat.iamge_url"></ion-col>
+  <ion-col col-8 class="text">{{cat.name}}</ion-col>
   </ion-row>  
 </ion-list>
 </ion-content>

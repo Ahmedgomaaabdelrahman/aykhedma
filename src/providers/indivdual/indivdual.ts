@@ -39,15 +39,7 @@ export class IndivdualProvider {
       email : technicion.email,
       type : technicion.type,
       u_id : technicion.uid,  
-      nationality : technicion.nationality,
-      available_hours : technicion.availableHours,
-      experience : technicion.experience,
-      birth_date : technicion.birthDate,
-      profile_image : technicion.profileImage,
-      identity_front_url : technicion.identityFront,
-      identity_back_url : technicion.identityBack,
-      tech_category_id : technicion.techCategoryID,
-      office_tech_id : technicion.officeTechID,
+      tech_categories_id : technicion.techCategoryID,
       Locatoin : technicion.locations
      };
      return this.http.post(this.techRegUrl,body).map((res) => res.json());

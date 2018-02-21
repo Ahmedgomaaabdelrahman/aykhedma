@@ -12,14 +12,19 @@ page-per-techcat {
         // padding-left: 40px;
     }
     .text{
-    padding: 15px;
-    text-align: start;
-    padding-top: 20px;
-    color: $color-font;
-    font-size: 1.8rem;
-    font-weight: 600;
-}
-.row{
-    height: 75px;
-}
+        padding: 40px 15px 0;
+        text-align: start;
+        color: rgba(0, 0, 0, 0.57);
+        font-size: 2.4rem;
+        font-weight: 600;
+    }
+    .row{
+        height: 110px;
+        border-bottom: 1px solid #bfbfbf;
+        .serimg{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
 }

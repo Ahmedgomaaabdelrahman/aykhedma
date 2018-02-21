@@ -12,15 +12,19 @@ page-serv-services {
     padding-left: 40px;
 }
 .text{
-    padding: 15px;
+    padding: 40px 15px 0;
     text-align: start;
-    padding-top: 20px;
-    color: $color-font;
-    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 0.57);
+    font-size: 2.4rem;
     font-weight: 600;
 }
 .row{
-    height: 55px;
-    margin: 25px 0;
+    height: 110px;
+    border-bottom: 1px solid #bfbfbf;
+    .serimg{
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+    }
 }
 }

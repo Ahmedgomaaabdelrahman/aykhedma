@@ -25,7 +25,7 @@ $color-background2:rgba(241, 241, 241, 0.78);
     color: white;
 }
 .toolbar-ios ion-title {
-    padding: 0 25px 1px;
+    padding: 0 5px 1px;
 }
 .back-button-text-ios {
     display: none;
@@ -34,17 +34,21 @@ $color-background2:rgba(241, 241, 241, 0.78);
     font-size: 2.2rem;
     color: $color-orange;
     font-weight: 600;
-    padding-right: 120px;
 }
 [dir ='rtl'] .pricemobile{
     font-size: 2.2rem;
     color: $color-orange;
     font-weight: 600;
-    padding-right: 10px;
-    padding-left: 116px;
 }
 [dir ='ltr'] .icons  {
      float: right;
+}
+
+.toolbar-background{
+    background-color: #26bfe4 !important
+}
+.toolbar-title{
+    color: white !important;
 }
 .imgrate{
     height: 70px;
@@ -101,6 +105,12 @@ $color-background2:rgba(241, 241, 241, 0.78);
     font-size: 1.7rem;
     text-align: center;
     // padding-right: 60px;
+    .icon {
+        color: white !important;
+            }
+}
+.back-button-icon{
+    color: white
 }
 [dir ='rtl'] .toolbar-title{
     color: rgba(66, 66, 66, 0.67);

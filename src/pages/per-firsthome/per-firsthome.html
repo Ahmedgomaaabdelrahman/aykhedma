@@ -7,13 +7,10 @@
           <ion-col col-1>
               <ion-icon class="icon" name="ios-person-outline" (click)="editprofile()"></ion-icon>
           </ion-col>
-          <ion-col col-1>
-              <!--<ion-icon class="icon" name="mail"(click)="goinbox()"></ion-icon>-->
-          </ion-col>
           <ion-col col-2 class="titlename">
               <ion-icon name="settings" (click)="settings()"></ion-icon>
           </ion-col>
-          <ion-col col-4 class="titlename">
+          <ion-col col-5 class="titlename">
               {{'Home'|translate}}
           </ion-col>
           <ion-col col-4 class="titlename" (click)="secondHome()">
@@ -31,10 +28,16 @@
     <img class="mobile" src="assets/imgs/LGG3.jpg">
   </ion-col>
   <ion-col>
-  <p class="text">{{specialAdd.title}} &nbsp; : &nbsp; {{specialAdd.description}}</p>
-  <span *ngIf="specialAdd.price > 0" class="pricemobile">{{specialAdd.price}}</span>
-  <ion-icon class="icons" class="icons" name="call" ></ion-icon>
-  <ion-icon class="icons" class="icons" name="mail" (click)="goToChat(specialAdd.user.person)"></ion-icon>
+        <p class="text">{{specialAdd.title}} &nbsp; : &nbsp; {{specialAdd.description}}</p>
+      <ion-row>
+            <ion-col col-6 style="text-align:start"> <span *ngIf="specialAdd.price > 0" class="pricemobile">{{specialAdd.price}}</span></ion-col>
+            <ion-col col-6 style="text-align:end"><ion-icon class="icons" class="icons" name="call" ></ion-icon>
+                <ion-icon class="icons" class="icons" name="mail" (click)="goToChat(specialAdd.user.person)"></ion-icon></ion-col>
+      </ion-row>
+      
+  
+ 
+  
   </ion-col>
   </ion-row>
 

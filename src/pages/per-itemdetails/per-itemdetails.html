@@ -2,11 +2,11 @@
 <ion-header>
 <ion-row>
    
-    <ion-col col-10><ion-navbar>
+    <ion-col col-10 style="text-align:center;padding:0"><ion-navbar>
         <ion-title>{{cname}}</ion-title>
         </ion-navbar>
     </ion-col>
-    <ion-col col-2 style="text-align:center;"><ion-icon name="add" class="addicon" (click)="addNew()"></ion-icon></ion-col>
+    <ion-col col-2 style="text-align:center;padding:0;background-color:#26bfe4"><ion-icon name="add" class="addicon" (click)="addNew()"></ion-icon></ion-col>
 </ion-row>
 </ion-header>
 
@@ -14,15 +14,21 @@
 <ion-content padding>
 
 <ion-row class="controw" *ngFor="let item of catItems">
-<ion-col col-2>
+<ion-col col-4>
 <img class="mobile" *ngIf="item.images.length > 0" [src]="mainService.imageUrl+item.images[0].image_url"
     (click)="goToAddDetails(item)">
 </ion-col>
-<ion-col>
+<ion-col col-8>
 <p class="text">{{item.title}}</p>
-<span class="pricemobile">{{item.price}}</span>
+<ion-row>
+    <ion-col col-6 style="text-align:start;padding-top: 40px;"><span class="pricemobile">{{item.price}}</span></ion-col>
+    <ion-col col-6 style="text-align:end;padding-top: 40px;">
+        
 <ion-icon class="icons" class="icons" name="call" ></ion-icon>
 <ion-icon class="icons" class="icons" name="mail" (click)="goToChat(item.user.person)"></ion-icon>
+    </ion-col>
+</ion-row>
+
 </ion-col>
 </ion-row>
 </ion-content>

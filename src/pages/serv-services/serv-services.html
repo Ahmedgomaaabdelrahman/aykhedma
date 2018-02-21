@@ -16,9 +16,9 @@
 <ion-content padding>
  <ion-list>  
   <ion-row *ngFor="let category of salesCategory" (click)="goitemdetails(category.id)">
-    <ion-col col-2><img [src]="mainService.imageUrl+category.img"></ion-col>
-    <ion-col col-10 class="text" *ngIf="mainService.lang == 'ar'">{{category.name_ar}}</ion-col>
-    <ion-col col-10 class="text" *ngIf="mainService.lang == 'en'">{{category.name_en}}</ion-col>
+    <ion-col col-4><img class="serimg"[src]="mainService.imageUrl+category.img"></ion-col>
+    <ion-col col-8 class="text" *ngIf="mainService.lang == 'ar'">{{category.name_ar}}</ion-col>
+    <ion-col col-8 class="text" *ngIf="mainService.lang == 'en'">{{category.name_en}}</ion-col>
   </ion-row>
   <hr>
  </ion-list>

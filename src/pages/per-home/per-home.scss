@@ -1,4 +1,7 @@
 page-per-home {
+    .content{
+       background-color:  #ffffff
+    }
     .header-md::after{
         background-image:none;
     }
@@ -38,12 +41,13 @@ p{
     color: $color-font;
     font-weight: 500;
     font-size: 1.5rem;
+    margin: 5px 0;
 }
 .rowitems{
-    margin-top: 30px;
+    margin: 10px 0 0;
 }
-[col-6]{
-    height: 120px;
+.divcol{
+    height: 190px;
 }
 .input{
     background-color: #f8f8f8;
@@ -68,6 +72,7 @@ p{
     height: 50px;
     width: 50px;
     margin-top: 5px;
+    border-radius: 5px;
 }
 
 .icons{
@@ -85,5 +90,28 @@ p{
     padding-top: 15px;
     color: #26bfe4;
     font-weight: bold;
+}
+
+.containdiv{
+    background-color: white;
+    height: 100%;
+    border: .5px solid  #f5f5f5;
+    margin: auto;
+    width: 95%;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 10px;
+    img{
+        width: 100%;
+        height: 120px;
+        margin: auto;
+        display: block;
+        border-radius: 20px;
+    }
+    p{
+        font-size: 1.7rem;
+        color: #797979;
+        font-weight: bolder;
+    }
 }
 }

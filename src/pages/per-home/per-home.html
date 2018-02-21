@@ -7,13 +7,10 @@
         <ion-col col-1>
             <ion-icon class="icon" name="ios-person-outline" (click)="editprofile()"></ion-icon>
         </ion-col>
-        <ion-col col-1>
-            <!--<ion-icon class="icon" name="mail"(click)="goinbox()"></ion-icon>-->
-        </ion-col>
         <ion-col col-2 class="titlename">
             <ion-icon name="settings" (click)="settings()"></ion-icon>
         </ion-col>
-        <ion-col col-5 class="titlename">
+        <ion-col col-6 class="titlename">
             {{'Home'|translate}}
         </ion-col>
         <ion-col col-2 class="titlename" (click)="firstHome()">
@@ -35,14 +32,18 @@
 <p>{{'Sell items'|translate}}</p>
 </ion-col> -->
   
-<ion-col col-6 >
-    <img src="assets/imgs/Serivice provider.png" (click)="goServicesProv()">
-    <p>{{'Services Providers'|translate}}</p>
+<ion-col col-6 class="divcol">
+    <div class="containdiv">
+        <img src="assets/imgs/Serivice provider.png" (click)="goServicesProv()">
+        <p>{{'Services Providers'|translate}}</p>
+    </div>
 </ion-col>
   
-<ion-col col-6 >
-<img src="assets/imgs/Technician.png" (click)="gotechnicians()">
-<p>{{'Technicians'|translate}}</p>
+<ion-col col-6  class="divcol">
+    <div class="containdiv">
+        <img src="assets/imgs/Technician.png" (click)="gotechnicians()">
+        <p>{{'Technicians'|translate}}</p>
+    </div>
 </ion-col>
 </ion-row>
 <div  *ngIf="showSearch">
@@ -52,20 +53,29 @@
             (click)="goToAddDetails(item)">
         </ion-col>
         <ion-col>
-        <p class="text">{{item.title}}</p>
-        <span class="pricemobile">{{item.price}}</span>
-        <ion-icon class="icons" class="icons" name="call" ></ion-icon>
-        <ion-icon class="icons" class="icons" name="mail" (click)="goToChat(item.user.person)"></ion-icon>
+            <p class="text">{{item.title}}</p>
+            <ion-row>
+                <ion-col col-6 style="text-align:start">        
+                    <span class="pricemobile">{{item.price}}</span>
+                </ion-col>
+                <ion-col col-6 style="text-align:end">
+                    <ion-icon class="icons" class="icons" name="call" ></ion-icon>
+                    <ion-icon class="icons" class="icons" name="mail" (click)="goToChat(item.user.person)"></ion-icon>
+                </ion-col>
+            </ion-row>
+    
         </ion-col>
     </ion-row>
 </div>
 
 
 <ion-row *ngIf="!showSearch"  class="rowitems">
-<ion-col col-6 *ngFor="let category of salesCategory" (click)="goitemdetails(category.name_ar,category.id)">
-    <img [src]="mainService.imageUrl+category.img">
-    <p *ngIf="mainService.lang == 'ar'">{{category.name_ar}}</p>
-    <p *ngIf="mainService.lang == 'en'">{{category.name_en}}</p>
+<ion-col col-6 class="divcol" *ngFor="let category of salesCategory" (click)="goitemdetails(category.name_ar,category.id)">
+    <div class="containdiv">
+        <img [src]="mainService.imageUrl+category.img">
+        <p *ngIf="mainService.lang == 'ar'">{{category.name_ar}}</p>
+        <p *ngIf="mainService.lang == 'en'">{{category.name_en}}</p>
+    </div>
 </ion-col>
 </ion-row>
 </ion-list>

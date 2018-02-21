@@ -36,15 +36,19 @@ import { CommonMediaProvider } from '../../providers/common-media/common-media';
 export class IndivSignupPage {
   public person : IndividualTech;
   public personClass = Person ;
+  public skills : any[] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams,public indivdual :IndivdualProvider,
     public personService : PersonProvider , public afAuth: AngularFireAuth ,
     public commonMediaService : CommonMediaProvider, public commonService : CommonProvider,
     public chatService : ChatProvider) {
-  
+       
       switch (this.navParams.data.mode){
         case Person.IndivTech_MODE : this.person = new IndividualTech();
       }
-      
+      this.indivdual.getSkills().subscribe((res)=>{
+        this.skills = res ;
+        console.log(this.skills);
+      });
     }
 
   ionViewDidLoad() {
@@ -99,7 +103,7 @@ export class IndivSignupPage {
       this.commonService.successToast();
       this.personService.currentUser = person;
       // case user only
-      this.navCtrl.push(Tecregist2Page,{personid:person.output.id , person:this.person});
+      this.navCtrl.push(IndivScedulePage,{personid:person.output.id , person:this.person});
       });
     }).catch((err)=>console.log(err));
     
